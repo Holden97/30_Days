@@ -13,11 +13,12 @@ namespace OfficeWar
         public float speed = 4;
         // The transform that the object is moving towards
         public SharedTransform target;
+        public float inAttackRange;
 
         public override TaskStatus OnUpdate()
         {
             // Return a task status of success once we've reached the target
-            if (Vector3.SqrMagnitude(transform.position - target.Value.position) < 0.1f)
+            if (Vector3.SqrMagnitude(transform.position - target.Value.position) < inAttackRange)
             {
                 return TaskStatus.Success;
             }
@@ -27,7 +28,7 @@ namespace OfficeWar
             var modifier = transform.GetComponent<SpeedAnimatorModifier>();
             if (modifier)
             {
-                modifier.SetSpeed((target.Value.position - transform.position) * speed);
+                modifier.SetSpeed((target.Value.position - transform.position).normalized * speed);
             }
             return TaskStatus.Running;
         }

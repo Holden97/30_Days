@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: UIPath
   m_EditorClassIdentifier: 
   uIInfos:
+  - name: HpPanel
+    resPath: Assets/Resources/UIPrefab/HpPanel.prefab
+    uiPrefab: {fileID: 5627787100988806994, guid: 979b1700bd6570f458b93ee6c585a598, type: 3}
+    uiType: 1
+    fadeType: 0
+    ecsRemovable: 1
   - name: ImportantInfoConfirmPanel
     resPath: Packages/com.commonbase/Runtime/Resources/ImportantInfoConfirmPanel.prefab
     uiPrefab: {fileID: 5810595182989658303, guid: 6147b0ff61ed45f41acf8449c6b59214, type: 3}

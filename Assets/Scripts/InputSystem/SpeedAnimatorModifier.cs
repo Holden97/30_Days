@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +10,7 @@ namespace OfficeWar
         public Animator playerAnim;
         public SpriteRenderer playerRenderer;
 
-        private float lastXGreaterThan0 = 0;
+        public float lastXGreaterThan0 = 0;
         public Vector3 realSpeed = default;
 
         [Range(2, 6)] public float speedMagnitude = 3;
