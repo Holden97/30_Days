@@ -13,6 +13,8 @@ namespace OfficeWar
 
         private Vector3 playerSpeed = default;
         private float lastXGreaterThan0 = 0;
+        public Vector3 realSpeed = default;
+
         [Range(2, 6)] public float speedMagnitude = 3;
 
         void Update()
@@ -26,7 +28,6 @@ namespace OfficeWar
         private Vector3 GetSpeed()
         {
             var result = Vector3.zero;
-            var realSpeed = Vector3.zero;
             var y = Input.GetAxis("Vertical");
             var x = Input.GetAxis("Horizontal");
 
