@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BehaviorDesigner.Runtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ namespace OfficeWar
         public GameObject player;
         public Animator playerAnim;
         public SpriteRenderer playerRenderer;
+
+        public BehaviorTree punchBt;
 
         private Vector3 playerSpeed = default;
         private float lastXGreaterThan0 = 0;
@@ -23,6 +26,13 @@ namespace OfficeWar
 
             player.transform.position += playerSpeed;
             playerRenderer.flipX = lastXGreaterThan0 < 0;
+
+            var attacking = Input.GetKey(KeyCode.Mouse0);
+            if (attacking)
+            {
+                playerAnim.SetTrigger("Attack");
+                punchBt.EnableBehavior();
+            }
         }
 
         private Vector3 GetSpeed()

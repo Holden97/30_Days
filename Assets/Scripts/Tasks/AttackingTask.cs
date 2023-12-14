@@ -16,33 +16,37 @@ namespace OfficeWar
         private Health targetHealth;
         private SpeedAnimatorModifier speedAnimatorModifier;
         public float punchDamge = 10;
+        public RaycastHit2D[] result;
 
 
         public override void OnAwake()
         {
             base.OnAwake();
-            targetHealth = target.Value.GetComponent<Health>();
             speedAnimatorModifier = this.transform.GetComponent<SpeedAnimatorModifier>();
+            result = new RaycastHit2D[1];
         }
 
         public override TaskStatus OnUpdate()
         {
-            Attck(target);
+            Attck();
             return TaskStatus.Success;
         }
 
-        public void Attck(SharedTransform target)
+        public void Attck()
         {
-            Vector3 direction = target.Value.position - transform.position;
-            //if (Vector3.Angle(direction, transform.forward) < fieldOfAttack && Vector3.Distance(target.Value.position, transform.position) < attackRange)
-            //{
-            //    targetHealth.BeHurt(punchDamge);
-            //}
+            var dir = speedAnimatorModifier.lastXGreaterThan0 >= 0 ? Vector3.right : Vector3.left;
+            Physics2D.CircleCastNonAlloc(this.transform.position, attackRange, dir, result);
 
-            if (Vector3.Angle(direction, speedAnimatorModifier.lastXGreaterThan0 >= 0 ? Vector3.right : Vector3.left) < fieldOfAttack && Vector3.Distance(target.Value.position, transform.position) < attackRange)
+            if (result[0].collider != null)
             {
-                targetHealth.BeHurt(punchDamge);
+                var health = result[0].collider.transform.GetComponent<Health>();
+                var vectorToCollider = result[0].collider.transform.position - this.transform.position;
+                if (Vector3.Dot(vectorToCollider, dir) > 0)
+                {
+                    health.BeHurt(punchDamge);
+                }
             }
+
 
         }
     }
