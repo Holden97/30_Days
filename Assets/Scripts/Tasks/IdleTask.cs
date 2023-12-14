@@ -13,8 +13,8 @@ namespace OfficeWar
 
         public override TaskStatus OnUpdate()
         {
-            var modifier = transform.GetComponent<SpeedAnimatorModifier>();
-            if (modifier)
+            var modifier = target.Value.GetComponent<ISpeedModifier>();
+            if (modifier != null)
             {
                 modifier.SetSpeed(Vector3.zero);
                 return TaskStatus.Success;

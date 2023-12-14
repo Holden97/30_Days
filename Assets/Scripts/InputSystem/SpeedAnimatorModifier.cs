@@ -5,15 +5,18 @@ using UnityEngine;
 
 namespace OfficeWar
 {
-    public class SpeedAnimatorModifier : MonoBehaviour
+    public class SpeedAnimatorModifier : MonoBehaviour, ISpeedModifier
     {
         public Animator playerAnim;
         public SpriteRenderer playerRenderer;
+        public Health selfHealth;
 
         public float lastXGreaterThan0 = 0;
         public Vector3 realSpeed = default;
 
         [Range(2, 6)] public float speedMagnitude = 3;
+
+        public float LastXGreaterThan0 { get => lastXGreaterThan0; set { lastXGreaterThan0 = value; } }
 
         void Update()
         {

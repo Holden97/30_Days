@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace OfficeWar
 {
-    public class PlayerInput : MonoBehaviour
+    public class PlayerInput : MonoBehaviour, ISpeedModifier
     {
         public GameObject player;
         public Animator playerAnim;
@@ -17,20 +17,30 @@ namespace OfficeWar
         private Vector3 playerSpeed = default;
         private float lastXGreaterThan0 = 0;
         public Vector3 realSpeed = default;
+        private Health selfHealth;
+        private Rigidbody2D selfRigid;
 
-        [Range(2, 6)] public float speedMagnitude = 3;
+        [Range(2, 16)] public float speedMagnitude = 10;
 
-        void Update()
+        public float LastXGreaterThan0 { get => lastXGreaterThan0; set { lastXGreaterThan0 = value; } }
+
+        private void Awake()
         {
-            playerSpeed = GetSpeed();
+            selfHealth = GetComponent<Health>();
+            selfRigid = GetComponent<Rigidbody2D>();
+        }
 
-            player.transform.position += playerSpeed;
+        void FixedUpdate()
+        {
+            if (!selfHealth.IsAlive) return;
+            realSpeed = GetSpeed();
+
+            selfRigid.MovePosition(player.transform.position + realSpeed * Time.deltaTime);
             playerRenderer.flipX = lastXGreaterThan0 < 0;
 
             var attacking = Input.GetKey(KeyCode.Mouse0);
             if (attacking)
             {
-                playerAnim.SetTrigger("Attack");
                 punchBt.EnableBehavior();
             }
         }
@@ -48,8 +58,7 @@ namespace OfficeWar
                 {
                     result = result.normalized;
                 }
-                realSpeed = result * speedMagnitude;
-                result = realSpeed * Time.deltaTime;
+                result *= speedMagnitude;
 
                 if (x != 0)
                 {
@@ -57,9 +66,19 @@ namespace OfficeWar
                 }
             }
 
-            playerAnim.SetFloat("Speed", realSpeed.magnitude);
+            playerAnim.SetFloat("Speed", result.magnitude);
 
             return result;
         }
+
+        public void SetSpeed(Vector3 speed)
+        {
+            this.realSpeed = speed;
+            if (speed.x != 0)
+            {
+                lastXGreaterThan0 = speed.x;
+            }
+        }
+
     }
 }
