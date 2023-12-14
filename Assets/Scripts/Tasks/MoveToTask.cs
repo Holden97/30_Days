@@ -6,7 +6,6 @@ using BehaviorDesigner.Runtime;
 
 namespace OfficeWar
 {
-
     public class MoveToTask : Action
     {
         // The speed of the object
