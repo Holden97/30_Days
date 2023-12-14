@@ -1,8 +1,5 @@
 ﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace OfficeWar
@@ -21,7 +18,6 @@ namespace OfficeWar
         public override void OnAwake()
         {
             base.OnAwake();
-            targetHealth = target.Value.GetComponent<Health>();
             speedAnimatorModifier = this.transform.GetComponent<SpeedAnimatorModifier>();
         }
 
@@ -34,16 +30,15 @@ namespace OfficeWar
         public void Attck(SharedTransform target)
         {
             Vector3 direction = target.Value.position - transform.position;
-            //if (Vector3.Angle(direction, transform.forward) < fieldOfAttack && Vector3.Distance(target.Value.position, transform.position) < attackRange)
-            //{
-            //    targetHealth.BeHurt(punchDamge);
-            //}
 
-            if (Vector3.Angle(direction, speedAnimatorModifier.lastXGreaterThan0 >= 0 ? Vector3.right : Vector3.left) < fieldOfAttack && Vector3.Distance(target.Value.position, transform.position) < attackRange)
+            if (target != null)
             {
-                targetHealth.BeHurt(punchDamge);
+                targetHealth = target.Value.GetComponent<Health>();
+                if (Vector3.Angle(direction, speedAnimatorModifier.lastXGreaterThan0 >= 0 ? Vector3.right : Vector3.left) < fieldOfAttack && Vector3.Distance(target.Value.position, transform.position) < attackRange)
+                {
+                    targetHealth.BeHurt(punchDamge);
+                }
             }
-
         }
     }
 }
