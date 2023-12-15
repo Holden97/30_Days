@@ -14,6 +14,7 @@ namespace OfficeWar
         public SharedTransform self;
         public float fieldOfAttack = 60;
         public float attackRange = 1;
+        public float attackWidth = .5f;
         private Health targetHealth;
         private ISpeedModifier speedAnimatorModifier;
         public float punchDamge = 50;
@@ -36,14 +37,15 @@ namespace OfficeWar
         public void Attck()
         {
             var dir = speedAnimatorModifier.LastXGreaterThan0 >= 0 ? Vector3.right : Vector3.left;
-            Physics2D.CircleCastNonAlloc(this.transform.position, attackRange, dir, result);
+            Physics2D.CircleCastNonAlloc(this.transform.position, attackWidth, dir, result, attackRange);
 
             foreach (var r in result)
             {
                 if (r.collider != null)
                 {
                     if (r.collider.isTrigger || r.collider == self.Value.GetComponent<Collider2D>()
-                        || r.collider.transform.GetComponent<Health>() == null) continue;
+                        || r.collider.transform.GetComponent<Health>() == null)
+                        continue;
                     var health = r.collider.transform.GetComponent<Health>();
                     var vectorToCollider = r.collider.transform.position - this.transform.position;
                     if (Vector3.Dot(vectorToCollider, dir) > 0)
