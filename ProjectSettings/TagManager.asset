@@ -6,15 +6,17 @@ TagManager:
   tags:
   - UICanvas
   - Trainee
+  - Weapon
+  - SkillInstance
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Weapon
   - Water
   - UI
-  - 
-  - 
+  - Agent
+  - SkillInstance
   - 
   - 
   - 
