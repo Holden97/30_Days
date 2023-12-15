@@ -16,7 +16,7 @@ namespace OfficeWar
 
         [Range(2, 6)] public float speedMagnitude = 3;
 
-        public float LastXGreaterThan0 { get => lastXGreaterThan0; set { lastXGreaterThan0 = value; } }
+        public float XSign { get => lastXGreaterThan0; set { lastXGreaterThan0 = value; } }
 
         void Update()
         {

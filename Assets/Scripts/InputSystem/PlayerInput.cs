@@ -12,17 +12,18 @@ namespace OfficeWar
         public Animator playerAnim;
         public SpriteRenderer playerRenderer;
 
+        public bool isAttacking;
+
         public BehaviorTree punchBt;
 
-        private Vector3 playerSpeed = default;
-        private float lastXGreaterThan0 = 0;
+        private float xSign = 0;
         public Vector3 realSpeed = default;
         private Health selfHealth;
         private Rigidbody2D selfRigid;
 
         [Range(2, 16)] public float speedMagnitude = 10;
 
-        public float LastXGreaterThan0 { get => lastXGreaterThan0; set { lastXGreaterThan0 = value; } }
+        public float XSign { get => xSign; set { xSign = value; } }
 
         private void Awake()
         {
@@ -33,10 +34,10 @@ namespace OfficeWar
         void FixedUpdate()
         {
             if (!selfHealth.IsAlive) return;
-            realSpeed = GetSpeed();
+            realSpeed = SetSpeedByPlayer();
 
             selfRigid.MovePosition(player.transform.position + realSpeed * Time.deltaTime);
-            playerRenderer.flipX = lastXGreaterThan0 < 0;
+            playerRenderer.flipX = xSign < 0;
 
             var attacking = Input.GetKey(KeyCode.Mouse0);
             if (attacking)
@@ -45,7 +46,7 @@ namespace OfficeWar
             }
         }
 
-        private Vector3 GetSpeed()
+        private Vector3 SetSpeedByPlayer()
         {
             var result = Vector3.zero;
             var y = Input.GetAxis("Vertical");
@@ -62,7 +63,7 @@ namespace OfficeWar
 
                 if (x != 0)
                 {
-                    lastXGreaterThan0 = x;
+                    XSign = Math.Sign(x);
                 }
             }
 
@@ -76,7 +77,7 @@ namespace OfficeWar
             this.realSpeed = speed;
             if (speed.x != 0)
             {
-                lastXGreaterThan0 = speed.x;
+                XSign = Math.Sign(speed.x);
             }
         }
 

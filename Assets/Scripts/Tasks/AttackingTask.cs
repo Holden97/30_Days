@@ -15,7 +15,6 @@ namespace OfficeWar
         public float fieldOfAttack = 60;
         public float attackRange = 1;
         public float attackWidth = .5f;
-        private Health targetHealth;
         private ISpeedModifier speedAnimatorModifier;
         public float punchDamge = 50;
         public RaycastHit2D[] result;
@@ -36,7 +35,8 @@ namespace OfficeWar
 
         public void Attck()
         {
-            var dir = speedAnimatorModifier.LastXGreaterThan0 >= 0 ? Vector3.right : Vector3.left;
+            //speedAnimatorModifier.XSign = Mathf.Sign(target.Value.position.x - this.transform.position.x);
+            var dir = speedAnimatorModifier.XSign >= 0 ? Vector3.right : Vector3.left;
             Physics2D.CircleCastNonAlloc(this.transform.position, attackWidth, dir, result, attackRange);
 
             foreach (var r in result)

@@ -6,6 +6,6 @@ namespace OfficeWar
     {
         void SetSpeed(Vector3 speed);
 
-        float LastXGreaterThan0 { get; set; }
+        float XSign { get; set; }
     }
 }
