@@ -1,5 +1,8 @@
 ﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using Cainos.CustomizablePixelCharacter;
+using CommonBase;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -35,25 +38,39 @@ namespace OfficeWar
 
         public void Attck()
         {
-            //speedAnimatorModifier.XSign = Mathf.Sign(target.Value.position.x - this.transform.position.x);
-            var dir = speedAnimatorModifier.XSign >= 0 ? Vector3.right : Vector3.left;
-            Physics2D.CircleCastNonAlloc(this.transform.position, attackWidth, dir, result, attackRange);
-
-            foreach (var r in result)
+            var curWeapon = self.Value.GetComponentInChildren<IWeapon>();
+            if (curWeapon != null)
             {
-                if (r.collider != null)
+                var mousePos = InputUtils.GetMouseWorldPosition();
+                var orginalPos = curWeapon.GetLocalPos();
+                curWeapon.GetTransform().DOLocalMove(((mousePos - curWeapon.GetTransform().position).normalized * curWeapon.AttackRange + orginalPos).To2(), curWeapon.AttackCostTime).OnComplete(() =>
                 {
-                    if (r.collider.isTrigger || r.collider == self.Value.GetComponent<Collider2D>()
-                        || r.collider.transform.GetComponent<Health>() == null)
-                        continue;
-                    var health = r.collider.transform.GetComponent<Health>();
-                    var vectorToCollider = r.collider.transform.position - this.transform.position;
-                    if (Vector3.Dot(vectorToCollider, dir) > 0)
+                    curWeapon.GetTransform().DOLocalMove(orginalPos, curWeapon.AttackCostTime);
+                });
+            }
+            else
+            {
+                //speedAnimatorModifier.XSign = Mathf.Sign(target.Value.position.x - this.transform.position.x);
+                var dir = speedAnimatorModifier.XSign >= 0 ? Vector3.right : Vector3.left;
+                Physics2D.CircleCastNonAlloc(this.transform.position, attackWidth, dir, result, attackRange);
+
+                foreach (var r in result)
+                {
+                    if (r.collider != null)
                     {
-                        health.BeHurt(punchDamge, transform);
+                        if (r.collider.isTrigger || r.collider == self.Value.GetComponent<Collider2D>()
+                            || r.collider.transform.GetComponent<Health>() == null)
+                            continue;
+                        var health = r.collider.transform.GetComponent<Health>();
+                        var vectorToCollider = r.collider.transform.position - this.transform.position;
+                        if (Vector3.Dot(vectorToCollider, dir) > 0)
+                        {
+                            health.BeHurt(punchDamge, transform);
+                        }
                     }
                 }
             }
+
 
 
 
