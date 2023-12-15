@@ -126,6 +126,7 @@ MonoBehaviour:
   player: {fileID: 4447407496110931393}
   playerAnim: {fileID: 5917741213142281449}
   playerRenderer: {fileID: 8779105264210323639}
+  isAttacking: 0
   punchBt: {fileID: 3795674407348693452}
   realSpeed: {x: 0, y: 0, z: 0}
   speedMagnitude: 4
@@ -268,7 +269,7 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-7086.03174,-451.4852)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-18.1388683,227.03241)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"OfficeWar.IdleTask","NodeData":{"Offset":"(-150.171417,171.003174)"},"ID":2,"Name":"Idle
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-7086.03174,-451.4852)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1.86113167,177.03241)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"OfficeWar.IdleTask","NodeData":{"Offset":"(-150.171417,171.003174)"},"ID":2,"Name":"Idle
         Task","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":0}},{"Type":"OfficeWar.AttackPreTask","NodeData":{"Offset":"(16.6467743,159.639542)"},"ID":3,"Name":"Attack
         Pre Task","Instant":true,"SharedTransformself":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(160.737717,159.639542)"},"ID":4,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"OfficeWar.AttackingTask","NodeData":{"Offset":"(294.8286,148.275909)"},"ID":5,"Name":"Attacking
         Task","Instant":true,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":2},"SharedTransformself":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":3},"SinglefieldOfAttack":180,"SingleattackRange":0.9,"SingleattackWidth":0.5,"SinglepunchDamge":50,"RaycastHit2D[]result":[]},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(414.8286,138.275909)"},"ID":6,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.6},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]}}'
