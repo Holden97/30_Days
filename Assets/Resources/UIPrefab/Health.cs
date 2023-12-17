@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace OfficeWar
 {
+    [RequireComponent(typeof(DamageFlash))]
     public class Health : MonoBehaviour
     {
         public float maxHp;
@@ -14,6 +15,8 @@ namespace OfficeWar
         public Animator selfAnim;
         public Rigidbody2D selfRigid;
         public float punchRate = 2;
+
+        private DamageFlash df;
 
         public bool IsAlive => curHp > 0;
 
@@ -25,10 +28,12 @@ namespace OfficeWar
         private void Awake()
         {
             ResetHealth();
+            df = GetComponent<DamageFlash>();
         }
 
         public void BeHurt(float damage, Transform caster)
         {
+            df.CallDamageFlash();
             curHp = Mathf.Max(0, curHp - damage);
             selfRigid.AddForce(((Vector2)(this.transform.position - caster.position)).normalized * punchRate, ForceMode2D.Impulse);
             if (curHp <= 0)
