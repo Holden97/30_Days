@@ -6,12 +6,17 @@ namespace OfficeWar
 {
     public class DirectlyHitWeapon : BaseWeapon
     {
-        private void OnCollisionEnter2D(Collision2D collision)
+
+        private void OnTriggerStay2D(Collider2D collision)
         {
-            var curHealth = collision.collider.transform.GetComponent<Health>();
-            if (curHealth != null && curHealth != Owner)
+            if (IsAttacking)
             {
-                curHealth.BeHurt(damage, this.transform);
+                var curHealth = collision.transform.GetComponent<Health>();
+                if (curHealth != null && curHealth != Owner && !HealthsAttacking.Contains(curHealth))
+                {
+                    HealthsAttacking.Add(curHealth);
+                    curHealth.BeHurt(damage, this.transform);
+                }
             }
         }
 
@@ -20,9 +25,11 @@ namespace OfficeWar
             base.Attack();
             var mousePos = InputUtils.GetMouseWorldPosition();
             var orginalPos = transform.localPosition;
-            transform.DOLocalMove(((mousePos - transform.position).normalized * AttackRange + orginalPos).To2(), AttackCostTime / 2).OnComplete(() =>
+            IsAttacking = true;
+            transform.DOLocalMove(((mousePos.To2() - transform.position.To2()).normalized.To3() * AttackRange + orginalPos), AttackCostTime / 2).OnComplete(() =>
             {
-                transform.DOLocalMove(orginalPos, AttackCostTime / 2);
+                transform.DOLocalMove(orginalPos, AttackCostTime / 2).OnComplete(() => this.IsAttacking = false);
+                HealthsAttacking.Clear();
             });
         }
     }

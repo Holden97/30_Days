@@ -8,6 +8,7 @@ namespace OfficeWar
 {
     public class SweapHitWeapon : BaseWeapon
     {
+        public Animator weaponAnimator;
         public float attckRotationAngle;
 
         private void OnTriggerStay2D(Collider2D collision)
@@ -26,8 +27,8 @@ namespace OfficeWar
 
         public override void Attack()
         {
-            HitCount++;
             base.Attack();
+            weaponAnimator.SetTrigger("Attack");
             var originalRotation = transform.rotation;
             var q1 = Quaternion.AngleAxis(attckRotationAngle, Vector3.back);
             var mousePos = InputUtils.GetMouseWorldPosition();

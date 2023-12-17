@@ -38,10 +38,13 @@ namespace OfficeWar
 
         public void Attck()
         {
-            var curWeapon = self.Value.GetComponentInChildren<BaseWeapon>();
-            if (curWeapon != null)
+            var curWeapons = self.Value.GetComponentsInChildren<BaseWeapon>();
+            if (curWeapons != null)
             {
-                curWeapon.Attack();
+                foreach (var w in curWeapons)
+                {
+                    w.Attack();
+                }
             }
             else
             {

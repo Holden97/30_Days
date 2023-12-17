@@ -10,9 +10,8 @@ namespace OfficeWar
         public int HitCount { get; protected set; }
         public List<Health> HealthsAttacking { get; protected set; }
 
-        public Animator weaponAnimator;
         public Health Owner { get; private set; }
-        public bool IsAttacking { get; private set; }
+        public bool IsAttacking { get; protected set; }
         public float damage = 20;
 
         public float attackRange = 3;
@@ -24,7 +23,6 @@ namespace OfficeWar
 
         public virtual void Attack()
         {
-            weaponAnimator.SetTrigger("Attack");
         }
 
         private void Awake()

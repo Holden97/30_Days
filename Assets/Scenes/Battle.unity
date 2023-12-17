@@ -6216,7 +6216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6209214833331822881, guid: fda628f54097b084992d6cb207350981, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6859749919233839035, guid: fda628f54097b084992d6cb207350981, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6270,10 +6270,15 @@ PrefabInstance:
       propertyPath: attackRange
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 8656535959098213307, guid: fda628f54097b084992d6cb207350981, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 456770354509934980, guid: fda628f54097b084992d6cb207350981, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209214833331822881, guid: fda628f54097b084992d6cb207350981, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 726902337}
   m_SourcePrefab: {fileID: 100100000, guid: fda628f54097b084992d6cb207350981, type: 3}
 --- !u!4 &23798694 stripped
 Transform:
@@ -6640,6 +6645,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &726902335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209214833331822881, guid: fda628f54097b084992d6cb207350981, type: 3}
+  m_PrefabInstance: {fileID: 23798693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &726902337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726902335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bce94a29b76ce841ba8c6a33a7b1142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  attackRange: 3
+  attackCostTime: 0.2
 --- !u!1 &1013629916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1600563898523640561, guid: 373dd48e5b611bf4d84a9219c7d7194b, type: 3}
@@ -6836,6 +6861,10 @@ PrefabInstance:
     - target: {fileID: 1600563898523640561, guid: 373dd48e5b611bf4d84a9219c7d7194b, type: 3}
       propertyPath: m_Name
       value: MeleeSweep
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600563898523640561, guid: 373dd48e5b611bf4d84a9219c7d7194b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4284556946698511146, guid: 373dd48e5b611bf4d84a9219c7d7194b, type: 3}
       propertyPath: OnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
