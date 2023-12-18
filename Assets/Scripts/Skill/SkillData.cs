@@ -1,4 +1,4 @@
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +10,7 @@ namespace OfficeWar
     {
         public string skillName;
         public float skillDuration;
-        public BehaviorTree skillBT;
+        public BehaviorDesigner.Runtime.BehaviorTree skillBT;
     }
 }
 

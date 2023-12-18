@@ -2,12 +2,12 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.Tasks
+namespace OfficeWar
 {
     public class FindObjectWithTagTask : Conditional
     {
         public string tag;
-        public SharedTransform target;
+        public BehaviorDesigner.Runtime.SharedTransform target;
 
         public override TaskStatus OnUpdate()
         {
