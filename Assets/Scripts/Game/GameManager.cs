@@ -20,5 +20,10 @@ namespace OfficeWar
             gameFsm = new FiniteStateMachine(gameFsmSO);
             gameFsm.Start();
         }
+
+        private void Update()
+        {
+            gameFsm.Update();
+        }
     }
 }

@@ -289,7 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4d61522ea9fa746be73bfd7cc21a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InGame: 0
   gameFsmSO: {fileID: 11400000, guid: d0208eff52ed9074d8c9694e1e575ea0, type: 2}
   MonsterPrefab: {fileID: 5286420220935447476, guid: 2eeaf3da512592b45bbe48a13644e4dd, type: 3}
   BulletPrefab: {fileID: 152870348349582098, guid: 9aeb66bab05d5f64cb23b4b78db8db66, type: 3}
@@ -317,7 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1039975882}
-  - component: {fileID: 1039975881}
+  - component: {fileID: 1039975883}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -325,19 +324,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1039975881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039975880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae3c192e925f2784390c1bfe9348c894, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiPath: {fileID: 11400000, guid: 79d49d71dc7a3af41ab586498ea45ceb, type: 2}
 --- !u!4 &1039975882
 Transform:
   m_ObjectHideFlags: 0
@@ -353,6 +339,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1039975883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039975880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6dd97933603cac4c9d6cdd0c0b8e0e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiPath: {fileID: 11400000, guid: 79d49d71dc7a3af41ab586498ea45ceb, type: 2}
+  parent: {fileID: 2024838273}
 --- !u!1001 &1065486649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -522,6 +522,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2024838273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1621721519752176100, guid: 017527282767eb84faae5220bf465e2a, type: 3}
+  m_PrefabInstance: {fileID: 1065486649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

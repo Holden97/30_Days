@@ -124,8 +124,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6859749919233839035}
-  - component: {fileID: 8656535959098213307}
   - component: {fileID: 3435144073564217492}
+  - component: {fileID: 4128732722486915438}
   m_Layer: 3
   m_Name: MeleeDirectlyPunch
   m_TagString: Weapon
@@ -150,22 +150,6 @@ Transform:
   - {fileID: 6848616696018018750}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8656535959098213307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6209214833331822881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63fb3086902e83e488b208ba22b7e2d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner: {fileID: 0}
-  damage: 20
-  attackRange: 5
-  attackCostTime: 0.2
 --- !u!58 &3435144073564217492
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -201,3 +185,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.14
+--- !u!114 &4128732722486915438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6209214833331822881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bce94a29b76ce841ba8c6a33a7b1142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  attackRange: 3
+  attackCostTime: 0.2

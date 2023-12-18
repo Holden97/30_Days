@@ -26,5 +26,11 @@ namespace OfficeWar
                 this.Transfer("START_GAME");
             }
         }
+
+        public override void OnStateEnd()
+        {
+            base.OnStateEnd();
+            UIManager.Instance.Hide<WelcomePanel>();
+        }
     }
 }
