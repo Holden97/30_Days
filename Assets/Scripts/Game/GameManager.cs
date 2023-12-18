@@ -9,10 +9,13 @@ namespace OfficeWar
     public class GameManager : MonoBehaviour
     {
         public GameObject MonsterPrefab;
+        public GameObject BulletPrefab;
+
 
         private void Awake()
         {
             ObjectPoolManager.Instance.CreatePool(100, MonsterPrefab, "怪物");
+            ObjectPoolManager.Instance.CreatePool(200, BulletPrefab, "子弹");
         }
         private void Start()
         {

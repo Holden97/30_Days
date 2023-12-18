@@ -38,15 +38,13 @@ namespace OfficeWar
 
         public void Attck()
         {
-            var curWeapon = self.Value.GetComponentInChildren<IWeapon>();
-            if (curWeapon != null)
+            var curWeapons = self.Value.GetComponentsInChildren<BaseWeapon>();
+            if (curWeapons != null)
             {
-                var mousePos = InputUtils.GetMouseWorldPosition();
-                var orginalPos = curWeapon.GetLocalPos();
-                curWeapon.GetTransform().DOLocalMove(((mousePos - curWeapon.GetTransform().position).normalized * curWeapon.AttackRange + orginalPos).To2(), curWeapon.AttackCostTime).OnComplete(() =>
+                foreach (var w in curWeapons)
                 {
-                    curWeapon.GetTransform().DOLocalMove(orginalPos, curWeapon.AttackCostTime);
-                });
+                    w.Attack();
+                }
             }
             else
             {

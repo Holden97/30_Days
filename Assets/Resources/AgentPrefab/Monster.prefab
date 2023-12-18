@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8504281467796402700}
   - component: {fileID: 4714796455405001649}
   - component: {fileID: 5375274728628708376}
+  - component: {fileID: 7200009624622084058}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Trainee
@@ -59,7 +60,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d54be8ba954048f4a962f76a573d6396, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -279,7 +280,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.52, y: 2.03}
+  m_Size: {x: 0.84, y: 2.03}
   m_Direction: 0
 --- !u!114 &5375274728628708376
 MonoBehaviour:
@@ -298,3 +299,59 @@ MonoBehaviour:
   selfAnim: {fileID: 6448330740064163035}
   selfRigid: {fileID: 8504281467796402700}
   punchRate: 2
+--- !u!114 &7200009624622084058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5286420220935447476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39d9ae0ced31a345ac1c70181531c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashColor: {r: 1, g: 1, b: 1, a: 1}
+  _flashTime: 0.25
+  _flashSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -2.3131256
+      outSlope: -2.3131256
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.25698683
+      value: 0.40555722
+      inSlope: -1.0310712
+      outSlope: -1.0310712
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.68517
+      value: 0.513024
+      inSlope: -0.6892719
+      outSlope: -0.6892719
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1.629527
+      outSlope: -1.629527
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
