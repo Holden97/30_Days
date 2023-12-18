@@ -1,0 +1,3 @@
+[submodule "Packages/CommonBase"]
+	path = Packages/CommonBase
+	url = https://github.com/Holden97/CommonBase
