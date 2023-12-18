@@ -37,7 +37,8 @@ namespace OfficeWar
             realSpeed = SetSpeedByPlayer();
 
             selfRigid.MovePosition(player.transform.position + realSpeed * Time.deltaTime);
-            playerRenderer.flipX = xSign < 0;
+            //playerRenderer.flipX = xSign < 0;
+            player.transform.localScale = new Vector3(-xSign, 1, 1);
 
             var attacking = Input.GetKey(KeyCode.Mouse0);
             if (attacking)
