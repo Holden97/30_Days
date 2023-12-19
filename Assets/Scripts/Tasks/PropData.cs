@@ -5,7 +5,7 @@ using UnityEngine;
 namespace OfficeWar
 {
     [System.Serializable]
-    public class PropData
+    public class PropData : CommodityData
     {
         public string name;
         public string description;

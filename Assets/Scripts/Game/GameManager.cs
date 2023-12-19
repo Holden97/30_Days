@@ -32,16 +32,19 @@ namespace OfficeWar
             TextAsset weaponsJson = Resources.Load<TextAsset>("JSON/Weapons");
             TextAsset propsJson = Resources.Load<TextAsset>("JSON/Props");
 
-            if (weaponsJson != null)
+            if (weaponsJson != null && weaponDataSO == null)
             {
                 var w = JsonUtility.FromJson<JsonWrapper<WeaponData>>(weaponsJson.text);
                 weaponDataSO.weaponData = new List<WeaponData>(w.items);
             }
-            if (propsJson != null)
+            if (propsJson != null && propDataSO == null)
             {
                 var w = JsonUtility.FromJson<JsonWrapper<PropData>>(propsJson.text);
                 propDataSO.propData = new List<PropData>(w.items);
             }
+
+            this.weaponsData = weaponDataSO.weaponData;
+            this.propsData = propDataSO.propData;
         }
 
         private void Update()

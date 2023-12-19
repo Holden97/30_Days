@@ -5,7 +5,7 @@ using UnityEngine;
 namespace OfficeWar
 {
     [System.Serializable]
-    public class WeaponData
+    public class WeaponData : CommodityData
     {
         public string name;
         public float damage;
