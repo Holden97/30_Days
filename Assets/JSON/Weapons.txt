@@ -1,0 +1,26 @@
+[
+    {
+        "name": "AK",
+        "damage": "20",
+        "attackSpeed": "0.5",
+        "attackRange": "20",
+        "type": "远程",
+        "cost": "200"
+    },
+    {
+        "name": "拳",
+        "damage": "10",
+        "attackSpeed": "0.8",
+        "attackRange": "10",
+        "type": "近战直击",
+        "cost": "50"
+    },
+    {
+        "name": "砍刀",
+        "damage": "30",
+        "attackSpeed": "1",
+        "attackRange": "30",
+        "type": "近战扫击",
+        "cost": "180"
+    }
+]

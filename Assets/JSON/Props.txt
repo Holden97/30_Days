@@ -1,0 +1,32 @@
+[
+    {
+        "name": "飞贼之靴",
+        "description": "增加10移速（固定）",
+        "bytecode": "ADD_FIXED_SPEED 10",
+        "cost": "50"
+    },
+    {
+        "name": "加速手套",
+        "description": "增加10攻速",
+        "bytecode": "GET_ATTACK_SPEED 10",
+        "cost": "50"
+    },
+    {
+        "name": "毛毛帽",
+        "description": "增加5生命值",
+        "bytecode": "ADD_MAX_HP 5",
+        "cost": "60"
+    },
+    {
+        "name": "轻盈羽翼",
+        "description": "每波次开始时，添加一次护盾",
+        "bytecode": "ADD_SHIELD_PER_WAVE 1",
+        "cost": "100"
+    },
+    {
+        "name": "大力士",
+        "description": "获得最大生命值20%的伤害加成",
+        "bytecode": "GET_MAX_HP;LITERAL 0.2f;MUL;GET DAMAGE_INCREASEMENT_PERSENT;ADD;SET DAMAGE_IMCRESEMENT_PERCENT",
+        "cost": "200"
+    }
+]
