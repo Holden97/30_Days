@@ -1,17 +1,18 @@
 ﻿using CommonBase;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace OfficeWar
 {
-    public class HpPanel : BaseUI
+    public class GamingInfoPanel : BaseUI
     {
         public Slider hp;
         private GameObject player;
-
         private Health playerHp;
+        public TMP_Text timer;
 
         private void Start()
         {
@@ -22,6 +23,9 @@ namespace OfficeWar
         private void Update()
         {
             hp.value = playerHp.curHp / playerHp.maxHp;
+
+            var timerLeftShow = (int)Mathf.Max(0, GamingState.TimeLeft);
+            timer.text = timerLeftShow.ToString();
         }
     }
 }

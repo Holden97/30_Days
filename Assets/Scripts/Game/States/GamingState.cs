@@ -1,8 +1,5 @@
 ﻿using BehaviorDesigner.Runtime;
 using CommonBase;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using Timer = CommonBase.Timer;
 
@@ -11,6 +8,8 @@ namespace OfficeWar
     public class GamingState : BaseState
     {
         private Health player;
+        private bool waveOver;
+        public static float TimeLeft;
         public GamingState(string stateName) : base(stateName)
         {
         }
@@ -18,13 +17,14 @@ namespace OfficeWar
         public override void OnStateStart()
         {
             base.OnStateStart();
+            new Timer(45, OnStart: () => { TimeLeft = 45; }, onComplete: () => waveOver = true);
             var playerGo = GameObject.FindGameObjectWithTag("Player");
             if (playerGo != null)
             {
                 player = playerGo.GetComponent<Health>();
             }
             UIManager.Instance.HideAll();
-            UIManager.Instance.ShowPanel<HpPanel>();
+            UIManager.Instance.ShowPanel<GamingInfoPanel>();
 
             ObjectPoolManager.Instance.CreatePool(100, GameManager.Instance.MonsterPrefab, "怪物");
             ObjectPoolManager.Instance.CreatePool(200, GameManager.Instance.BulletPrefab, "子弹");
@@ -37,13 +37,13 @@ namespace OfficeWar
                 go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
 
             }, isLoop: true).Register();
-            UIManager.Instance.ShowPanel<HpPanel>();
+            UIManager.Instance.ShowPanel<GamingInfoPanel>();
         }
 
         public override void OnStateCheckTransition()
         {
             base.OnStateCheckTransition();
-            if (player == null || !player.IsAlive)
+            if (player == null || !player.IsAlive || waveOver)
             {
                 this.Transfer("GAME_OVER");
             }
@@ -53,6 +53,13 @@ namespace OfficeWar
         {
             base.OnStateUpdate();
             TimerManager.Instance.Tick();
+            TimeLeft -= Time.deltaTime;
+        }
+
+        public override void OnStateEnd()
+        {
+            base.OnStateEnd();
+            waveOver = false;
         }
     }
 }

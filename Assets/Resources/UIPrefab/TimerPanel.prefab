@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 1275356201279884893}
   - component: {fileID: 8545315872540618465}
   m_Layer: 5
-  m_Name: HpPanel
+  m_Name: TimerPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
