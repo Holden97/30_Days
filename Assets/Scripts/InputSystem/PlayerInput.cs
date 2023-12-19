@@ -34,13 +34,16 @@ namespace OfficeWar
         void FixedUpdate()
         {
             if (!selfHealth.IsAlive) return;
-            if(Input.GetAxis("Horizontal") == 0) return; //水平操控未输入则返回-ZXY
 
             realSpeed = SetSpeedByPlayer();
 
             selfRigid.MovePosition(player.transform.position + realSpeed * Time.deltaTime);
             //playerRenderer.flipX = xSign < 0; //注释旧版旋转-ZXY
-            player.transform.localScale = new Vector3(-xSign, 1, 1); //更新旋转方式-ZXY
+
+            if(Input.GetAxis("Horizontal") != 0)
+            {
+                player.transform.localScale = new Vector3(-xSign, 1, 1); //更新旋转方式-ZXY
+            }
 
             var attacking = Input.GetKey(KeyCode.Mouse0);
             if (attacking)
