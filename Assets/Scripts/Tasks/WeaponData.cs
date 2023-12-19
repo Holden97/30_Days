@@ -13,5 +13,6 @@ namespace OfficeWar
         public float attackRange;
         public string type;
         public int cost;
+        public Sprite avatar;
     }
 }
