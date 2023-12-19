@@ -11,6 +11,7 @@ namespace OfficeWar
         public string description;
         public string bytecode;
         public int cost;
+        public Sprite avatar;
 
         public void ExcuteBytecode(string b)
         {

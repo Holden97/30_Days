@@ -15,6 +15,7 @@ namespace OfficeWar
         public override void OnStateStart()
         {
             base.OnStateStart();
+            SceneManager.LoadScene("MainMenu");
             UIManager.Instance.ShowPanel<WelcomePanel>();
         }
 

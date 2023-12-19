@@ -17,6 +17,9 @@ namespace OfficeWar
         public List<WeaponData> weaponsData;
         public List<PropData> propsData;
 
+        public PropDataSO propDataSO;
+        public WeaponDataSO weaponDataSO;
+
         protected override void Awake()
         {
             base.Awake();
@@ -32,12 +35,12 @@ namespace OfficeWar
             if (weaponsJson != null)
             {
                 var w = JsonUtility.FromJson<JsonWrapper<WeaponData>>(weaponsJson.text);
-                weaponsData = new List<WeaponData>(w.items);
+                weaponDataSO.weaponData = new List<WeaponData>(w.items);
             }
             if (propsJson != null)
             {
                 var w = JsonUtility.FromJson<JsonWrapper<PropData>>(propsJson.text);
-                propsData = new List<PropData>(w.items);
+                propDataSO.propData = new List<PropData>(w.items);
             }
         }
 

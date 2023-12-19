@@ -19,9 +19,15 @@ MonoBehaviour:
     uiType: 1
     fadeType: 0
     ecsRemovable: 1
-  - name: HpPanel
-    resPath: Assets/Resources/UIPrefab/HpPanel.prefab
+  - name: GamingInfoPanel
+    resPath: Assets/Resources/UIPrefab/GamingInfoPanel.prefab
     uiPrefab: {fileID: 5627787100988806994, guid: 979b1700bd6570f458b93ee6c585a598, type: 3}
+    uiType: 1
+    fadeType: 0
+    ecsRemovable: 0
+  - name: TimerPanel
+    resPath: Assets/Resources/UIPrefab/TimerPanel.prefab
+    uiPrefab: {fileID: 5627787100988806994, guid: 95004886aa60c7a40969e5179a06d894, type: 3}
     uiType: 1
     fadeType: 0
     ecsRemovable: 0

@@ -10,14 +10,23 @@ namespace OfficeWar
         private Health player;
         private bool waveOver;
         public static float TimeLeft;
+        public static float WaveDuration = 10;
+        public static int CurWave;
         public GamingState(string stateName) : base(stateName)
         {
         }
 
         public override void OnStateStart()
         {
+            var pi = GameObject.FindObjectOfType<PlayerInput>();
+            if (pi != null)
+            {
+                pi.enabled = true;
+            }
+
+            TimeLeft = WaveDuration;
             base.OnStateStart();
-            new Timer(45, OnStart: () => { TimeLeft = 45; }, onComplete: () => waveOver = true);
+            new Timer(WaveDuration, onComplete: () => waveOver = true).Register();
             var playerGo = GameObject.FindGameObjectWithTag("Player");
             if (playerGo != null)
             {

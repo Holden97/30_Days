@@ -16,6 +16,11 @@ namespace OfficeWar
         {
             base.OnStateStart();
             UIManager.Instance.ShowPanel<GameOverPanel>();
+            var pi = GameObject.FindObjectOfType<PlayerInput>();
+            if (pi != null)
+            {
+                pi.enabled = false;
+            }
         }
 
         public override void OnStateCheckTransition()
@@ -25,6 +30,14 @@ namespace OfficeWar
             {
                 this.Transfer("BACK_TO_MAIN");
             }
+        }
+
+        public override void OnStateEnd()
+        {
+            base.OnStateEnd();
+            UIManager.Instance.HideAll();
+            ObjectPoolManager.Instance.PutbackAll("怪物");
+            ObjectPoolManager.Instance.PutbackAll("子弹");
         }
     }
 }

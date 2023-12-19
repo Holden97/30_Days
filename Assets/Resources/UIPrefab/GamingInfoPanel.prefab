@@ -307,7 +307,7 @@ MonoBehaviour:
   coverOthersWhenShow: 0
   fadeType: 0
   hp: {fileID: 6963632684541624912}
-  timer: {fileID: 0}
+  timer: {fileID: 4430420097536960464}
 --- !u!1 &5923177496040420721
 GameObject:
   m_ObjectHideFlags: 0

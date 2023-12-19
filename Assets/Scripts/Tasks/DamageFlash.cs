@@ -48,11 +48,10 @@ namespace OfficeWar
             while (elapsedTime < _flashTime)
             {
                 elapsedTime += Time.deltaTime;
-                currentFlashAmount = Mathf.Lerp(1f, _flashSpeedCurve.Evaluate(elapsedTime), (elapsedTime / _flashTime));
+                currentFlashAmount = Mathf.Lerp(1f, _flashSpeedCurve.Evaluate(elapsedTime / _flashTime), (elapsedTime / _flashTime));
                 SetFlashAmount(currentFlashAmount);
                 yield return null;
             }
-            //TODO：临时使用，后续需要搞懂这个脚本的含义
             SetFlashAmount(0);
         }
 
@@ -70,6 +69,12 @@ namespace OfficeWar
             {
                 _materials[i].SetFloat("_FlashAmount", amount);
             }
+        }
+
+        private void OnDisable()
+        {
+            //TODO：临时使用，后续需要搞懂这个脚本的含义
+            SetFlashAmount(0);
         }
     }
 }
