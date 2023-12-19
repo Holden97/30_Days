@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.commonbase": {
-      "version": "file:CommonBase3",
+      "version": "file:CommonBase",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
