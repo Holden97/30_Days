@@ -1,4 +1,4 @@
-[
+﻿{"items":[
     {
         "name": "飞贼之靴",
         "description": "增加10移速（固定）",
@@ -29,4 +29,4 @@
         "bytecode": "GET_MAX_HP;LITERAL 0.2f;MUL;GET DAMAGE_INCREASEMENT_PERSENT;ADD;SET DAMAGE_IMCRESEMENT_PERCENT",
         "cost": "200"
     }
-]
+]}

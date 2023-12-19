@@ -7,6 +7,7 @@ namespace OfficeWar
 {
     public class BaseWeapon : MonoBehaviour
     {
+        public WeaponData weaponData;
         public int HitCount { get; protected set; }
         public List<Health> HealthsAttacking { get; protected set; }
 
