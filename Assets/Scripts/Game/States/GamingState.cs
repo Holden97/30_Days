@@ -10,17 +10,18 @@ namespace OfficeWar
         private Health player;
         private bool waveOver;
         public static float TimeLeft;
-        public static float WaveDuration = 7;
+        public static float WaveDuration = 10;
         public static int CurWaveNo;
         public static int MaxWaveNo = 6;
         private Timer monsterTimer;
         public GamingState(string stateName) : base(stateName)
         {
-            CurWaveNo = 1;
+            CurWaveNo = 0;
         }
 
         public override void OnStateStart()
         {
+            CurWaveNo++;
             var pi = GameObject.FindObjectOfType<PlayerInput>();
             if (pi != null)
             {
@@ -48,7 +49,7 @@ namespace OfficeWar
             }
             if (!ObjectPoolManager.Instance.Contains("金币"))
             {
-                ObjectPoolManager.Instance.CreatePool(200, GameManager.Instance.BulletPrefab, "金币");
+                ObjectPoolManager.Instance.CreatePool(200, GameManager.Instance.CoinPrefab, "金币");
             }
 
             monsterTimer = new Timer(2, "生成怪物", onComplete: () =>

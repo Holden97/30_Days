@@ -17,7 +17,7 @@ namespace OfficeWar
             var c = data as CommodityData;
             avatarImg.sprite = c.avatar;
             commodityNameText.text = c.name;
-            commodityNameText.text = c.cost.ToString();
+            commodityCost.text = c.cost.ToString();
         }
     }
 }

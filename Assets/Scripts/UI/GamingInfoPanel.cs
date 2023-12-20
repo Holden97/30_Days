@@ -9,14 +9,17 @@ namespace OfficeWar
     {
         public Slider hp;
         private GameObject player;
+        private PlayerPicker picker;
         private Health playerHp;
         public TMP_Text timer;
         public TMP_Text waveNo;
+        public TMP_Text coinsCount;
 
         private void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player");
             playerHp = player.GetComponent<Health>();
+            picker = playerHp.GetComponent<PlayerPicker>();
         }
 
         private void Update()
@@ -26,6 +29,7 @@ namespace OfficeWar
             var timerLeftShow = (int)Mathf.Max(0, GamingState.TimeLeft);
             timer.text = timerLeftShow.ToString();
             waveNo.text = GamingState.CurWaveNo.ToString();
+            coinsCount.text = picker.coinsCount.ToString();
         }
     }
 }

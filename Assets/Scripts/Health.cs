@@ -41,6 +41,8 @@ namespace OfficeWar
                 selfAnim.SetBool("Alive", false);
                 if (this.tag == "Trainee")
                 {
+                    var go = ObjectPoolManager.Instance.GetNextObject("金币");
+                    go.transform.SetPositionAndRotation(transform.position, Quaternion.identity);
                     StartCoroutine(Putback());
                 }
             }

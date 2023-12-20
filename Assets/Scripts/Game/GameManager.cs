@@ -8,11 +8,12 @@ namespace OfficeWar
 {
     public class GameManager : MonoSingleton<GameManager>
     {
-        private FiniteStateMachine gameFsm;
+        public FiniteStateMachine GameFsm { get; private set; }
         public FSMSO gameFsmSO;
 
         public GameObject MonsterPrefab;
         public GameObject BulletPrefab;
+        public GameObject CoinPrefab;
 
         public List<WeaponData> weaponsData;
         public List<PropData> propsData;
@@ -23,8 +24,8 @@ namespace OfficeWar
         protected override void Awake()
         {
             base.Awake();
-            gameFsm = new FiniteStateMachine(gameFsmSO);
-            gameFsm.Start();
+            GameFsm = new FiniteStateMachine(gameFsmSO);
+            GameFsm.Start();
             this.weaponsData = new List<WeaponData>();
             this.propsData = new List<PropData>();
 
@@ -66,7 +67,7 @@ namespace OfficeWar
 
         private void Update()
         {
-            gameFsm.Update();
+            GameFsm.Update();
         }
     }
 }
