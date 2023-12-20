@@ -8,6 +8,9 @@ TagManager:
   - Trainee
   - Weapon
   - SkillInstance
+  - New tag
+  - SelectionArea
+  - Coin
   layers:
   - Default
   - TransparentFX

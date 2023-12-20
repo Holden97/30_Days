@@ -23,6 +23,9 @@ MonoBehaviour:
   - stateName: "\u7ED3\u7B97"
     stateClass: OfficeWar.GameOverState
     isDefaultState: 0
+  - stateName: "\u8D2D\u7269"
+    stateClass: OfficeWar.ShoppingState
+    isDefaultState: 0
   transfers:
   - startState: "\u51C6\u5907"
     trransition: START_GAME
@@ -33,3 +36,9 @@ MonoBehaviour:
   - startState: "\u7ED3\u7B97"
     trransition: BACK_TO_MAIN
     endState: "\u51C6\u5907"
+  - startState: "\u8D2D\u7269"
+    trransition: LEAVE_SHOP
+    endState: "\u6E38\u620F\u4E2D"
+  - startState: "\u6E38\u620F\u4E2D"
+    trransition: GO_SHOPPING
+    endState: "\u8D2D\u7269"

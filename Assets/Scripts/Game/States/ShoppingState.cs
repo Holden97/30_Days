@@ -18,7 +18,7 @@ namespace OfficeWar
             isShopping = true;
             var s = GameManager.Instance.CreateCommodityData();
 
-            UIManager.Instance.ShowPanel<ShopPanel>(data:s);
+            UIManager.Instance.ShowPanel<ShopPanel>(data: s);
         }
 
         public override void OnStateCheckTransition()
@@ -26,7 +26,7 @@ namespace OfficeWar
             base.OnStateCheckTransition();
             if (!isShopping)
             {
-                this.Transfer("离开商店");
+                this.Transfer("LEAVE_SHOP");
             }
         }
 
@@ -34,6 +34,7 @@ namespace OfficeWar
         {
             base.OnStateEnd();
             isShopping = false;
+            UIManager.Instance.Hide<ShopPanel>();
         }
     }
 }

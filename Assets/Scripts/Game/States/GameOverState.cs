@@ -38,6 +38,7 @@ namespace OfficeWar
             UIManager.Instance.HideAll();
             ObjectPoolManager.Instance.PutbackAll("怪物");
             ObjectPoolManager.Instance.PutbackAll("子弹");
+            ObjectPoolManager.Instance.PutbackAll("金币");
         }
     }
 }

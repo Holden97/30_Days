@@ -10,10 +10,13 @@ namespace OfficeWar
         private Health player;
         private bool waveOver;
         public static float TimeLeft;
-        public static float WaveDuration = 10;
-        public static int CurWave;
+        public static float WaveDuration = 7;
+        public static int CurWaveNo;
+        public static int MaxWaveNo = 6;
+        private Timer monsterTimer;
         public GamingState(string stateName) : base(stateName)
         {
+            CurWaveNo = 1;
         }
 
         public override void OnStateStart()
@@ -35,24 +38,43 @@ namespace OfficeWar
             UIManager.Instance.HideAll();
             UIManager.Instance.ShowPanel<GamingInfoPanel>();
 
-            ObjectPoolManager.Instance.CreatePool(100, GameManager.Instance.MonsterPrefab, "怪物");
-            ObjectPoolManager.Instance.CreatePool(200, GameManager.Instance.BulletPrefab, "子弹");
-
-            new Timer(2, "生成怪物", onComplete: () =>
+            if (!ObjectPoolManager.Instance.Contains("怪物"))
             {
-                var go = ObjectPoolManager.Instance.GetNextObject("怪物");
-                go.GetComponent<Health>().ResetHealth();
-                go.GetComponent<BehaviorTree>().EnableBehavior();
-                go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
+                ObjectPoolManager.Instance.CreatePool(100, GameManager.Instance.MonsterPrefab, "怪物");
+            }
+            if (!ObjectPoolManager.Instance.Contains("子弹"))
+            {
+                ObjectPoolManager.Instance.CreatePool(200, GameManager.Instance.BulletPrefab, "子弹");
+            }
+            if (!ObjectPoolManager.Instance.Contains("金币"))
+            {
+                ObjectPoolManager.Instance.CreatePool(200, GameManager.Instance.BulletPrefab, "金币");
+            }
 
-            }, isLoop: true).Register();
+            monsterTimer = new Timer(2, "生成怪物", onComplete: () =>
+              {
+                  var go = ObjectPoolManager.Instance.GetNextObject("怪物");
+                  go.GetComponent<Health>().ResetHealth();
+                  go.GetComponent<BehaviorTree>().EnableBehavior();
+                  go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
+
+              }, isLoop: true);
+            monsterTimer.Register();
             UIManager.Instance.ShowPanel<GamingInfoPanel>();
         }
 
         public override void OnStateCheckTransition()
         {
             base.OnStateCheckTransition();
-            if (player == null || !player.IsAlive || waveOver)
+            if (player == null || !player.IsAlive)
+            {
+                this.Transfer("GAME_OVER");
+            }
+            if (waveOver && CurWaveNo < MaxWaveNo)
+            {
+                this.Transfer("GO_SHOPPING");
+            }
+            else if (waveOver && CurWaveNo >= MaxWaveNo)
             {
                 this.Transfer("GAME_OVER");
             }
@@ -69,6 +91,7 @@ namespace OfficeWar
         {
             base.OnStateEnd();
             waveOver = false;
+            monsterTimer.Unregister();
         }
     }
 }

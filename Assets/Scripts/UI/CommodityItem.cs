@@ -1,4 +1,4 @@
-using CommonBase;
+﻿using CommonBase;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace OfficeWar
 {
-    public class CommodityItem : IListItem
+    public class CommodityItem : MonoBehaviour, IListItem
     {
         public Image avatarImg;
         public Text commodityNameText;

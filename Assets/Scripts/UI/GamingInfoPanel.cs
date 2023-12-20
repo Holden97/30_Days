@@ -11,6 +11,7 @@ namespace OfficeWar
         private GameObject player;
         private Health playerHp;
         public TMP_Text timer;
+        public TMP_Text waveNo;
 
         private void Start()
         {
@@ -24,6 +25,7 @@ namespace OfficeWar
 
             var timerLeftShow = (int)Mathf.Max(0, GamingState.TimeLeft);
             timer.text = timerLeftShow.ToString();
+            waveNo.text = GamingState.CurWaveNo.ToString();
         }
     }
 }
