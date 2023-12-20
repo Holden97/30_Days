@@ -7,9 +7,5 @@ namespace OfficeWar
 {
     public class ShopManager : Singleton<ShopManager>
     {
-        public CommodityData[] CreateMurchandise()
-        {
-            return null;
-        }
     }
 }

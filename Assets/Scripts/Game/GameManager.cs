@@ -47,6 +47,23 @@ namespace OfficeWar
             this.propsData = propDataSO.propData;
         }
 
+        public List<CommodityData> CreateCommodityData()
+        {
+            var result = new List<CommodityData>();
+            for (int i = 0; i < 4; i++)
+            {
+                if (Random.Range(0, 1f) < 0.5f)
+                {
+                    result.Add(weaponsData.Random());
+                }
+                else
+                {
+                    result.Add(propsData.Random());
+                }
+            }
+            return result;
+        }
+
         private void Update()
         {
             gameFsm.Update();

@@ -8,6 +8,8 @@ namespace OfficeWar
     [Serializable]
     public class CommodityData
     {
-
+        public string name;
+        public Sprite avatar;
+        public int cost;
     }
 }

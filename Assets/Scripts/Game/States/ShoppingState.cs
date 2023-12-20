@@ -16,7 +16,9 @@ namespace OfficeWar
         {
             base.OnStateStart();
             isShopping = true;
-            UIManager.Instance.ShowPanel<ShopPanel>();
+            var s = GameManager.Instance.CreateCommodityData();
+
+            UIManager.Instance.ShowPanel<ShopPanel>(data:s);
         }
 
         public override void OnStateCheckTransition()
