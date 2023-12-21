@@ -107,7 +107,7 @@ ScriptedImporter:
       height: 45
     spriteID: 1531a57189f926844859c18a2d873ecb
     spriteBone:
-    - name: "bone_\u8EAF\u5E72"
+    - name: "bone_\u5934"
       guid: 1af053a0945877d45a4c9f56c59102ed
       position: {x: 21.040833, y: 1.0244942, z: 0}
       rotation: {x: 0, y: 0, z: 0.71252286, w: 0.70164895}
@@ -445,7 +445,7 @@ ScriptedImporter:
       height: 12
     spriteID: 552423969a2d59c41a4b2e328f8b240d
     spriteBone:
-    - name: "bone_\u5934"
+    - name: "bone_\u8EAF\u5E72"
       guid: 8909633a0d2f36d4eb489aa9c11e0f36
       position: {x: 12.0408325, y: 1.2489815, z: 0}
       rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
@@ -629,7 +629,7 @@ ScriptedImporter:
     spritePosition: {x: 16, y: 10}
   characterData:
     bones:
-    - name: "bone_\u5934"
+    - name: "bone_\u8EAF\u5E72"
       guid: 8909633a0d2f36d4eb489aa9c11e0f36
       position: {x: 28.040833, y: 11.248982, z: 0}
       rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
@@ -638,7 +638,7 @@ ScriptedImporter:
       color:
         serializedVersion: 2
         rgba: 4278190335
-    - name: "bone_\u8EAF\u5E72"
+    - name: "bone_\u5934"
       guid: 1af053a0945877d45a4c9f56c59102ed
       position: {x: 10.775511, y: -0.0000011901445, z: 0}
       rotation: {x: 0, y: 0, z: 0.007689018, w: 0.9999705}
@@ -750,6 +750,16 @@ ScriptedImporter:
     spriteID: 675c932314b179b478b061927d94e7eb
     layerID: 11
     mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: "\u9752\u7B4B"
+    spriteName: "\u9752\u7B4B"
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bcd9f2b9d7668e64696b94f394019a9d
+    layerID: 15
+    mosaicPosition: {x: 4, y: 77}
     flatten: 0
     isImported: 0
     isVisible: 0

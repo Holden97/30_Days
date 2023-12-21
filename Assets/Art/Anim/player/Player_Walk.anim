@@ -66,7 +66,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: "\u6253\u5DE5\u4EBA/bone_\u5934"
+    path: "\u6253\u5DE5\u4EBA/bone_\u8EAF\u5E72"
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -118,7 +118,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: "\u6253\u5DE5\u4EBA/bone_\u5934/bone_\u8EAF\u5E72"
+    path: "\u6253\u5DE5\u4EBA/bone_\u8EAF\u5E72/bone_\u5934"
   m_ScaleCurves: []
   m_FloatCurves:
   - serializedVersion: 2
@@ -195,7 +195,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2425742344
+      path: 271771296
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -204,7 +204,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2530045198
+      path: 2420920108
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -346,7 +346,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: "\u6253\u5DE5\u4EBA/bone_\u5934"
+    path: "\u6253\u5DE5\u4EBA/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -403,7 +403,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: "\u6253\u5DE5\u4EBA/bone_\u5934"
+    path: "\u6253\u5DE5\u4EBA/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -442,7 +442,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: "\u6253\u5DE5\u4EBA/bone_\u5934"
+    path: "\u6253\u5DE5\u4EBA/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -499,7 +499,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: "\u6253\u5DE5\u4EBA/bone_\u5934/bone_\u8EAF\u5E72"
+    path: "\u6253\u5DE5\u4EBA/bone_\u8EAF\u5E72/bone_\u5934"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -538,7 +538,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: "\u6253\u5DE5\u4EBA/bone_\u5934/bone_\u8EAF\u5E72"
+    path: "\u6253\u5DE5\u4EBA/bone_\u8EAF\u5E72/bone_\u5934"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -577,7 +577,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: "\u6253\u5DE5\u4EBA/bone_\u5934/bone_\u8EAF\u5E72"
+    path: "\u6253\u5DE5\u4EBA/bone_\u8EAF\u5E72/bone_\u5934"
     classID: 4
     script: {fileID: 0}
     flags: 0

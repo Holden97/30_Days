@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 7488260387596114635}
   - component: {fileID: 2361557826418066}
   m_Layer: 6
-  m_Name: New_Player
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -742,6 +742,14 @@ PrefabInstance:
     - target: {fileID: -7552582706839291426, guid: 086830ef369fad94b82064156fff2e20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1366305144521745502, guid: 086830ef369fad94b82064156fff2e20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118024964409749523, guid: 086830ef369fad94b82064156fff2e20, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
