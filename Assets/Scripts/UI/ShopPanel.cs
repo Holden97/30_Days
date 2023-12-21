@@ -1,9 +1,6 @@
 ﻿using CommonBase;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Sprites;
 using UnityEngine;
 
 namespace OfficeWar
@@ -11,6 +8,8 @@ namespace OfficeWar
     public class ShopPanel : BaseUI
     {
         public CommonList shopItemList;
+        public CommonList playerPropsList;
+        public CommonList playerWeaponsList;
         public TMP_Text coinsText;
         private PlayerPicker playerPicker;
         private GameObject player;
@@ -23,11 +22,13 @@ namespace OfficeWar
 
         public override void UpdateView(object o)
         {
-            var s = o as Tuple<int, List<CommodityData>>;
+            var s = o as Tuple<PlayerPicker, CommodityData[]>;
             if (s != null)
             {
-                this.coinsText.text = s.Item1.ToString();
+                this.coinsText.text = s.Item1.coinsCount.ToString();
                 this.shopItemList.BindData(s.Item2);
+                this.playerWeaponsList.BindData(s.Item1.weapons);
+                this.playerPropsList.BindData(s.Item1.props);
             }
         }
 
@@ -39,8 +40,8 @@ namespace OfficeWar
 
         public void Refresh()
         {
-            var s = GameManager.Instance.CreateCommodityData();
-            UpdateView(new Tuple<int, List<CommodityData>>(playerPicker.coinsCount, s));
+            ShopManager.Instance.commodityData = GameManager.Instance.CreateCommodityData(ShopManager.SlotCount);
+            UpdateView(new Tuple<PlayerPicker, CommodityData[]>(playerPicker, ShopManager.Instance.commodityData));
         }
     }
 }

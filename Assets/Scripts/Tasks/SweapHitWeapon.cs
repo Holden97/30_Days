@@ -19,7 +19,7 @@ namespace OfficeWar
                 if (curHealth != null && curHealth != Owner && !HealthsAttacking.Contains(curHealth))
                 {
                     HealthsAttacking.Add(curHealth);
-                    curHealth.BeHurt(damage, this.transform);
+                    curHealth.BeHurt(Damage, this.transform);
                 }
             }
         }
@@ -33,9 +33,9 @@ namespace OfficeWar
             var q1 = Quaternion.AngleAxis(attckRotationAngle, Vector3.back);
             var mousePos = InputUtils.GetMouseWorldPosition();
             var orginalPos = transform.localPosition;
-            transform.DOLocalRotateQuaternion(originalRotation * q1, AttackCostTime / 2).OnComplete(() =>
+            transform.DOLocalRotateQuaternion(originalRotation * q1, AttackSpeed / 2).OnComplete(() =>
             {
-                transform.DOLocalRotateQuaternion(originalRotation, AttackCostTime / 2);
+                transform.DOLocalRotateQuaternion(originalRotation, AttackSpeed / 2);
             });
         }
     }

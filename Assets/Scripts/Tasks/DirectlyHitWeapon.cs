@@ -15,7 +15,7 @@ namespace OfficeWar
                 if (curHealth != null && curHealth != Owner && !HealthsAttacking.Contains(curHealth))
                 {
                     HealthsAttacking.Add(curHealth);
-                    curHealth.BeHurt(damage, this.transform);
+                    curHealth.BeHurt(Damage, this.transform);
                 }
             }
         }
@@ -26,9 +26,9 @@ namespace OfficeWar
             var mousePos = InputUtils.GetMouseWorldPosition();
             var orginalPos = transform.localPosition;
             IsAttacking = true;
-            transform.DOLocalMove(((mousePos.To2() - transform.position.To2()).normalized.To3() * AttackRange + orginalPos), AttackCostTime / 2).OnComplete(() =>
+            transform.DOLocalMove(((mousePos.To2() - transform.position.To2()).normalized.To3() * AttackRange + orginalPos), AttackSpeed / 2).OnComplete(() =>
             {
-                transform.DOLocalMove(orginalPos, AttackCostTime / 2).OnComplete(() => this.IsAttacking = false);
+                transform.DOLocalMove(orginalPos, AttackSpeed / 2).OnComplete(() => this.IsAttacking = false);
                 HealthsAttacking.Clear();
             });
         }

@@ -1,11 +1,10 @@
 ﻿using CommonBase;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace OfficeWar
 {
-    public class BaseWeapon : MonoBehaviour
+    public class BaseWeapon : MonoBehaviour, ICost
     {
         public WeaponData weaponData;
         public int HitCount { get; protected set; }
@@ -13,14 +12,12 @@ namespace OfficeWar
 
         public Health Owner { get; private set; }
         public bool IsAttacking { get; protected set; }
-        public float damage = 20;
 
-        public float attackRange = 3;
-        public float attackCostTime = 0.2f;
+        [field: SerializeField] public float Damage { get; private set; }
+        [field: SerializeField] public float AttackSpeed { get; private set; }
+        [field: SerializeField] public float AttackRange { get; private set; }
 
-        public float AttackCostTime { get => attackCostTime; set => attackCostTime = value; }
-
-        public float AttackRange { get => attackRange; set => attackRange = value; }
+        public int Cost => weaponData.cost;
 
         public virtual void Attack()
         {
@@ -30,6 +27,14 @@ namespace OfficeWar
         {
             Owner = GetComponentInParent<Health>();
             HealthsAttacking = new List<Health>();
+        }
+
+        public virtual void Init(WeaponData w)
+        {
+            this.weaponData = w;
+            Damage = w.damage;
+            AttackSpeed = w.attackSpeed;
+            AttackRange = w.attackRange;
         }
 
         public void ResetAttack()

@@ -21,6 +21,8 @@ namespace OfficeWar
         public PropDataSO propDataSO;
         public WeaponDataSO weaponDataSO;
 
+        public PlayerPicker player;
+
         protected override void Awake()
         {
             base.Awake();
@@ -48,18 +50,18 @@ namespace OfficeWar
             this.propsData = propDataSO.propData;
         }
 
-        public List<CommodityData> CreateCommodityData()
+        public CommodityData[] CreateCommodityData(int count)
         {
-            var result = new List<CommodityData>();
-            for (int i = 0; i < 4; i++)
+            var result = new CommodityData[count];
+            for (int i = 0; i < count; i++)
             {
                 if (Random.Range(0, 1f) < 0.5f)
                 {
-                    result.Add(weaponsData.Random());
+                    result[i] = (weaponsData.Random());
                 }
                 else
                 {
-                    result.Add(propsData.Random());
+                    result[i] = (propsData.Random());
                 }
             }
             return result;

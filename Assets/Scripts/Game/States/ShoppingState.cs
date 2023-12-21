@@ -11,7 +11,6 @@ namespace OfficeWar
     public class ShoppingState : BaseState
     {
         public bool isShopping = false;
-        private PlayerPicker picker;
         public ShoppingState(string stateName) : base(stateName)
         {
         }
@@ -21,11 +20,9 @@ namespace OfficeWar
             base.OnStateStart();
             var player = GameObject.FindGameObjectWithTag("Player");
             ObjectPoolManager.Instance.PutbackAll("怪物");
-            picker = player.GetComponent<PlayerPicker>();
             isShopping = true;
-            var s = GameManager.Instance.CreateCommodityData();
-            Tuple<int, List<CommodityData>> d = new Tuple<int, List<CommodityData>>(picker.coinsCount, s);
-            UIManager.Instance.ShowPanel<ShopPanel>(data: d);
+            ShopManager.Instance.Refresh();
+            UIManager.Instance.ShowPanel<ShopPanel>(data: ShopManager.GetShopData());
         }
 
         public override void OnStateCheckTransition()
