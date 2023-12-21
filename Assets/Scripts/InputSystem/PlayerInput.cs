@@ -21,7 +21,7 @@ namespace OfficeWar
         private Health selfHealth;
         private Rigidbody2D selfRigid;
 
-        [Range(2, 16)] public float speedMagnitude = 10;
+        [Range(1, 16)] public float speedMagnitude = 10;
 
         public float XSign { get => xSign; set { xSign = value; } }
 
