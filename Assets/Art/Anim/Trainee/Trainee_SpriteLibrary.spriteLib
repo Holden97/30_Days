@@ -12,7 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Library: []
+  m_Library:
+  - m_Name: Head
+    m_Hash: 130111906
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: 0
+      m_Hash: 886824737
+      m_Sprite: {fileID: 2035524795917144365, guid: 1e6ca11718ff6534b99689d514d5e17f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2035524795917144365, guid: 1e6ca11718ff6534b99689d514d5e17f, type: 3}
+    - m_Name: 1
+      m_Hash: 64810935
+      m_Sprite: {fileID: 2963530001235240066, guid: 1e6ca11718ff6534b99689d514d5e17f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2963530001235240066, guid: 1e6ca11718ff6534b99689d514d5e17f, type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: 1827343536011802619, guid: 1e6ca11718ff6534b99689d514d5e17f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1827343536011802619, guid: 1e6ca11718ff6534b99689d514d5e17f, type: 3}
+    - m_Name: 3
+      m_Hash: 768773787
+      m_Sprite: {fileID: -8975748938483920415, guid: 1e6ca11718ff6534b99689d514d5e17f, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8975748938483920415, guid: 1e6ca11718ff6534b99689d514d5e17f, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 4
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 0
+  m_ModificationHash: 638388542450581515
   m_Version: 1

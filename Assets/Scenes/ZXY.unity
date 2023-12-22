@@ -12964,7 +12964,7 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &8123385114336328980
+--- !u!1001 &822065448496481116
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -12974,11 +12974,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1024964674653124094, guid: 27f3faedf2b272c42ad40ac75842371d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.31528533
       objectReference: {fileID: 0}
     - target: {fileID: 1024964674653124094, guid: 27f3faedf2b272c42ad40ac75842371d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.2527356
       objectReference: {fileID: 0}
     - target: {fileID: 1024964674653124094, guid: 27f3faedf2b272c42ad40ac75842371d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13014,13 +13014,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4373778672942348890, guid: 27f3faedf2b272c42ad40ac75842371d, type: 3}
       propertyPath: m_Name
-      value: Trainee
+      value: "Trainee_\u2160"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27f3faedf2b272c42ad40ac75842371d, type: 3}
+--- !u!1001 &2383973524024340137
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.9122529
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.23024297
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373778672942348890, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
+      propertyPath: m_Name
+      value: "Trainee_\u2161"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -13031,4 +13088,5 @@ SceneRoots:
   - {fileID: 1032252194}
   - {fileID: 1955557202}
   - {fileID: 176498797}
-  - {fileID: 8123385114336328980}
+  - {fileID: 822065448496481116}
+  - {fileID: 2383973524024340137}
