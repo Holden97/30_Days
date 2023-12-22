@@ -15,7 +15,7 @@ namespace OfficeWar
 
         public bool isAttacking;
 
-        public BehaviorTree punchBt;
+        public List<BehaviorTree> skills;
 
         private float xSign = 0;
         public Vector3 realSpeed = default;
@@ -52,6 +52,15 @@ namespace OfficeWar
                     Time.timeScale = 0;
                 }
             }
+
+            var attacking = Input.GetKey(KeyCode.Mouse0);
+            if (attacking)
+            {
+                foreach (var skill in skills)
+                {
+                    skill.EnableBehavior();
+                }
+            }
         }
 
         void FixedUpdate()
@@ -66,14 +75,6 @@ namespace OfficeWar
             if (Input.GetAxis("Horizontal") != 0)
             {
                 player.transform.localScale = new Vector3(-xSign, 1, 1); //更新旋转方式-ZXY
-            }
-
-
-
-            var attacking = Input.GetKey(KeyCode.Mouse0);
-            if (attacking)
-            {
-                punchBt.EnableBehavior();
             }
         }
 

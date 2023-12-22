@@ -12,7 +12,7 @@ namespace OfficeWar
         public override void OnAwake()
         {
             base.OnAwake();
-            selfAnimator = self.Value.GetComponent<Animator>();
+            selfAnimator = self.Value.GetComponentInChildren<Animator>();
         }
 
         public override void OnStart()

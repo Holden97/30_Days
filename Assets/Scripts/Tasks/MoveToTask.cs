@@ -16,25 +16,29 @@ namespace OfficeWar
         private Rigidbody2D selfRigid;
         private Health selfHealth;
         public float inAttackRange;
+        private ISpeedModifier speedModifier;
+        private Animator speedAnim;
 
         public override void OnAwake()
         {
             base.OnAwake();
-            selfRigid = self.Value.GetComponent<Rigidbody2D>();
-            selfHealth = self.Value.GetComponent<Health>();
+            selfRigid = self.Value.GetComponentInChildren<Rigidbody2D>();
+            selfHealth = self.Value.GetComponentInChildren<Health>();
+            speedModifier = self.Value.GetComponentInChildren<ISpeedModifier>();
+            speedAnim = self.Value.GetComponentInChildren<Animator>();
         }
 
         public override void OnFixedUpdate()
         {
             base.OnFixedUpdate();
-            selfRigid.MovePosition(transform.position + speed * (target.Value.position - transform.position).normalized * Time.deltaTime);
+            selfRigid.MovePosition(selfRigid.transform.position + speed * (target.Value.position - transform.position).normalized * Time.deltaTime);
 
         }
 
         public override TaskStatus OnUpdate()
         {
             // Return a task status of success once we've reached the target
-            if (Vector3.Distance(transform.position, target.Value.position) < inAttackRange)
+            if (Vector3.Distance(selfRigid.transform.position, target.Value.position) < inAttackRange)
             {
                 return TaskStatus.Success;
             }
@@ -43,11 +47,10 @@ namespace OfficeWar
                 return TaskStatus.Failure;
             }
             // We haven't reached the target yet so keep moving towards it
-
-            var modifier = transform.GetComponent<ISpeedModifier>();
-            if (modifier != null)
+            if (speedModifier != null)
             {
-                modifier.SetSpeed((target.Value.position - transform.position).normalized * speed);
+                var curSpeed = (target.Value.position - selfRigid.transform.position).normalized * speed;
+                speedModifier.SetSpeed(curSpeed);
             }
             return TaskStatus.Running;
         }

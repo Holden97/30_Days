@@ -52,15 +52,15 @@ namespace OfficeWar
                 ObjectPoolManager.Instance.CreatePool(200, GameManager.Instance.CoinPrefab, "金币");
             }
 
-            monsterTimer = new Timer(2, "生成怪物", onComplete: () =>
-              {
-                  var go = ObjectPoolManager.Instance.GetNextObject("怪物");
-                  go.GetComponent<Health>().ResetHealth();
-                  go.GetComponent<BehaviorTree>().EnableBehavior();
-                  go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
+            //monsterTimer = new Timer(2, "生成怪物", onComplete: () =>
+            //  {
+            //      var go = ObjectPoolManager.Instance.GetNextObject("怪物");
+            //      go.GetComponentInChildren<Health>().ResetHealth();
+            //      go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
+            //      go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
 
-              }, isLoop: true);
-            monsterTimer.Register();
+            //  }, isLoop: true);
+            //monsterTimer.Register();
             UIManager.Instance.ShowPanel<GamingInfoPanel>();
         }
 

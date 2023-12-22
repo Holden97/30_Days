@@ -2,26 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace OfficeWar
 {
-    public class SpeedAnimatorModifier : MonoBehaviour, ISpeedModifier
+    public class AnimatorModifier : MonoBehaviour, ISpeedModifier
     {
         public Animator playerAnim;
-        public SpriteRenderer playerRenderer;
+        public Transform playerRenderer;
         public Health selfHealth;
-
-        public float lastXGreaterThan0 = 0;
+        /// <summary>
+        /// 1-right,-1-left
+        /// </summary>
+        private float dir = 1;
         public Vector3 realSpeed = default;
-
-        [Range(2, 6)] public float speedMagnitude = 3;
-
-        public float XSign { get => lastXGreaterThan0; set { lastXGreaterThan0 = value; } }
+        public float XSign { get => dir; set { dir = value; } }
 
         void Update()
         {
             playerAnim.SetFloat("Speed", realSpeed.magnitude);
-            playerRenderer.flipX = lastXGreaterThan0 < 0;
+            playerRenderer.localScale = new Vector3(-XSign, 1, 1); //更新旋转方式-ZXY
         }
 
         public void SetSpeed(Vector3 speed)
@@ -29,7 +29,7 @@ namespace OfficeWar
             this.realSpeed = speed;
             if (speed.x != 0)
             {
-                lastXGreaterThan0 = speed.x;
+                dir = Mathf.Sign(speed.x);
             }
         }
     }

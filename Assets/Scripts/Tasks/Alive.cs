@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using CommonBase;
 
 namespace OfficeWar
 {
     public class Alive : Conditional
     {
-        public SharedTransform target;
+        public SharedTransform self;
 
         private Health selfHealth;
 
         public override void OnAwake()
         {
             base.OnAwake();
-            selfHealth = target.Value.GetComponent<Health>();
+            selfHealth = self.Value.GetComponentInChildren<Health>();
         }
 
         public override TaskStatus OnUpdate()

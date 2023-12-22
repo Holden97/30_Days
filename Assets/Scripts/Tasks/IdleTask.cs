@@ -9,11 +9,11 @@ namespace OfficeWar
 
     public class IdleTask : Action
     {
-        public SharedTransform target;
+        public SharedTransform self;
 
         public override TaskStatus OnUpdate()
         {
-            var modifier = target.Value.GetComponent<ISpeedModifier>();
+            var modifier = self.Value.GetComponentInChildren<ISpeedModifier>();
             if (modifier != null)
             {
                 modifier.SetSpeed(Vector3.zero);

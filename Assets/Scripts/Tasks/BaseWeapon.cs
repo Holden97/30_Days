@@ -1,4 +1,5 @@
-﻿using CommonBase;
+﻿using BehaviorDesigner.Runtime;
+using CommonBase;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ namespace OfficeWar
 
         public Health Owner { get; private set; }
         public bool IsAttacking { get; protected set; }
+
+        public BehaviorTree autoAttackBT;
 
         [field: SerializeField] public float Damage { get; private set; }
         [field: SerializeField] public float AttackSpeed { get; private set; }

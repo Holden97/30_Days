@@ -1,9 +1,5 @@
 ﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using CommonBase;
-using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace OfficeWar
@@ -46,7 +42,6 @@ namespace OfficeWar
             }
             else
             {
-                //speedAnimatorModifier.XSign = Mathf.Sign(target.Value.position.x - this.transform.position.x);
                 var dir = speedAnimatorModifier.XSign >= 0 ? Vector3.right : Vector3.left;
                 Physics2D.CircleCastNonAlloc(this.transform.position, attackWidth, dir, result, attackRange);
 
@@ -66,10 +61,6 @@ namespace OfficeWar
                     }
                 }
             }
-
-
-
-
         }
     }
 }
