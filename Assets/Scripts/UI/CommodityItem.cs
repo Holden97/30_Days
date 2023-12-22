@@ -10,17 +10,25 @@ namespace OfficeWar
     public class CommodityItem : MonoBehaviour, IListItem
     {
         public Image avatarImg;
+        public Sprite transformSquare;
         public Text commodityNameText;
         public Text commodityCost;
+
+        private CanvasGroup cg;
         public int index;
 
         private CommodityData c;
+
+        private void Awake()
+        {
+            cg = GetComponent<CanvasGroup>();
+        }
 
         public void BindData(object data)
         {
             if (data != null)
             {
-                avatarImg.gameObject.SetActive(true);
+                cg.alpha = 1;
                 var c = data as CommodityData;
                 avatarImg.sprite = c.avatar;
                 commodityNameText.text = c.name;
@@ -29,8 +37,8 @@ namespace OfficeWar
             }
             else
             {
-                avatarImg.gameObject.SetActive(false);
-                avatarImg.sprite = null;
+                cg.alpha = 0;
+                avatarImg.sprite = transformSquare;
                 commodityNameText.text = "";
                 commodityCost.text = "";
                 this.c = null;

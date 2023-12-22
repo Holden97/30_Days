@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: UIPath
   m_EditorClassIdentifier: 
   uIInfos:
+  - name: CharacterInfoPanel
+    resPath: Assets/Resources/UIPrefab/CharacterInfoPanel.prefab
+    uiPrefab: {fileID: 7429277776593789120, guid: d79ca67f0943e924e9a0a1fe2c04d57d, type: 3}
+    uiType: 1
+    fadeType: 0
+    ecsRemovable: 1
   - name: GameOverPanel
     resPath: Assets/Resources/UIPrefab/GameOverPanel.prefab
     uiPrefab: {fileID: 7429277776593789120, guid: 1ebfefab7e03000489c77a2cde5a7d18, type: 3}
@@ -24,7 +30,7 @@ MonoBehaviour:
     uiPrefab: {fileID: 5627787100988806994, guid: 979b1700bd6570f458b93ee6c585a598, type: 3}
     uiType: 1
     fadeType: 0
-    ecsRemovable: 0
+    ecsRemovable: 1
   - name: ShopPanel
     resPath: Assets/Resources/UIPrefab/ShopPanel.prefab
     uiPrefab: {fileID: 7429277776593789120, guid: 9a38e24b38647b24e90825bdad04b444, type: 3}
@@ -36,7 +42,7 @@ MonoBehaviour:
     uiPrefab: {fileID: 5627787100988806994, guid: 95004886aa60c7a40969e5179a06d894, type: 3}
     uiType: 1
     fadeType: 0
-    ecsRemovable: 0
+    ecsRemovable: 1
   - name: WelcomePanel
     resPath: Assets/Resources/UIPrefab/WelcomePanel.prefab
     uiPrefab: {fileID: 7429277776593789120, guid: 998ac1fbbf183d2438490c121f817374, type: 3}
@@ -48,4 +54,4 @@ MonoBehaviour:
     uiPrefab: {fileID: 5810595182989658303, guid: 6147b0ff61ed45f41acf8449c6b59214, type: 3}
     uiType: 1
     fadeType: 0
-    ecsRemovable: 0
+    ecsRemovable: 1

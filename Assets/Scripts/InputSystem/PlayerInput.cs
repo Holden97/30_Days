@@ -1,4 +1,5 @@
 ﻿using BehaviorDesigner.Runtime;
+using CommonBase;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -31,6 +32,28 @@ namespace OfficeWar
             selfRigid = GetComponent<Rigidbody2D>();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                var shoppingState = GameManager.Instance.GameFsm.GetState("购物") as ShoppingState;
+                if (shoppingState.isShopping) return;
+                if (UIManager.Instance.Get<CharacterInfoPanel>() != null
+                    && UIManager.Instance.Get<CharacterInfoPanel>().IsShowing)
+                {
+                    UIManager.Instance.CloseCurrent();
+                    Time.timeScale = 1;
+                }
+                else
+                {
+                    var player = GameObject.FindGameObjectWithTag("Player");
+                    var playerPicker = player.GetComponent<PlayerPicker>();
+                    UIManager.Instance.ShowPanel<CharacterInfoPanel>(data: playerPicker);
+                    Time.timeScale = 0;
+                }
+            }
+        }
+
         void FixedUpdate()
         {
             if (!selfHealth.IsAlive) return;
@@ -40,10 +63,12 @@ namespace OfficeWar
             selfRigid.MovePosition(player.transform.position + realSpeed * Time.deltaTime);
             //playerRenderer.flipX = xSign < 0; //注释旧版旋转-ZXY
 
-            if(Input.GetAxis("Horizontal") != 0)
+            if (Input.GetAxis("Horizontal") != 0)
             {
                 player.transform.localScale = new Vector3(-xSign, 1, 1); //更新旋转方式-ZXY
             }
+
+
 
             var attacking = Input.GetKey(KeyCode.Mouse0);
             if (attacking)

@@ -7,7 +7,8 @@ namespace OfficeWar
 {
     public class GamingInfoPanel : BaseUI
     {
-        public Slider hp;
+        public Slider hpPercent;
+        public TMP_Text hp;
         private GameObject player;
         private PlayerPicker picker;
         private Health playerHp;
@@ -24,12 +25,13 @@ namespace OfficeWar
 
         private void Update()
         {
-            hp.value = playerHp.curHp / playerHp.maxHp;
+            hpPercent.value = playerHp.curHp / playerHp.maxHp;
 
             var timerLeftShow = (int)Mathf.Max(0, GamingState.TimeLeft);
             timer.text = timerLeftShow.ToString();
             waveNo.text = GamingState.CurWaveNo.ToString();
             coinsCount.text = picker.coinsCount.ToString();
+            hp.text = $"{playerHp.curHp}/{playerHp.maxHp}";
         }
     }
 }

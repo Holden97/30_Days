@@ -480,6 +480,7 @@ GameObject:
   - component: {fileID: 8700316208743378255}
   - component: {fileID: 6321822226523860189}
   - component: {fileID: 7591382565337113636}
+  - component: {fileID: 4701606205208563533}
   m_Layer: 5
   m_Name: PropItem
   m_TagString: Untagged
@@ -549,8 +550,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avatarImg: {fileID: 7766951969679052959}
+  transformSquare: {fileID: 21300000, guid: 955bd888b969ffc4fbaed2fc8a9e9c4d, type: 3}
   commodityNameText: {fileID: 7574435354127551360}
   commodityCost: {fileID: 2706421890943001344}
+  index: 0
 --- !u!114 &8700316208743378255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +636,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &4701606205208563533
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462582644389514281}
+  m_Enabled: 1
+  m_Alpha: 0.18
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5168787303182156188
 GameObject:
   m_ObjectHideFlags: 0
