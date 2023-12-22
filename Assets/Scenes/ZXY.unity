@@ -6212,7 +6212,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 766022466687942403, guid: bc79eeababa263048a165294e6f54cb4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.72
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 766022466687942403, guid: bc79eeababa263048a165294e6f54cb4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12739,11 +12739,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1024964674653124094, guid: 27f3faedf2b272c42ad40ac75842371d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.83
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1024964674653124094, guid: 27f3faedf2b272c42ad40ac75842371d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.33
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1024964674653124094, guid: 27f3faedf2b272c42ad40ac75842371d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12796,11 +12796,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4269676
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3524927
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1024964674653124094, guid: e75f99ca0b8eeec4799a4fbfcc839b25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12861,7 +12861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4915900752915735808, guid: 16b688d3f6876af4387eb2a89cda0568, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4915900752915735808, guid: 16b688d3f6876af4387eb2a89cda0568, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12910,6 +12910,6 @@ SceneRoots:
   - {fileID: 1032252194}
   - {fileID: 1955557202}
   - {fileID: 176498797}
+  - {fileID: 8488378309399018359}
   - {fileID: 822065448496481116}
   - {fileID: 2383973524024340137}
-  - {fileID: 8488378309399018359}
