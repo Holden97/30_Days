@@ -10,7 +10,6 @@ namespace OfficeWar
         private Health player;
         private bool waveOver;
         public static float TimeLeft;
-        public static float WaveDuration = 3;
         public static int CurWaveNo;
         public static int MaxWaveNo = 6;
         private Timer monsterTimer;
@@ -29,9 +28,9 @@ namespace OfficeWar
                 pi.enabled = true;
             }
 
-            TimeLeft = WaveDuration;
+            TimeLeft = GameManager.Instance.waveDuration;
             base.OnStateStart();
-            new Timer(WaveDuration, onComplete: () => waveOver = true).Register();
+            new Timer(TimeLeft, onComplete: () => waveOver = true).Register();
             var playerGo = GameObject.FindGameObjectWithTag("Player");
             if (playerGo != null)
             {

@@ -10,6 +10,7 @@ namespace OfficeWar
     {
         public FiniteStateMachine GameFsm { get; private set; }
         public FSMSO gameFsmSO;
+        public float waveDuration = 30;
 
         public GameObject MonsterPrefab;
         public GameObject BulletPrefab;

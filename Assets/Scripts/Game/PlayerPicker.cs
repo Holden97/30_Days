@@ -15,6 +15,8 @@ namespace OfficeWar
         public List<BaseWeapon> weapons;
         public List<Prop> props;
 
+        public List<Transform> weaponPositions;
+
         private void Awake()
         {
             coinsCount = 2000;
@@ -43,6 +45,17 @@ namespace OfficeWar
                 {
                     var weapon = WeaponFactory.Instance.CreateWeapon(w);
                     weapons.Add(weapon);
+
+                    foreach (var pos in weaponPositions)
+                    {
+                        if (pos.transform.childCount == 0)
+                        {
+                            weapon.transform.SetParent(pos);
+                            weapon.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+                            break;
+                        }
+                    }
+
                     return weapon;
                 }
                 if (c is PropData p)

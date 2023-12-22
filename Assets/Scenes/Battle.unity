@@ -6214,7 +6214,7 @@ GameObject:
   m_Layer: 0
   m_Name: WeaponPos1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6227,7 +6227,7 @@ Transform:
   m_GameObject: {fileID: 21332515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.386, y: 0.566, z: 0}
+  m_LocalPosition: {x: -0.263, y: 0.566, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6245,7 +6245,7 @@ GameObject:
   m_Layer: 0
   m_Name: WeaponPos2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6313,7 +6313,7 @@ GameObject:
   m_Layer: 0
   m_Name: WeaponPos6
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6326,7 +6326,7 @@ Transform:
   m_GameObject: {fileID: 77673159}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.276, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0.276, y: -0.242, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6340,6 +6340,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2361557826418066, guid: bc79eeababa263048a165294e6f54cb4, type: 3}
+      propertyPath: weaponPositions.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361557826418066, guid: bc79eeababa263048a165294e6f54cb4, type: 3}
+      propertyPath: weaponPositions.Array.data[0]
+      value: 
+      objectReference: {fileID: 21332516}
+    - target: {fileID: 2361557826418066, guid: bc79eeababa263048a165294e6f54cb4, type: 3}
+      propertyPath: weaponPositions.Array.data[1]
+      value: 
+      objectReference: {fileID: 29758151}
+    - target: {fileID: 2361557826418066, guid: bc79eeababa263048a165294e6f54cb4, type: 3}
+      propertyPath: weaponPositions.Array.data[2]
+      value: 
+      objectReference: {fileID: 209464965}
+    - target: {fileID: 2361557826418066, guid: bc79eeababa263048a165294e6f54cb4, type: 3}
+      propertyPath: weaponPositions.Array.data[3]
+      value: 
+      objectReference: {fileID: 1748870795}
+    - target: {fileID: 2361557826418066, guid: bc79eeababa263048a165294e6f54cb4, type: 3}
+      propertyPath: weaponPositions.Array.data[4]
+      value: 
+      objectReference: {fileID: 1864233951}
+    - target: {fileID: 2361557826418066, guid: bc79eeababa263048a165294e6f54cb4, type: 3}
+      propertyPath: weaponPositions.Array.data[5]
+      value: 
+      objectReference: {fileID: 77673160}
     - target: {fileID: 766022466687942403, guid: bc79eeababa263048a165294e6f54cb4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.39034718
@@ -6413,7 +6441,7 @@ GameObject:
   m_Layer: 0
   m_Name: WeaponPos3
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6914,7 +6942,7 @@ GameObject:
   m_Layer: 0
   m_Name: WeaponPos4
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6927,7 +6955,7 @@ Transform:
   m_GameObject: {fileID: 1748870794}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.317, y: 0.635, z: 0}
+  m_LocalPosition: {x: 0.275, y: 0.576, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6945,7 +6973,7 @@ GameObject:
   m_Layer: 0
   m_Name: WeaponPos5
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

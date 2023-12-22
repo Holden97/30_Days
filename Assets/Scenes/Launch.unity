@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameFsmSO: {fileID: 11400000, guid: d0208eff52ed9074d8c9694e1e575ea0, type: 2}
+  waveDuration: 10
   MonsterPrefab: {fileID: 5286420220935447476, guid: 2eeaf3da512592b45bbe48a13644e4dd, type: 3}
   BulletPrefab: {fileID: 152870348349582098, guid: 9aeb66bab05d5f64cb23b4b78db8db66, type: 3}
   CoinPrefab: {fileID: 4171846467530137350, guid: bc1e59e32003ae8449a4a065773df6ef, type: 3}
@@ -160,6 +161,7 @@ MonoBehaviour:
   propsData: []
   propDataSO: {fileID: 11400000, guid: f3167b645b136d44fb79ec48801e19d1, type: 2}
   weaponDataSO: {fileID: 11400000, guid: 39c2080148b71df498551ee7685e9509, type: 2}
+  player: {fileID: 0}
 --- !u!4 &441229737
 Transform:
   m_ObjectHideFlags: 0

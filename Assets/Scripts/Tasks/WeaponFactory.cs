@@ -11,6 +11,7 @@ namespace OfficeWar
         public GameObject directlyHitWeaponPref;
         public GameObject sweapHitWeaponPref;
 
+
         public BaseWeapon CreateWeapon(WeaponData w)
         {
             GameObject go;
