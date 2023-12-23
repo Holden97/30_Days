@@ -68,6 +68,11 @@ namespace OfficeWar
             return result;
         }
 
+        public WeaponData GetWeaponData(string weaponName)
+        {
+            return weaponsData.Find(x => x.name == weaponName);
+        }
+
         private void Update()
         {
             GameFsm.Update();

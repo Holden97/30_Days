@@ -156,9 +156,7 @@ MonoBehaviour:
   playerAnim: {fileID: 6413885528085342805}
   playerRenderer: {fileID: 5023615592380252399}
   selfHealth: {fileID: 3361815926897252794}
-  lastXGreaterThan0: 0
   realSpeed: {x: 0, y: 0, z: 0}
-  speedMagnitude: 3
 --- !u!1 &2955439991623740814
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +321,7 @@ GameObject:
   - component: {fileID: 7166451595141090205}
   m_Layer: 0
   m_Name: "Trainee_\u2160"
-  m_TagString: Untagged
+  m_TagString: Trainee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,6 +677,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health
       objectReference: {fileID: 0}
+    - target: {fileID: 1647744117294301176, guid: fd34de54a9a2c04479542f06374a703f, type: 3}
+      propertyPath: faction
+      value: 
+      objectReference: {fileID: 4167246721849662976}
+    - target: {fileID: 1647744117294301176, guid: fd34de54a9a2c04479542f06374a703f, type: 3}
+      propertyPath: selfAnim
+      value: 
+      objectReference: {fileID: 6413885528085342805}
+    - target: {fileID: 1647744117294301176, guid: fd34de54a9a2c04479542f06374a703f, type: 3}
+      propertyPath: selfRigid
+      value: 
+      objectReference: {fileID: 8034661709959123124}
     - target: {fileID: 8562427361352983498, guid: fd34de54a9a2c04479542f06374a703f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -15,6 +15,7 @@ namespace OfficeWar
         public Animator selfAnim;
         public Rigidbody2D selfRigid;
         public float punchRate = 2;
+        public Faction faction;
 
         private DamageFlash df;
 
@@ -31,15 +32,16 @@ namespace OfficeWar
             df = GetComponent<DamageFlash>();
         }
 
-        public void BeHurt(float damage, Transform caster)
+        public void BeHurt(float damage, Transform hitPoint)
         {
             df.CallDamageFlash();
             curHp = Mathf.Max(0, curHp - damage);
-            selfRigid.AddForce(((Vector2)(this.transform.position - caster.position)).normalized * punchRate, ForceMode2D.Impulse);
+            selfRigid.AddForce(((Vector2)(this.transform.position - hitPoint.position)).normalized * punchRate, ForceMode2D.Impulse);
+            EventCenter.Instance.Trigger("HURT", new HurtEvent(this, damage));
             if (curHp <= 0)
             {
                 selfAnim.SetBool("Alive", false);
-                if (this.tag == "Trainee")
+                if (faction.factionType == Faction.FactionEnum.ENEMY)
                 {
                     var go = ObjectPoolManager.Instance.GetNextObject("金币");
                     go.transform.SetPositionAndRotation(transform.position, Quaternion.identity);

@@ -15,7 +15,7 @@ namespace OfficeWar
         {
             if (IsAttacking)
             {
-                var curHealth = collision.transform.GetComponent<Health>();
+                var curHealth = collision.transform.GetComponentInChildren<Health>();
                 if (curHealth != null && curHealth != Owner && !HealthsAttacking.Contains(curHealth))
                 {
                     HealthsAttacking.Add(curHealth);
