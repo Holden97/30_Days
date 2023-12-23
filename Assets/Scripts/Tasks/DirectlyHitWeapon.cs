@@ -9,7 +9,7 @@ namespace OfficeWar
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (AttackingCheck)
+            if (AttackingChecking)
             {
                 var curHealth = collision.transform.GetComponent<Health>();
                 if (curHealth != null && curHealth != Owner && !HealthsAttacking.Contains(curHealth))
@@ -25,10 +25,10 @@ namespace OfficeWar
             base.Attack();
             var mousePos = InputUtils.GetMouseWorldPosition();
             var orginalPos = transform.localPosition;
-            AttackingCheck = true;
+            AttackingChecking = true;
             transform.DOLocalMove(((mousePos.To2() - transform.position.To2()).normalized.To3() * AttackRange + orginalPos), AttackSpeed / 2).OnComplete(() =>
             {
-                transform.DOLocalMove(orginalPos, AttackSpeed / 2).OnComplete(() => this.AttackingCheck = false);
+                transform.DOLocalMove(orginalPos, AttackSpeed / 2).OnComplete(() => this.AttackingChecking = false);
                 HealthsAttacking.Clear();
             });
         }

@@ -26,11 +26,11 @@ namespace OfficeWar
 
         public override TaskStatus OnUpdate()
         {
-            Attck();
+            Attack();
             return TaskStatus.Success;
         }
 
-        public void Attck()
+        private void Attack()
         {
             var curWeapons = self.Value.GetComponentsInChildren<BaseWeapon>();
             if (curWeapons != null)

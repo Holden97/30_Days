@@ -23,7 +23,7 @@ namespace OfficeWar
 
         protected override void Update()
         {
-            if (AttackingCheck)
+            if (AttackingChecking)
             {
                 return;
             }

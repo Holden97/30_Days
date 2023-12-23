@@ -19,7 +19,7 @@ namespace OfficeWar
         /// <summary>
         /// 进展武器碰撞判定
         /// </summary>
-        public bool AttackingCheck { get; protected set; }
+        public bool AttackingChecking { get; protected set; }
 
         public BehaviorTree autoAttackBT;
 
@@ -48,7 +48,7 @@ namespace OfficeWar
 
         public void AttackingFlag()
         {
-            AttackingCheck = true;
+            AttackingChecking = true;
         }
 
         private void Awake()
@@ -69,12 +69,12 @@ namespace OfficeWar
         public void ResetAttack()
         {
             HealthsAttacking.Clear();
-            AttackingCheck = false;
+            AttackingChecking = false;
         }
 
         protected virtual void Update()
         {
-            if (AttackingCheck)
+            if (AttackingChecking)
             {
                 return;
             }
