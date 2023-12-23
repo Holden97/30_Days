@@ -7,7 +7,7 @@ namespace OfficeWar
     public class AttackingTask : Action
     {
         // The transform that the object is moving towards
-        public SharedTransform target;
+        public SharedVector3 target;
         public SharedTransform self;
         public float fieldOfAttack = 60;
         public float attackRange = 1;
@@ -26,18 +26,18 @@ namespace OfficeWar
 
         public override TaskStatus OnUpdate()
         {
-            Attack();
+            Attack(target.Value);
             return TaskStatus.Success;
         }
 
-        private void Attack()
+        private void Attack(Vector3 target)
         {
             var curWeapons = self.Value.GetComponentsInChildren<BaseWeapon>();
             if (curWeapons != null)
             {
                 foreach (var w in curWeapons)
                 {
-                    w.Attack();
+                    w.Attack(target);
                 }
             }
             else

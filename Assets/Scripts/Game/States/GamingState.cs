@@ -21,9 +21,9 @@ namespace OfficeWar
 
         public override void OnStateStart()
         {
+            UIManager.Instance.HideAll();
             CurWaveNo++;
             var pi = GameObject.FindObjectOfType<PlayerInput>();
-            UIManager.Instance.ShowPanel<DamageInfoPanel>();
             GameManager.Instance.player = GameObject.FindObjectOfType<PlayerPicker>();
             if (pi != null)
             {
@@ -39,8 +39,6 @@ namespace OfficeWar
                 player = playerGo.GetComponentInChildren<Health>();
                 playerPicker = playerGo.GetComponent<PlayerPicker>();
             }
-            UIManager.Instance.HideAll();
-            UIManager.Instance.ShowPanel<GamingInfoPanel>();
 
             if (!ObjectPoolManager.Instance.Contains("怪物"))
             {
@@ -55,21 +53,22 @@ namespace OfficeWar
                 ObjectPoolManager.Instance.CreatePool("金币", GameManager.Instance.CoinPrefab, 200);
             }
 
-            //monsterTimer = new Timer(2, "生成怪物", onComplete: () =>
-            //  {
-            //      var go = ObjectPoolManager.Instance.GetNextObject("怪物");
-            //      go.GetComponentInChildren<Health>().ResetHealth();
-            //      go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
-            //      go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
+            monsterTimer = new Timer(2, "生成怪物", onComplete: () =>
+              {
+                  var go = ObjectPoolManager.Instance.GetNextObject("怪物");
+                  go.GetComponentInChildren<Health>().ResetHealth();
+                  go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
+                  go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
 
-            //  }, isLoop: true);
-            //monsterTimer.Register();
+              }, isLoop: true);
+            monsterTimer.Register();
 
             //测试临时添加武器
             var curWeapon = GameManager.Instance.GetWeaponData("砍刀");
             playerPicker.SetupWeapon(curWeapon);
-
+            //UI
             UIManager.Instance.ShowPanel<GamingInfoPanel>();
+            UIManager.Instance.ShowPanel<DamageInfoPanel>();
         }
 
         public override void OnStateCheckTransition()

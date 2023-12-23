@@ -18,9 +18,9 @@ TagManager:
   - Weapon
   - Water
   - UI
-  - Agent
+  - Enemy
   - SkillInstance
-  - 
+  - Player
   - 
   - 
   - 

@@ -11,7 +11,7 @@
         "name": "拳",
         "damage": "10",
         "attackSpeed": "0.8",
-        "attackRange": "10",
+        "attackRange": "3",
         "type": "近战直击",
         "cost": "50"
     },
@@ -19,7 +19,7 @@
         "name": "砍刀",
         "damage": "30",
         "attackSpeed": "1",
-        "attackRange": "30",
+        "attackRange": "2",
         "type": "近战扫击",
         "cost": "180"
     }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5596089306019715062}
   - component: {fileID: 4537133323195890281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\u6295\u5F71"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7344890896834239276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponPos4
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 2175422078229658430}
   - component: {fileID: 8483736972732821319}
   - component: {fileID: 8698142634201514839}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4459259770320734233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponPos6
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -337,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3809208910322981081}
   - component: {fileID: 2653787802313750138}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7183831361659345488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponPos3
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 3293477457254357139}
   - component: {fileID: 3370677487319574083}
   - component: {fileID: 2361557826418066}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -584,7 +584,6 @@ MonoBehaviour:
   playerAnim: {fileID: 806949938167728361}
   playerRenderer: {fileID: 0}
   playerPicker: {fileID: 2361557826418066}
-  isAttacking: 0
   skills: []
   realSpeed: {x: 0, y: 0, z: 0}
   speedMagnitude: 7.02
@@ -627,6 +626,7 @@ MonoBehaviour:
   selfRigid: {fileID: 6035301288174911703}
   punchRate: 1
   faction: {fileID: 0}
+  root: {fileID: 0}
 --- !u!114 &2361557826418066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,6 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22ce7582c5b7404eaee69d3024ef8bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manualAttackMode: 0
   coinsCount: 0
   weapons: []
   weaponPositions:
@@ -657,7 +658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4102488738361444547}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 296778090802717389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponPos5
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -725,7 +726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6688684561996328356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponPos2
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -756,7 +757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6174371913459800556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponPos1
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -789,6 +790,10 @@ PrefabInstance:
     - target: {fileID: 2295461530115478475, guid: df37c72562a5cc543b0c4175fb71fe8d, type: 3}
       propertyPath: m_Name
       value: PlayerAutoAttackBT
+      objectReference: {fileID: 0}
+    - target: {fileID: 2295461530115478475, guid: df37c72562a5cc543b0c4175fb71fe8d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6013787021264827373, guid: df37c72562a5cc543b0c4175fb71fe8d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -848,9 +853,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 766022466687942403}
     m_Modifications:
+    - target: {fileID: -9002905120698540461, guid: 086830ef369fad94b82064156fff2e20, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 086830ef369fad94b82064156fff2e20, type: 3}
       propertyPath: m_Name
       value: "\u6253\u5DE5\u4EBA"
+      objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 086830ef369fad94b82064156fff2e20, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 086830ef369fad94b82064156fff2e20, type: 3}
       propertyPath: m_IsActive
@@ -904,9 +917,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6574121342844636153, guid: 086830ef369fad94b82064156fff2e20, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -1366305144521745502, guid: 086830ef369fad94b82064156fff2e20, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -174585253787430363, guid: 086830ef369fad94b82064156fff2e20, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052605662778080797, guid: 086830ef369fad94b82064156fff2e20, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4118024964409749523, guid: 086830ef369fad94b82064156fff2e20, type: 3}
       propertyPath: m_SortingOrder

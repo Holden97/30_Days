@@ -11,18 +11,12 @@ namespace OfficeWar
         public Animator weaponAnimator;
         public float attckRotationAngle;
 
-        public override void Attack()
+        public override void Attack(Vector3 target)
         {
             if (readyToAttack)
             {
-                base.Attack();
+                base.Attack(target);
                 weaponAnimator.SetTrigger("Attack");
-                //Debug.Log("攻击！！");
-                //var originalRotation = transform.rotation;
-                //var q1 = Quaternion.AngleAxis(attckRotationAngle, Vector3.back);
-                //var mousePos = InputUtils.GetMouseWorldPosition();
-                //var orginalPos = transform.localPosition;
-                //transform.DOLocalRotateQuaternion(originalRotation * q1, AttackSpeed / 2);
             }
         }
 

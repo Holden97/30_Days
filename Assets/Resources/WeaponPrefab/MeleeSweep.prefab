@@ -252,7 +252,8 @@ MonoBehaviour:
     attackSpeed: 0
     attackRange: 0
     type: 
-  autoAttackBT: {fileID: 5845677283825489682, guid: df37c72562a5cc543b0c4175fb71fe8d, type: 3}
+  autoAttackBTPref: {fileID: 5845677283825489682, guid: df37c72562a5cc543b0c4175fb71fe8d, type: 3}
+  autoAttackBTInstance: {fileID: 0}
   readyToAttack: 1
   <Damage>k__BackingField: 0
   <AttackSpeed>k__BackingField: 0

@@ -1,6 +1,8 @@
 ﻿using CommonBase;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace OfficeWar
 {
@@ -10,7 +12,7 @@ namespace OfficeWar
 
         private void OnEnable()
         {
-            ObjectPoolManager.Instance.CreatePool("伤害文字", DamagePref, 100);
+            ObjectPoolManager.Instance.CreatePool("伤害文字", DamagePref, 10);
             this.EventRegister<HurtEvent>("HURT", OnBeAttacked);
         }
 
@@ -28,12 +30,18 @@ namespace OfficeWar
         public void ShowDamageText(float damage, Vector3 attackedWorldPos)
         {
             var go = ObjectPoolManager.Instance.GetNextObject("伤害文字");
-            var screenPos = Camera.main.WorldToScreenPoint(go.transform.position);
-            go.transform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, attackedWorldPos);
-            go.GetComponent<DamageText>().Init(damage);
-            go.transform.DOMoveY(100, 1).OnComplete(() =>
+            //var screenPos = Camera.main.WorldToScreenPoint(go.transform.position);
+            //go.transform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, attackedWorldPos);
+            go.GetComponentInChildren<TMP_Text>().alpha = 1;
+            go.transform.position = attackedWorldPos + (Vector3)Random.insideUnitCircle * 0.5f;
+            go.GetComponentInChildren<DamageText>().Init(damage);
+            go.transform.DOBlendableMoveBy(Vector3.up * 2, 0.5f).OnComplete(() =>
             {
-                ObjectPoolManager.Instance.Putback("伤害文字", go);
+                DOTween.To(() => go.GetComponentInChildren<TMP_Text>().alpha, x => go.GetComponentInChildren<TMP_Text>().alpha = x, 0, 1).OnComplete(() =>
+                {
+                    ObjectPoolManager.Instance.Putback("伤害文字", go);
+
+                });
             });
         }
     }

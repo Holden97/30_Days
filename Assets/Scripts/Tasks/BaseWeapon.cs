@@ -9,19 +9,33 @@ namespace OfficeWar
 {
     public class BaseWeapon : MonoBehaviour, ICost
     {
+        public bool manualAttackMode = false;
         public WeaponData weaponData;
 
         public float attackCD => weaponData.attackSpeed;
         public int HitCount { get; protected set; }
         public List<Health> HealthsAttacking { get; protected set; }
+        private Health owner;
 
-        public Health Owner { get; private set; }
+        public Health Owner
+        {
+            get
+            {
+                return owner;
+            }
+            private set
+            {
+                autoAttackBTInstance.SetVariableValue("self", value.transform);
+                owner = value;
+            }
+        }
         /// <summary>
         /// 进展武器碰撞判定
         /// </summary>
         public bool AttackingChecking { get; protected set; }
 
-        public BehaviorTree autoAttackBT;
+        public BehaviorTree autoAttackBTPref;
+        public BehaviorTree autoAttackBTInstance;
 
         /// <summary>
         /// 武器是否准备好下次攻击
@@ -34,7 +48,7 @@ namespace OfficeWar
 
         public int Cost => weaponData.cost;
 
-        public virtual void Attack()
+        public virtual void Attack(Vector3 target)
         {
             StartCoroutine(EnterAttackCD());
         }
@@ -46,6 +60,11 @@ namespace OfficeWar
             readyToAttack = true;
         }
 
+        public void SetOwner(Health owner)
+        {
+            this.Owner = owner;
+        }
+
         public void AttackingFlag()
         {
             AttackingChecking = true;
@@ -53,9 +72,9 @@ namespace OfficeWar
 
         private void Awake()
         {
-            Owner = GetComponentInParent<Health>();
             HealthsAttacking = new List<Health>();
-            GameObject.Instantiate(autoAttackBT, this.transform);
+            autoAttackBTInstance = GameObject.Instantiate(autoAttackBTPref, this.transform);
+            autoAttackBTInstance.SetVariableValue("curWeapon", this);
         }
 
         public virtual void Init(WeaponData w)
@@ -64,6 +83,7 @@ namespace OfficeWar
             Damage = w.damage;
             AttackSpeed = w.attackSpeed;
             AttackRange = w.attackRange;
+            autoAttackBTInstance.SetVariableValue("attackInterval", this.weaponData.attackSpeed);
         }
 
         public void ResetAttack()
@@ -78,8 +98,12 @@ namespace OfficeWar
             {
                 return;
             }
-            Vector2 direction = (InputUtils.GetMouseWorldPosition() - this.transform.position).normalized;
-            transform.up = direction;
+            if (manualAttackMode)
+            {
+                //手动攻击
+                Vector2 direction = (InputUtils.GetMouseWorldPosition() - this.transform.position).normalized;
+                transform.up = direction;
+            }
         }
     }
 }

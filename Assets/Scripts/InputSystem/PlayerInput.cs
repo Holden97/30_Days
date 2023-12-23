@@ -14,8 +14,6 @@ namespace OfficeWar
         public SpriteRenderer playerRenderer;
         public PlayerPicker playerPicker;
 
-        public bool isAttacking;
-
         public List<BehaviorTree> skills;
 
         private float xSign = 0;
@@ -54,14 +52,14 @@ namespace OfficeWar
                 }
             }
 
-            var attacking = Input.GetKey(KeyCode.Mouse0);
-            if (attacking)
+            //手动攻击
+            if (Input.GetKey(KeyCode.Mouse0))
             {
-                if (playerPicker != null)
+                if (playerPicker != null && playerPicker.manualAttackMode)
                 {
                     foreach (var w in playerPicker.weapons)
                     {
-                        w.Attack();
+                        w.Attack(InputUtils.GetMouseWorldPositionFixedZ());
                     }
                 }
             }

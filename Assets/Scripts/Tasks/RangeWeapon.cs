@@ -10,12 +10,10 @@ namespace OfficeWar
         private Vector2 fireDir;
 
 
-        public override void Attack()
+        public override void Attack(Vector3 target)
         {
-            base.Attack();
+            base.Attack(target);
             //weaponAnimator.SetTrigger("Attack");
-            var mousePos = InputUtils.GetMouseWorldPosition();
-            var orginalPos = transform.localPosition;
             var go = ObjectPoolManager.Instance.GetNextObject("子弹");
             go.GetComponent<Bullet>().Init(Owner);
             go.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);

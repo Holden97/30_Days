@@ -10,6 +10,7 @@ namespace OfficeWar
     /// </summary>
     public class PlayerPicker : MonoBehaviour
     {
+        public bool manualAttackMode = false;
         public int coinsCount;
 
         public List<BaseWeapon> weapons;
@@ -67,6 +68,7 @@ namespace OfficeWar
         {
             var weapon = WeaponFactory.Instance.CreateWeapon(w);
             weapons.Add(weapon);
+            weapon.SetOwner(GetComponent<Health>());
 
             foreach (var pos in weaponPositions)
             {

@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData:
   - name: AK
+    avatar: {fileID: 21300000, guid: cd90fca40a4a2eb40ab221f82219c26f, type: 3}
+    cost: 200
     damage: 20
     attackSpeed: 0.5
     attackRange: 20
     type: "\u8FDC\u7A0B"
-    cost: 200
-    avatar: {fileID: 21300000, guid: cd90fca40a4a2eb40ab221f82219c26f, type: 3}
   - name: "\u62F3"
+    avatar: {fileID: 21300000, guid: feda55714c3a9494c97ce62fe0170d3d, type: 3}
+    cost: 50
     damage: 10
     attackSpeed: 0.8
-    attackRange: 10
+    attackRange: 4
     type: "\u8FD1\u6218\u76F4\u51FB"
-    cost: 50
-    avatar: {fileID: 21300000, guid: feda55714c3a9494c97ce62fe0170d3d, type: 3}
   - name: "\u780D\u5200"
+    avatar: {fileID: 21300000, guid: 44fcab6cb08be9c4bbc1957668154ac7, type: 3}
+    cost: 180
     damage: 30
     attackSpeed: 1
-    attackRange: 30
+    attackRange: 3
     type: "\u8FD1\u6218\u626B\u51FB"
-    cost: 180
-    avatar: {fileID: 21300000, guid: 44fcab6cb08be9c4bbc1957668154ac7, type: 3}

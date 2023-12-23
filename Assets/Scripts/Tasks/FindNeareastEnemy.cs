@@ -7,27 +7,29 @@ using UnityEngine;
 
 namespace OfficeWar
 {
-    public class SearchNeareastEnemy : Action
+    public class FindNeareastEnemy : Action
     {
         public SharedTransform target;
         public SharedTransform self;
 
         private List<Collider2D> colliders;
-        public override void OnAwake()
-        {
-            base.OnAwake();
-            var enemies = Physics2D.OverlapCircleAll(target.Value.position, 10);
-
-            colliders = enemies.ToList();
-            colliders.Sort(new PeopleComparer(self.Value.position));
-            if (!colliders.IsNullOrEmpty())
-            {
-                this.target.SetValue(colliders[0]);
-            }
-        }
 
         public override TaskStatus OnUpdate()
         {
+            var enemies = Physics2D.OverlapCircleAll(self.Value.position, 10);
+
+            colliders = enemies.ToList();
+            colliders.Sort(new PeopleComparer(self.Value.position));
+            for (int i = 0; i < colliders.Count; i++)
+            {
+                Collider2D item = colliders[i];
+                if (item.GetComponentInChildren<Health>() != null && item.transform != self.Value)
+                {
+                    this.target.SetValue(item.transform);
+                    break;
+                }
+            }
+
             if (target.Value != null)
             {
                 return TaskStatus.Success;

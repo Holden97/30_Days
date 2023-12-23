@@ -20,13 +20,12 @@ namespace OfficeWar
             }
         }
 
-        public override void Attack()
+        public override void Attack(Vector3 target)
         {
-            base.Attack();
-            var mousePos = InputUtils.GetMouseWorldPosition();
+            base.Attack(target);
             var orginalPos = transform.localPosition;
             AttackingChecking = true;
-            transform.DOLocalMove(((mousePos.To2() - transform.position.To2()).normalized.To3() * AttackRange + orginalPos), AttackSpeed / 2).OnComplete(() =>
+            transform.DOLocalMove(((target.To2() - transform.position.To2()).normalized.To3() * AttackRange + orginalPos), AttackSpeed / 2).OnComplete(() =>
             {
                 transform.DOLocalMove(orginalPos, AttackSpeed / 2).OnComplete(() => this.AttackingChecking = false);
                 HealthsAttacking.Clear();
