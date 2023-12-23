@@ -14,6 +14,8 @@ namespace OfficeWar
         public static int CurWaveNo;
         public static int MaxWaveNo = 6;
         private Timer monsterTimer;
+        private float lastCursorMoveTime;
+        private Vector3 lastMousePos;
         public GamingState(string stateName) : base(stateName)
         {
             CurWaveNo = 0;
@@ -91,6 +93,14 @@ namespace OfficeWar
         public override void OnStateUpdate()
         {
             base.OnStateUpdate();
+            if (Input.mousePosition != lastMousePos)
+            {
+                lastMousePos = Input.mousePosition;
+                Debug.Log("lastMousePos:" + lastMousePos);
+                Debug.Log("Input.mousePosition:" + Input.mousePosition);
+                lastCursorMoveTime = Time.time;
+            }
+            Cursor.visible = Time.time - lastCursorMoveTime < 1;
             TimerManager.Instance.Tick();
             TimeLeft -= Time.deltaTime;
         }
