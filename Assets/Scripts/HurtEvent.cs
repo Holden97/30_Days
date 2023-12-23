@@ -8,11 +8,13 @@ namespace OfficeWar
     {
         public Health beAttacked;
         public float damage;
+        public Vector3 damageSource;
 
-        public HurtEvent(Health beAttacked, float damage)
+        public HurtEvent(Health beAttacked, float damage, Vector3 damageSource)
         {
             this.beAttacked = beAttacked;
             this.damage = damage;
+            this.damageSource = damageSource;
         }
     }
 }

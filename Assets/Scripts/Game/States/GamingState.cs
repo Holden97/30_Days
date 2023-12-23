@@ -60,6 +60,7 @@ namespace OfficeWar
                   var go = ObjectPoolManager.Instance.GetNextObject("怪物");
                   go.GetComponentInChildren<Health>().ResetHealth();
                   go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
+                  //go.GetComponentInChildren<Animator>().Play("Trainee_idle");
                   go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
 
               }, isLoop: true);

@@ -56,7 +56,7 @@ namespace OfficeWar
                         var vectorToCollider = r.collider.transform.position - this.transform.position;
                         if (Vector3.Dot(vectorToCollider, dir) > 0)
                         {
-                            health.BeHurt(punchDamge, transform);
+                            health.BeHurt(punchDamge, transform, this.transform.position);
                         }
                     }
                 }

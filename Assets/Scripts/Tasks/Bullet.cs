@@ -22,7 +22,7 @@ namespace OfficeWar
             var h = collision.GetComponent<Health>();
             if (h && h != Owner)
             {
-                h.BeHurt(damage, this.transform);
+                h.BeHurt(damage, collision.transform, this.transform.position);
 
             }
         }

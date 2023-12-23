@@ -15,7 +15,7 @@ namespace OfficeWar
                 if (curHealth != null && curHealth != weapon.Owner && !weapon.HealthsAttacking.Contains(curHealth))
                 {
                     weapon.HealthsAttacking.Add(curHealth);
-                    curHealth.BeHurt(weapon.Damage, this.transform);
+                    curHealth.BeHurt(weapon.Damage, this.transform, this.transform.position);
                 }
             }
         }
