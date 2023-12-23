@@ -13,7 +13,7 @@ namespace OfficeWar
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (IsAttacking)
+            if (readyToAttack)
             {
                 var curHealth = collision.transform.GetComponentInChildren<Health>();
                 if (curHealth != null && curHealth != Owner && !HealthsAttacking.Contains(curHealth))
@@ -25,18 +25,29 @@ namespace OfficeWar
         }
 
 
+
         public override void Attack()
         {
-            base.Attack();
-            weaponAnimator.SetTrigger("Attack");
-            var originalRotation = transform.rotation;
-            var q1 = Quaternion.AngleAxis(attckRotationAngle, Vector3.back);
-            var mousePos = InputUtils.GetMouseWorldPosition();
-            var orginalPos = transform.localPosition;
-            transform.DOLocalRotateQuaternion(originalRotation * q1, AttackSpeed / 2).OnComplete(() =>
+            if (readyToAttack)
             {
-                transform.DOLocalRotateQuaternion(originalRotation, AttackSpeed / 2);
-            });
+                base.Attack();
+                weaponAnimator.SetTrigger("Attack");
+                Debug.Log("攻击！！");
+                var originalRotation = transform.rotation;
+                var q1 = Quaternion.AngleAxis(attckRotationAngle, Vector3.back);
+                var mousePos = InputUtils.GetMouseWorldPosition();
+                var orginalPos = transform.localPosition;
+                transform.DOLocalRotateQuaternion(originalRotation * q1, AttackSpeed / 2).OnComplete(() =>
+                {
+                    transform.DOLocalRotateQuaternion(originalRotation, AttackSpeed / 2);
+                });
+            }
+        }
+
+        protected override void Update()
+        {
+            base.Update();
+            weaponAnimator.SetBool("IsAttacking", AttackingCheck);
         }
     }
 }

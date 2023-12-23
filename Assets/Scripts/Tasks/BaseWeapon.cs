@@ -1,6 +1,7 @@
 ﻿using BehaviorDesigner.Runtime;
 using CommonBase;
 using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,13 +10,23 @@ namespace OfficeWar
     public class BaseWeapon : MonoBehaviour, ICost
     {
         public WeaponData weaponData;
+
+        public float attackCD => weaponData.attackSpeed;
         public int HitCount { get; protected set; }
         public List<Health> HealthsAttacking { get; protected set; }
 
         public Health Owner { get; private set; }
-        public bool IsAttacking { get; protected set; }
+        /// <summary>
+        /// 进展武器碰撞判定
+        /// </summary>
+        public bool AttackingCheck { get; protected set; }
 
         public BehaviorTree autoAttackBT;
+
+        /// <summary>
+        /// 武器是否准备好下次攻击
+        /// </summary>
+        public bool readyToAttack = true;
 
         [field: SerializeField] public float Damage { get; private set; }
         [field: SerializeField] public float AttackSpeed { get; private set; }
@@ -25,11 +36,19 @@ namespace OfficeWar
 
         public virtual void Attack()
         {
+            StartCoroutine(EnterAttackCD());
+        }
+
+        protected IEnumerator EnterAttackCD()
+        {
+            readyToAttack = false;
+            yield return new WaitForSeconds(attackCD);
+            readyToAttack = true;
         }
 
         public void AttackingFlag()
         {
-            IsAttacking = true;
+            AttackingCheck = true;
         }
 
         private void Awake()
@@ -50,12 +69,12 @@ namespace OfficeWar
         public void ResetAttack()
         {
             HealthsAttacking.Clear();
-            IsAttacking = false;
+            AttackingCheck = false;
         }
 
         protected virtual void Update()
         {
-            if (IsAttacking)
+            if (AttackingCheck)
             {
                 return;
             }
