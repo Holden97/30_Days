@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8562427361352983498}
-  - component: {fileID: 1196318643885950572}
   - component: {fileID: 1647744117294301176}
   - component: {fileID: 8888676245105111868}
   m_Layer: 0
@@ -34,26 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1196318643885950572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429438584289527743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b39d9ae0ced31a345ac1c70181531c16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _flashColor: {r: 1, g: 1, b: 1, a: 1}
-  _flashTime: 0.25
-  _flashSpeedCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1647744117294301176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +50,7 @@ MonoBehaviour:
   selfAnim: {fileID: 0}
   selfRigid: {fileID: 0}
   punchRate: 2
+  faction: {fileID: 0}
 --- !u!114 &8888676245105111868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +107,4 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _spriteParent: {fileID: 0}

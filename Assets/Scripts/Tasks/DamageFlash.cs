@@ -10,6 +10,7 @@ namespace OfficeWar
         [SerializeField] private Color _flashColor = Color.white;
         [SerializeField] private float _flashTime = 0.25f;
         [SerializeField] private AnimationCurve _flashSpeedCurve;
+        [SerializeField] private Transform _spriteParent;
 
         private SpriteRenderer[] _spriteRenderers;
         private Material[] _materials;
@@ -18,8 +19,7 @@ namespace OfficeWar
 
         private void Awake()
         {
-            _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-
+            _spriteRenderers = _spriteParent.GetComponentsInChildren<SpriteRenderer>();
             Init();
         }
 

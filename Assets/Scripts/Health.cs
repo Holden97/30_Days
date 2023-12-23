@@ -16,6 +16,7 @@ namespace OfficeWar
         public Rigidbody2D selfRigid;
         public float punchRate = 2;
         public Faction faction;
+        public GameObject root;
 
         private DamageFlash df;
 
@@ -53,8 +54,8 @@ namespace OfficeWar
         private IEnumerator Putback()
         {
             yield return new WaitForSeconds(1.5f);
-            ObjectPoolManager.Instance.Putback("怪物", gameObject);
-            gameObject.GetComponent<BehaviorTree>().DisableBehavior();
+            ObjectPoolManager.Instance.Putback("怪物", root);
+            gameObject.GetComponent<BehaviorTree>()?.DisableBehavior();
         }
     }
 }
