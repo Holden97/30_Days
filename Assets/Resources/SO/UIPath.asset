@@ -19,6 +19,12 @@ MonoBehaviour:
     uiType: 1
     fadeType: 0
     ecsRemovable: 1
+  - name: DamageInfoPanel
+    resPath: Assets/Resources/UIPrefab/DamageInfoPanel.prefab
+    uiPrefab: {fileID: 5627787100988806994, guid: 2b7b7bce8cd7bb741abfea6cbaa2e8e3, type: 3}
+    uiType: 1
+    fadeType: 0
+    ecsRemovable: 1
   - name: GameOverPanel
     resPath: Assets/Resources/UIPrefab/GameOverPanel.prefab
     uiPrefab: {fileID: 7429277776593789120, guid: 1ebfefab7e03000489c77a2cde5a7d18, type: 3}

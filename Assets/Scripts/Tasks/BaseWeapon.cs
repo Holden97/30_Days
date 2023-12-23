@@ -1,5 +1,6 @@
 ﻿using BehaviorDesigner.Runtime;
 using CommonBase;
+using JetBrains.Annotations;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,10 +27,16 @@ namespace OfficeWar
         {
         }
 
+        public void AttackingFlag()
+        {
+            IsAttacking = true;
+        }
+
         private void Awake()
         {
             Owner = GetComponentInParent<Health>();
             HealthsAttacking = new List<Health>();
+            GameObject.Instantiate(autoAttackBT, this.transform);
         }
 
         public virtual void Init(WeaponData w)
@@ -44,11 +51,6 @@ namespace OfficeWar
         {
             HealthsAttacking.Clear();
             IsAttacking = false;
-        }
-
-        public void Attacking()
-        {
-            IsAttacking = true;
         }
 
         protected virtual void Update()

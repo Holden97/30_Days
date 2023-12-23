@@ -122,13 +122,13 @@ MonoBehaviour:
   OnStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 5104284478163372978}
+        m_TargetAssemblyTypeName: OfficeWar.BaseWeapon, OfficeWar
+        m_MethodName: AttackingFlag
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -137,13 +137,13 @@ MonoBehaviour:
   OnEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 5104284478163372978}
+        m_TargetAssemblyTypeName: OfficeWar.BaseWeapon, OfficeWar
+        m_MethodName: ResetAttack
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -159,6 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 396556883754866251}
   - component: {fileID: 5104284478163372978}
+  - component: {fileID: 5818968442809142590}
   m_Layer: 0
   m_Name: MeleeSweep
   m_TagString: Untagged
@@ -180,7 +181,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5289166444470015672}
-  - {fileID: 623636593510330638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5104284478163372978
@@ -203,50 +203,19 @@ MonoBehaviour:
     attackSpeed: 0
     attackRange: 0
     type: 
-  damage: 50
-  attackRange: 3
-  attackCostTime: 0.2
+  autoAttackBT: {fileID: 5845677283825489682, guid: df37c72562a5cc543b0c4175fb71fe8d, type: 3}
+  <Damage>k__BackingField: 0
+  <AttackSpeed>k__BackingField: 0
+  <AttackRange>k__BackingField: 0
   weaponAnimator: {fileID: 5486318710843818968}
   attckRotationAngle: 0
---- !u!1 &7898721516141336390
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 623636593510330638}
-  - component: {fileID: 5606039576153465414}
-  m_Layer: 0
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &623636593510330638
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7898721516141336390}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.066, z: 0}
-  m_LocalScale: {x: 0.5625, y: 0.4875, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 396556883754866251}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &5606039576153465414
+--- !u!70 &5818968442809142590
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7898721516141336390}
+  m_GameObject: {fileID: 1600563898523640561}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -269,9 +238,9 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.16}
-  m_Size: {x: 0.41, y: 2.53}
+  m_Offset: {x: 0, y: 0.8}
+  m_Size: {x: 0.3, y: 0.98}
   m_Direction: 0

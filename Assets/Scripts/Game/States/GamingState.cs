@@ -8,6 +8,7 @@ namespace OfficeWar
     public class GamingState : BaseState
     {
         private Health player;
+        private PlayerPicker playerPicker;
         private bool waveOver;
         public static float TimeLeft;
         public static int CurWaveNo;
@@ -22,6 +23,7 @@ namespace OfficeWar
         {
             CurWaveNo++;
             var pi = GameObject.FindObjectOfType<PlayerInput>();
+            UIManager.Instance.ShowPanel<DamageInfoPanel>();
             GameManager.Instance.player = GameObject.FindObjectOfType<PlayerPicker>();
             if (pi != null)
             {
@@ -34,22 +36,23 @@ namespace OfficeWar
             var playerGo = GameObject.FindGameObjectWithTag("Player");
             if (playerGo != null)
             {
-                player = playerGo.GetComponent<Health>();
+                player = playerGo.GetComponentInChildren<Health>();
+                playerPicker = playerGo.GetComponent<PlayerPicker>();
             }
             UIManager.Instance.HideAll();
             UIManager.Instance.ShowPanel<GamingInfoPanel>();
 
             if (!ObjectPoolManager.Instance.Contains("怪物"))
             {
-                ObjectPoolManager.Instance.CreatePool(100, GameManager.Instance.MonsterPrefab, "怪物");
+                ObjectPoolManager.Instance.CreatePool("怪物", GameManager.Instance.MonsterPrefab, 100);
             }
             if (!ObjectPoolManager.Instance.Contains("子弹"))
             {
-                ObjectPoolManager.Instance.CreatePool(200, GameManager.Instance.BulletPrefab, "子弹");
+                ObjectPoolManager.Instance.CreatePool("子弹", GameManager.Instance.BulletPrefab, 200);
             }
             if (!ObjectPoolManager.Instance.Contains("金币"))
             {
-                ObjectPoolManager.Instance.CreatePool(200, GameManager.Instance.CoinPrefab, "金币");
+                ObjectPoolManager.Instance.CreatePool("金币", GameManager.Instance.CoinPrefab, 200);
             }
 
             //monsterTimer = new Timer(2, "生成怪物", onComplete: () =>
@@ -61,6 +64,11 @@ namespace OfficeWar
 
             //  }, isLoop: true);
             //monsterTimer.Register();
+
+            //测试临时添加武器
+            var curWeapon = GameManager.Instance.GetWeaponData("砍刀");
+            playerPicker.SetupWeapon(curWeapon);
+
             UIManager.Instance.ShowPanel<GamingInfoPanel>();
         }
 
@@ -93,6 +101,7 @@ namespace OfficeWar
             base.OnStateEnd();
             waveOver = false;
             monsterTimer.Unregister();
+            UIManager.Instance.Hide<DamageInfoPanel>();
         }
     }
 }

@@ -43,20 +43,7 @@ namespace OfficeWar
                 ShopManager.Instance.Sell(index);
                 if (c is WeaponData w)
                 {
-                    var weapon = WeaponFactory.Instance.CreateWeapon(w);
-                    weapons.Add(weapon);
-
-                    foreach (var pos in weaponPositions)
-                    {
-                        if (pos.transform.childCount == 0)
-                        {
-                            weapon.transform.SetParent(pos);
-                            weapon.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-                            break;
-                        }
-                    }
-
-                    return weapon;
+                    return SetupWeapon(w);
                 }
                 if (c is PropData p)
                 {
@@ -74,6 +61,24 @@ namespace OfficeWar
                 return null;
             }
 
+        }
+
+        public BaseWeapon SetupWeapon(WeaponData w)
+        {
+            var weapon = WeaponFactory.Instance.CreateWeapon(w);
+            weapons.Add(weapon);
+
+            foreach (var pos in weaponPositions)
+            {
+                if (pos.transform.childCount == 0)
+                {
+                    weapon.transform.SetParent(pos);
+                    weapon.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+                    break;
+                }
+            }
+
+            return weapon;
         }
     }
 }

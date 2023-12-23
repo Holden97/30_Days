@@ -12,6 +12,7 @@ namespace OfficeWar
         public GameObject player;
         public Animator playerAnim;
         public SpriteRenderer playerRenderer;
+        public PlayerPicker playerPicker;
 
         public bool isAttacking;
 
@@ -56,9 +57,12 @@ namespace OfficeWar
             var attacking = Input.GetKey(KeyCode.Mouse0);
             if (attacking)
             {
-                foreach (var skill in skills)
+                if (playerPicker != null)
                 {
-                    skill.EnableBehavior();
+                    foreach (var w in playerPicker.weapons)
+                    {
+                        w.Attack();
+                    }
                 }
             }
         }
