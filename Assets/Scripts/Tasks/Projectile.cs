@@ -2,7 +2,7 @@
 
 namespace OfficeWar
 {
-    public class Bullet : MonoBehaviour
+    public class Projectile : MonoBehaviour
     {
         public float damage = 15;
         public float speed = 20;

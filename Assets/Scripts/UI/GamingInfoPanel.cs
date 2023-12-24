@@ -19,7 +19,7 @@ namespace OfficeWar
         private void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player");
-            playerHp = player.GetComponent<Health>();
+            playerHp = player.GetComponentInChildren<Health>();
             picker = playerHp.GetComponent<PlayerPicker>();
         }
 

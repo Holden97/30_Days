@@ -36,6 +36,7 @@ namespace OfficeWar
 
         public void BeHurt(float damage, Transform hitPoint, Vector3 damageSource)
         {
+            if (!this.gameObject.activeInHierarchy) return;
             df.CallDamageFlash();
             curHp = Mathf.Max(0, curHp - damage);
             selfRigid.AddForce(((Vector2)(this.transform.position - hitPoint.position)).normalized * punchRate, ForceMode2D.Impulse);

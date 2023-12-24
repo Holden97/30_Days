@@ -662,8 +662,8 @@ MonoBehaviour:
   selfRigid: {fileID: 6035301288174911703}
   punchRate: 1
   deathRate: 5
-  faction: {fileID: 0}
-  root: {fileID: 0}
+  faction: {fileID: 5447552972975663740}
+  root: {fileID: 5558294019186666448}
 --- !u!114 &2361557826418066
 MonoBehaviour:
   m_ObjectHideFlags: 0
