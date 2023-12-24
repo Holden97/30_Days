@@ -11,5 +11,6 @@ namespace OfficeWar
         public float attackSpeed;
         public float attackRange;
         public string type;
+        public GameObject weaponPrefab;
     }
 }

@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: WeaponDataSO
   m_EditorClassIdentifier: 
   weaponData:
-  - name: AK
-    avatar: {fileID: 21300000, guid: cd90fca40a4a2eb40ab221f82219c26f, type: 3}
+  - name: "\u6B65\u67AA"
+    avatar: {fileID: 21300000, guid: 23b786ec2d9be7741ab23509087b9d33, type: 3}
     cost: 200
     damage: 20
     attackSpeed: 0.5
     attackRange: 20
     type: "\u8FDC\u7A0B"
+    weaponPrefab: {fileID: 1600563898523640561, guid: e02f283dc1943f743bee4f81fc98dfa4, type: 3}
   - name: "\u62F3"
     avatar: {fileID: 21300000, guid: feda55714c3a9494c97ce62fe0170d3d, type: 3}
     cost: 50
@@ -27,6 +28,7 @@ MonoBehaviour:
     attackSpeed: 0.8
     attackRange: 4
     type: "\u8FD1\u6218\u76F4\u51FB"
+    weaponPrefab: {fileID: 6209214833331822881, guid: fda628f54097b084992d6cb207350981, type: 3}
   - name: "\u780D\u5200"
     avatar: {fileID: 21300000, guid: 44fcab6cb08be9c4bbc1957668154ac7, type: 3}
     cost: 180
@@ -34,3 +36,28 @@ MonoBehaviour:
     attackSpeed: 1
     attackRange: 3
     type: "\u8FD1\u6218\u626B\u51FB"
+    weaponPrefab: {fileID: 1600563898523640561, guid: 373dd48e5b611bf4d84a9219c7d7194b, type: 3}
+  - name: "\u54B8\u9C7C\u5251"
+    avatar: {fileID: -708530506, guid: 68b9f0511c89ebf468fb4a3405331c13, type: 3}
+    cost: 30
+    damage: 1
+    attackSpeed: 1
+    attackRange: 3
+    type: "\u8FD1\u6218\u626B\u51FB"
+    weaponPrefab: {fileID: 1600563898523640561, guid: dfdff15ee45183e4788accfba9b5ba4b, type: 3}
+  - name: "\u62AB\u8428"
+    avatar: {fileID: 1033874005, guid: dee0ea1374759b44e876bad35fb3096e, type: 3}
+    cost: 50
+    damage: 2
+    attackSpeed: 1
+    attackRange: 3
+    type: "\u8FDC\u7A0B"
+    weaponPrefab: {fileID: 152870348349582098, guid: 4ac5a86f01d352a49bc5ed90c469a56d, type: 3}
+  - name: "\u624B\u67AA"
+    avatar: {fileID: 21300000, guid: 1e8302df0e66c714caa9a5aaa5b3253d, type: 3}
+    cost: 180
+    damage: 1
+    attackSpeed: 1
+    attackRange: 3
+    type: "\u8FDC\u7A0B"
+    weaponPrefab: {fileID: 1600563898523640561, guid: c3475be58354d774ebdab63db1efa3d8, type: 3}

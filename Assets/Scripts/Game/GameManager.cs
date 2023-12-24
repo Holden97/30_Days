@@ -1,6 +1,4 @@
-﻿using BehaviorDesigner.Runtime;
-using CommonBase;
-using System.Collections;
+﻿using CommonBase;
 using System.Collections.Generic;
 using UnityEngine;
 
