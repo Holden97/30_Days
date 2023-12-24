@@ -13,6 +13,7 @@ namespace OfficeWar
         public Animator playerAnim;
         public SpriteRenderer playerRenderer;
         public PlayerPicker playerPicker;
+        public Transform rendererRoot;
 
         public List<BehaviorTree> skills;
 
@@ -76,7 +77,7 @@ namespace OfficeWar
 
             if (Input.GetAxis("Horizontal") != 0)
             {
-                player.transform.localScale = new Vector3(-xSign, 1, 1); //更新旋转方式-ZXY
+                rendererRoot.transform.localScale = new Vector3(-xSign, 1, 1); //更新旋转方式-ZXY
             }
         }
 

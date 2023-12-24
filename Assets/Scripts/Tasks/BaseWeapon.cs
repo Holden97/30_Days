@@ -35,7 +35,7 @@ namespace OfficeWar
         public bool AttackingChecking { get; protected set; }
 
         public BehaviorTree autoAttackBTPref;
-        public BehaviorTree autoAttackBTInstance;
+        private BehaviorTree autoAttackBTInstance;
 
         /// <summary>
         /// 武器是否准备好下次攻击
