@@ -37,6 +37,12 @@ MonoBehaviour:
     uiType: 1
     fadeType: 0
     ecsRemovable: 1
+  - name: PreparePanel
+    resPath: Assets/Resources/UIPrefab/PreparePanel.prefab
+    uiPrefab: {fileID: 7429277776593789120, guid: 3b9f4639da87a444d8a6a7deeb2edb37, type: 3}
+    uiType: 1
+    fadeType: 0
+    ecsRemovable: 1
   - name: ShopPanel
     resPath: Assets/Resources/UIPrefab/ShopPanel.prefab
     uiPrefab: {fileID: 7429277776593789120, guid: 9a38e24b38647b24e90825bdad04b444, type: 3}

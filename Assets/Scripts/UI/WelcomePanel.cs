@@ -10,7 +10,7 @@ namespace OfficeWar
     {
         public void StartGame()
         {
-            SceneManager.LoadScene("Battle");
+            UIManager.Instance.ShowPanel<PreparePanel>(data: GameManager.Instance.weaponsData);
         }
     }
 }

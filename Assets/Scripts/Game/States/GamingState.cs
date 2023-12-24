@@ -67,11 +67,15 @@ namespace OfficeWar
             monsterTimer.Register();
 
             //测试临时添加武器
-            var curWeapon = GameManager.Instance.GetWeaponData("砍刀");
-            playerPicker.SetupWeapon(curWeapon);
+            SetUpWeapon("砍刀");
             //UI
             UIManager.Instance.ShowPanel<GamingInfoPanel>();
             UIManager.Instance.ShowPanel<DamageInfoPanel>();
+        }
+
+        public void SetUpWeapon(string name)
+        {
+            playerPicker.SetupWeapon(GameManager.Instance.GetWeaponData(name));
         }
 
         public override void OnStateCheckTransition()
