@@ -29,6 +29,7 @@ namespace OfficeWar
 
         public void StartGame()
         {
+
             SceneManager.LoadScene("Battle");
         }
     }

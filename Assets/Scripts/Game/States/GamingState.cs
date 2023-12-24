@@ -1,4 +1,5 @@
 ﻿using BehaviorDesigner.Runtime;
+using BehaviorDesigner.Runtime.Tasks.Unity.UnityAudioSource;
 using CommonBase;
 using UnityEngine;
 using Timer = CommonBase.Timer;
@@ -65,9 +66,8 @@ namespace OfficeWar
 
               }, isLoop: true);
             monsterTimer.Register();
-
-            //测试临时添加武器
-            SetUpWeapon("砍刀");
+            //装备初始武器
+            SetUpWeapon(GameManager.Instance.gameData.initialWeaponData.name);
             //UI
             UIManager.Instance.ShowPanel<GamingInfoPanel>();
             UIManager.Instance.ShowPanel<DamageInfoPanel>();

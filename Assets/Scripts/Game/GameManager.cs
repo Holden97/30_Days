@@ -23,10 +23,12 @@ namespace OfficeWar
         public WeaponDataSO weaponDataSO;
 
         public PlayerPicker player;
+        public GameDataSave gameData;
 
         protected override void Awake()
         {
             base.Awake();
+            gameData = new GameDataSave();
             GameFsm = new FiniteStateMachine(gameFsmSO);
             GameFsm.Start();
             this.weaponsData = new List<WeaponData>();

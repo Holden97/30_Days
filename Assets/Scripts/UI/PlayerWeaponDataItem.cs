@@ -11,13 +11,15 @@ namespace OfficeWar
         public Image weaponIcon;
         public TMP_Text weaponName;
 
+        private WeaponData w;
+
         public void BindData(object data)
         {
-            var c = data as WeaponData;
-            if (c != null)
+            w = data as WeaponData;
+            if (w != null)
             {
-                weaponIcon.sprite = c.avatar;
-                weaponName.text = c.name;
+                weaponIcon.sprite = w.avatar;
+                weaponName.text = w.name;
             }
             else
             {
@@ -29,6 +31,7 @@ namespace OfficeWar
         public void OnSelected()
         {
             selectedBg.SetActive(true);
+            GameManager.Instance.gameData.initialWeaponData = w;
         }
 
         public void OnUnselected()
