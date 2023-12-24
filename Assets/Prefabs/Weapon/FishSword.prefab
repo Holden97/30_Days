@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 3163209984042723663}
   - component: {fileID: 1673591730435471506}
   - component: {fileID: 4389016785314681374}
+  - component: {fileID: 4807515811590383315}
   m_Layer: 0
   m_Name: FishSword
   m_TagString: Untagged
@@ -163,7 +164,7 @@ Animator:
   m_GameObject: {fileID: 7475161507946492424}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 76ddb7ab83ae77a46a80dc8707e9e12b, type: 2}
+  m_Controller: {fileID: 22100000, guid: 2920d03ae9ecb44478ee5d741a9af2df, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -174,6 +175,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4807515811590383315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7475161507946492424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92dce5b22b28dfe40af514526f79ba50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualAttackMode: 0
+  weaponData:
+    name: 
+    avatar: {fileID: 0}
+    cost: 0
+    damage: 0
+    attackSpeed: 0
+    attackRange: 0
+    type: 
+    weaponPrefab: {fileID: 0}
+  autoAttackBTPref: {fileID: 5845677283825489682, guid: df37c72562a5cc543b0c4175fb71fe8d, type: 3}
+  readyToAttack: 1
+  weaponAnimator: {fileID: 4389016785314681374}
+  attckRotationAngle: 0
 --- !u!1 &7947828472329480943
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ namespace OfficeWar
     public class SweapHitWeapon : BaseWeapon
     {
         public Animator weaponAnimator;
-        public float attckRotationAngle;
+        //public float attckRotationAngle;
 
         public override void Attack(Vector3 target)
         {

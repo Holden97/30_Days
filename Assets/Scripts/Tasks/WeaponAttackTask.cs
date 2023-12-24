@@ -35,7 +35,7 @@ namespace OfficeWar
             else
             {
                 Vector2 direction = (target.Value.position - self.Value.position).normalized;
-                switch (weapon.Value.weaponData.type)
+                switch (weapon.Value.WeaponData.type)
                 {
                     case "近战扫击":
                         weapon.Value.transform.up = direction;

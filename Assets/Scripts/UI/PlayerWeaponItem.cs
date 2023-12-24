@@ -16,8 +16,8 @@ namespace OfficeWar
             var c = data as BaseWeapon;
             if (c != null)
             {
-                weaponIcon.sprite = c.weaponData.avatar;
-                weaponName.text = c.weaponData.name;
+                weaponIcon.sprite = c.WeaponData.avatar;
+                weaponName.text = c.WeaponData.name;
             }
             else
             {

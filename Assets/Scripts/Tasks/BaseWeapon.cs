@@ -10,7 +10,8 @@ namespace OfficeWar
     public class BaseWeapon : MonoBehaviour, ICost
     {
         public bool manualAttackMode = false;
-        public WeaponData weaponData;
+        private WeaponData weaponData;
+        public WeaponData WeaponData => weaponData;
 
         public float attackCD => weaponData.attackSpeed;
         public int HitCount { get; protected set; }
@@ -42,9 +43,9 @@ namespace OfficeWar
         /// </summary>
         public bool readyToAttack = true;
 
-        [field: SerializeField] public float Damage { get; private set; }
-        [field: SerializeField] public float AttackSpeed { get; private set; }
-        [field: SerializeField] public float AttackRange { get; private set; }
+        public float Damage { get; private set; }
+        public float AttackSpeed { get; private set; }
+        public float AttackRange { get; private set; }
 
         public int Cost => weaponData.cost;
 

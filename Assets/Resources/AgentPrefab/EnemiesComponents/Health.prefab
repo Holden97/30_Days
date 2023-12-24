@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8562427361352983498}
   - component: {fileID: 1647744117294301176}
   - component: {fileID: 8888676245105111868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,9 @@ MonoBehaviour:
   selfAnim: {fileID: 0}
   selfRigid: {fileID: 0}
   punchRate: 2
+  deathRate: 2
   faction: {fileID: 0}
+  root: {fileID: 0}
 --- !u!114 &8888676245105111868
 MonoBehaviour:
   m_ObjectHideFlags: 0

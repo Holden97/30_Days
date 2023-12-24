@@ -66,7 +66,7 @@ namespace OfficeWar
 
         public BaseWeapon SetupWeapon(WeaponData w)
         {
-            var weapon = WeaponFactory.Instance.CreateWeapon(w);
+            var weapon = WeaponFactory.CreateWeapon(w);
             weapons.Add(weapon);
             weapon.SetOwner(GetComponent<Health>());
 

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace OfficeWar
 {
@@ -22,6 +23,11 @@ namespace OfficeWar
                 this.playerWeaponsList.BindData(s.weapons);
                 this.playerPropsList.BindData(s.props);
             }
+        }
+
+        public void BackToMainMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

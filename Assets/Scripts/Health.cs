@@ -32,7 +32,6 @@ namespace OfficeWar
         {
             ResetHealth();
             df = GetComponent<DamageFlash>();
-            faction = GetComponentInChildren<Faction>();
         }
 
         public void BeHurt(float damage, Transform hitPoint, Vector3 damageSource)

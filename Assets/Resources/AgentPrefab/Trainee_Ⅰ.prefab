@@ -675,10 +675,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health
       objectReference: {fileID: 0}
-    - target: {fileID: 429438584289527743, guid: fd34de54a9a2c04479542f06374a703f, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 1647744117294301176, guid: fd34de54a9a2c04479542f06374a703f, type: 3}
       propertyPath: root
       value: 

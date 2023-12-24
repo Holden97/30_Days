@@ -8,4 +8,8 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: FishSweep
   m_Controller: {fileID: 9100000, guid: a40c97f8162bf9e47982bac563fb0def, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 54354ffcce43af04b996bb9f56ef8cc6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 07e84c64e89abbf4381808c2aa741c06, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1b763c1c604ce6d48894c3560c97c6f0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b68d6b8ab23767e4c9a7dcd69a274630, type: 2}

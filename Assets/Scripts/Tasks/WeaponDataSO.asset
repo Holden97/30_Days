@@ -44,7 +44,7 @@ MonoBehaviour:
     attackSpeed: 1
     attackRange: 3
     type: "\u8FD1\u6218\u626B\u51FB"
-    weaponPrefab: {fileID: 1600563898523640561, guid: dfdff15ee45183e4788accfba9b5ba4b, type: 3}
+    weaponPrefab: {fileID: 7475161507946492424, guid: 37f127338da7be144805d83356c0f513, type: 3}
   - name: "\u62AB\u8428"
     avatar: {fileID: 1033874005, guid: dee0ea1374759b44e876bad35fb3096e, type: 3}
     cost: 50
