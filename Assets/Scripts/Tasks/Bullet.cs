@@ -19,7 +19,7 @@ namespace OfficeWar
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            var h = collision.GetComponent<Health>();
+            var h = collision.GetComponentInChildren<Health>();
             if (h && h != Owner)
             {
                 h.BeHurt(damage, collision.transform, this.transform.position);

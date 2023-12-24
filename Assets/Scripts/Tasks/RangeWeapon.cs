@@ -18,15 +18,5 @@ namespace OfficeWar
             go.GetComponent<Bullet>().Init(Owner);
             go.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
         }
-
-        protected override void Update()
-        {
-            if (AttackingChecking)
-            {
-                return;
-            }
-            fireDir = (InputUtils.GetMouseWorldPosition() - this.transform.position).normalized;
-            transform.right = fireDir;
-        }
     }
 }

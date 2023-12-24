@@ -27,6 +27,7 @@ namespace OfficeWar
 
         public override TaskStatus OnUpdate()
         {
+
             if (target.Value == null)
             {
                 weapon.Value.transform.up = Vector3.up;
@@ -34,7 +35,20 @@ namespace OfficeWar
             else
             {
                 Vector2 direction = (target.Value.position - self.Value.position).normalized;
-                weapon.Value.transform.up = direction;
+                switch (weapon.Value.weaponData.type)
+                {
+                    case "近战扫击":
+                        weapon.Value.transform.up = direction;
+                        break;
+                    case "近战直击":
+                        weapon.Value.transform.up = direction;
+                        break;
+                    case "远程":
+                        weapon.Value.transform.right = direction;
+                        break;
+                    default:
+                        break;
+                }
             }
             return TaskStatus.Success; ;
         }
