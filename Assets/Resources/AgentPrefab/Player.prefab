@@ -379,7 +379,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d54be8ba954048f4a962f76a573d6396, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -458,6 +458,7 @@ GameObject:
   - component: {fileID: 3293477457254357139}
   - component: {fileID: 3370677487319574083}
   - component: {fileID: 2361557826418066}
+  - component: {fileID: 5447552972975663740}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -598,11 +599,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39d9ae0ced31a345ac1c70181531c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flashColor: {r: 1, g: 1, b: 1, a: 1}
+  _flashColor: {r: 2, g: 0.12578595, b: 0.12578595, a: 1}
   _flashTime: 0.25
   _flashSpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -2.7846029
+      outSlope: -2.7846029
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2686326
+      value: 0.25196493
+      inSlope: -1.1692702
+      outSlope: -1.1692702
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.72426736
+      value: 0.4552065
+      inSlope: -0.6024178
+      outSlope: -0.6024178
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1.6508982
+      outSlope: -1.6508982
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -649,6 +686,19 @@ MonoBehaviour:
   - {fileID: 7344890896834239276}
   - {fileID: 296778090802717389}
   - {fileID: 4459259770320734233}
+--- !u!114 &5447552972975663740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558294019186666448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed197336517cb254b83eaa6a6c187edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factionType: 0
 --- !u!1 &5693113204079676007
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +953,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8091490197804695700, guid: 086830ef369fad94b82064156fff2e20, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d54be8ba954048f4a962f76a573d6396, type: 2}
     - target: {fileID: -7552582706839291426, guid: 086830ef369fad94b82064156fff2e20, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -955,6 +1009,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -4536849555838678070, guid: 086830ef369fad94b82064156fff2e20, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d54be8ba954048f4a962f76a573d6396, type: 2}
     - target: {fileID: -1366305144521745502, guid: 086830ef369fad94b82064156fff2e20, type: 3}
       propertyPath: m_IsActive
       value: 1

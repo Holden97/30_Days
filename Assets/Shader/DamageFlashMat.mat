@@ -61,7 +61,7 @@ Material:
     - _FlashAmount: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _FlashColor: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 1}
+    - _FlashColor: {r: 4, g: 0.025156736, b: 0.025156736, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
