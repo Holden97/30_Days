@@ -23,7 +23,8 @@ namespace OfficeWar
             for (int i = 0; i < colliders.Count; i++)
             {
                 Collider2D item = colliders[i];
-                if (item.GetComponentInChildren<Health>() != null && item.transform != self.Value)
+                var curHealth = item.GetComponentInChildren<Health>();
+                if (curHealth != null && item.transform != self.Value && curHealth.IsAlive)
                 {
                     this.target.SetValue(item.transform);
                     break;
