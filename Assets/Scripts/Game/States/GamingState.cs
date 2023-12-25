@@ -26,6 +26,7 @@ namespace OfficeWar
         {
             UIManager.Instance.HideAll();
             CurWaveNo++;
+
             var pi = GameObject.FindObjectOfType<PlayerInput>();
             GameManager.Instance.player = GameObject.FindObjectOfType<PlayerPicker>();
             if (pi != null)
@@ -41,6 +42,12 @@ namespace OfficeWar
             {
                 player = playerGo.GetComponentInChildren<Health>();
                 playerPicker = playerGo.GetComponent<PlayerPicker>();
+            }
+
+            if (CurWaveNo == 1)
+            {
+                //装备初始武器
+                SetUpWeapon(GameManager.Instance.gameData.initialWeaponData.name);
             }
 
             if (!ObjectPoolManager.Instance.Contains("怪物"))
@@ -66,8 +73,7 @@ namespace OfficeWar
 
               }, isLoop: true);
             monsterTimer.Register();
-            //装备初始武器
-            SetUpWeapon(GameManager.Instance.gameData.initialWeaponData.name);
+
             //UI
             UIManager.Instance.ShowPanel<GamingInfoPanel>();
             UIManager.Instance.ShowPanel<DamageInfoPanel>();

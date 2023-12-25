@@ -41,7 +41,7 @@ namespace OfficeWar
 
             if (c is WeaponData && weapons.Count >= 6)
             {
-                Debug.LogError("装备已满，无法购买!");
+                Debug.LogWarning("装备已满，无法购买!");
                 UIManager.Instance.ShowTip("装备已满，无法购买!");
                 return null;
             }

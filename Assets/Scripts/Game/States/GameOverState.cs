@@ -15,6 +15,7 @@ namespace OfficeWar
         public override void OnStateStart()
         {
             base.OnStateStart();
+            Cursor.visible = true;
             UIManager.Instance.ShowPanel<GameOverPanel>();
             var pi = GameObject.FindObjectOfType<PlayerInput>();
             if (pi != null)
