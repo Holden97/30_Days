@@ -17,6 +17,7 @@ namespace OfficeWar
 
         public override void OnStateStart()
         {
+            Cursor.visible = true;
             base.OnStateStart();
             var player = GameObject.FindGameObjectWithTag("Player");
             ObjectPoolManager.Instance.PutbackAll("怪物");
