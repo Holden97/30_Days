@@ -2337,7 +2337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4462582644389514281, guid: 806b1077aaefad146a9205ab07963e8c, type: 3}
       propertyPath: m_Name
-      value: PlayerWeaponItem (3)
+      value: PlayerWeaponItem_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2439,7 +2439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4462582644389514281, guid: 806b1077aaefad146a9205ab07963e8c, type: 3}
       propertyPath: m_Name
-      value: PlayerWeaponItem (1)
+      value: PlayerWeaponItem_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2557,7 +2557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4462582644389514281, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_Name
-      value: PropItem (1)
+      value: PropItem_1
       objectReference: {fileID: 0}
     - target: {fileID: 5670881866826284951, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2574,6 +2574,10 @@ PrefabInstance:
     - target: {fileID: 5670881866826284951, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967895003290153529, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
+      propertyPath: index
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2691,7 +2695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4462582644389514281, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_Name
-      value: PropItem (3)
+      value: PropItem_3
       objectReference: {fileID: 0}
     - target: {fileID: 5670881866826284951, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2708,6 +2712,10 @@ PrefabInstance:
     - target: {fileID: 5670881866826284951, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967895003290153529, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
+      propertyPath: index
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2809,7 +2817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4462582644389514281, guid: 806b1077aaefad146a9205ab07963e8c, type: 3}
       propertyPath: m_Name
-      value: PlayerWeaponItem
+      value: PlayerWeaponItem_0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2911,7 +2919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4462582644389514281, guid: 806b1077aaefad146a9205ab07963e8c, type: 3}
       propertyPath: m_Name
-      value: PlayerWeaponItem (5)
+      value: PlayerWeaponItem_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3029,7 +3037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4462582644389514281, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_Name
-      value: PropItem (2)
+      value: PropItem_2
       objectReference: {fileID: 0}
     - target: {fileID: 5670881866826284951, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3046,6 +3054,10 @@ PrefabInstance:
     - target: {fileID: 5670881866826284951, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967895003290153529, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
+      propertyPath: index
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3147,7 +3159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4462582644389514281, guid: 806b1077aaefad146a9205ab07963e8c, type: 3}
       propertyPath: m_Name
-      value: PlayerWeaponItem (2)
+      value: PlayerWeaponItem_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3265,7 +3277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4462582644389514281, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_Name
-      value: PropItem
+      value: PropItem_0
       objectReference: {fileID: 0}
     - target: {fileID: 5670881866826284951, guid: b4addadff3690f943930ebc7f867fba2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3383,7 +3395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4462582644389514281, guid: 806b1077aaefad146a9205ab07963e8c, type: 3}
       propertyPath: m_Name
-      value: PlayerWeaponItem (4)
+      value: PlayerWeaponItem_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
