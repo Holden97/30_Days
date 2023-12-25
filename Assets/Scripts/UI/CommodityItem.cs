@@ -2,6 +2,7 @@
 using CommonBase;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,8 +12,8 @@ namespace OfficeWar
     {
         public Image avatarImg;
         public Sprite transformSquare;
-        public Text commodityNameText;
-        public Text commodityCost;
+        public TMP_Text commodityNameText;
+        public TMP_Text commodityCost;
 
         private CanvasGroup cg;
         public int index;
