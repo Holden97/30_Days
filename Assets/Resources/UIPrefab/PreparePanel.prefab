@@ -210,8 +210,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4327654567162586974}
   m_HandleRect: {fileID: 7477218748429357281}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.4999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -832,7 +832,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -392.31204, y: 347.58096}
+  m_AnchoredPosition: {x: -392.31204, y: 194.98837}
   m_SizeDelta: {x: 984.5, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8014113597724467378
@@ -1005,6 +1005,7 @@ MonoBehaviour:
     attackSpeed: 0
     attackRange: 0
     type: 
+    penetration: 0
     weaponPrefab: {fileID: 0}
   candidateWeapons: []
   weaponList: {fileID: 1113358954456924549}
