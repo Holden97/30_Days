@@ -11,6 +11,10 @@ namespace OfficeWar
         public float attackSpeed;
         public float attackRange;
         public string type;
+        /// <summary>
+        /// 穿透（远程）
+        /// </summary>
+        public int penetration;
         public GameObject weaponPrefab;
     }
 }

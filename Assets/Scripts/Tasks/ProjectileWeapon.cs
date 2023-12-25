@@ -22,7 +22,7 @@ namespace OfficeWar
         public void OnEndAttacking()
         {
             GameObject go = GameObject.Instantiate(pizza);
-            go.GetComponent<Projectile>().Init(Owner);
+            go.GetComponent<Projectile>().Init(Owner, WeaponData);
             go.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
             go.SetActive(true);
         }

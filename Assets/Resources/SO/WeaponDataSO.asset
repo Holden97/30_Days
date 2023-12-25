@@ -20,6 +20,7 @@ MonoBehaviour:
     attackSpeed: 0.5
     attackRange: 20
     type: "\u8FDC\u7A0B"
+    penetration: 1
     weaponPrefab: {fileID: 1600563898523640561, guid: e02f283dc1943f743bee4f81fc98dfa4, type: 3}
   - name: "\u62F3"
     avatar: {fileID: 21300000, guid: f841fee643bc9da4db5d620c20bac545, type: 3}
@@ -28,6 +29,7 @@ MonoBehaviour:
     attackSpeed: 0.8
     attackRange: 4
     type: "\u8FD1\u6218\u76F4\u51FB"
+    penetration: 0
     weaponPrefab: {fileID: 6209214833331822881, guid: fda628f54097b084992d6cb207350981, type: 3}
   - name: "\u780D\u5200"
     avatar: {fileID: -929548471, guid: fdba490b89fa9c243a2d3448399391ee, type: 3}
@@ -36,6 +38,7 @@ MonoBehaviour:
     attackSpeed: 1
     attackRange: 3
     type: "\u8FD1\u6218\u626B\u51FB"
+    penetration: 0
     weaponPrefab: {fileID: 1600563898523640561, guid: 373dd48e5b611bf4d84a9219c7d7194b, type: 3}
   - name: "\u54B8\u9C7C\u5251"
     avatar: {fileID: -708530506, guid: 68b9f0511c89ebf468fb4a3405331c13, type: 3}
@@ -44,6 +47,7 @@ MonoBehaviour:
     attackSpeed: 1
     attackRange: 3
     type: "\u8FD1\u6218\u626B\u51FB"
+    penetration: 0
     weaponPrefab: {fileID: 7475161507946492424, guid: 37f127338da7be144805d83356c0f513, type: 3}
   - name: "\u62AB\u8428"
     avatar: {fileID: 1033874005, guid: dee0ea1374759b44e876bad35fb3096e, type: 3}
@@ -52,6 +56,7 @@ MonoBehaviour:
     attackSpeed: 1
     attackRange: 3
     type: "\u8FDC\u7A0B"
+    penetration: 0
     weaponPrefab: {fileID: 8318458049461795442, guid: 62ebcc726bf690144a4184b7dba04861, type: 3}
   - name: "\u624B\u67AA"
     avatar: {fileID: 21300000, guid: 1e8302df0e66c714caa9a5aaa5b3253d, type: 3}
@@ -60,4 +65,5 @@ MonoBehaviour:
     attackSpeed: 1
     attackRange: 3
     type: "\u8FDC\u7A0B"
+    penetration: 0
     weaponPrefab: {fileID: 5914322737466284520, guid: 6d36f403e3f7dad4a8817a454b0761e2, type: 3}

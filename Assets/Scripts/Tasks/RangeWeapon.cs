@@ -32,7 +32,7 @@ namespace OfficeWar
             //{
             //    go.transform.position = dischargeRefPos.position;
             //}
-            go.GetComponent<Projectile>().Init(Owner);
+            go.GetComponent<Projectile>().Init(Owner, WeaponData);
             go.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
         }
 
@@ -44,7 +44,7 @@ namespace OfficeWar
             //{
             //    go.transform.position = dischargeRefPos.position;
             //}
-            go.GetComponent<Projectile>().Init(Owner);
+            go.GetComponent<Projectile>().Init(Owner, WeaponData);
             go.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
         }
     }
