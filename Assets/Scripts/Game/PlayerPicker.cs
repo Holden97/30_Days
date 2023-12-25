@@ -38,14 +38,24 @@ namespace OfficeWar
         {
             CommodityData c = ShopManager.Instance.Get(index);
             if (c == null) { return null; }
+
+            if (c is WeaponData && weapons.Count >= 6)
+            {
+                Debug.LogError("装备已满，无法购买!");
+                UIManager.Instance.ShowTip("装备已满，无法购买!");
+                return null;
+            }
+
             if (this.coinsCount >= c.cost)
             {
-                this.coinsCount -= c.cost;
                 ShopManager.Instance.Sell(index);
+
+                this.coinsCount -= c.cost;
                 if (c is WeaponData w)
                 {
                     return SetupWeapon(w);
                 }
+
                 if (c is PropData p)
                 {
                     var prop = new Prop(p);
