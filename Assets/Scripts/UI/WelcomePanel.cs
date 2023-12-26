@@ -47,7 +47,7 @@ namespace OfficeWar
         {
             developmentList.SetActive(true);
         }
-        public void OpenIt()
+        public void CloseIt()
         {
             start.SetActive(true);
             developmentList.SetActive(false);

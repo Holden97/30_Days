@@ -529,7 +529,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 716415615170251204}
         m_TargetAssemblyTypeName: OfficeWar.WelcomePanel, OfficeWar
-        m_MethodName: OpenIt
+        m_MethodName: CloseIt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
