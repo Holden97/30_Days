@@ -116,5 +116,9 @@ namespace OfficeWar
             }
         }
 
+        public Vector3 GetSpeed()
+        {
+            return this.realSpeed;
+        }
     }
 }

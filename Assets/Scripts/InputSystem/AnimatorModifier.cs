@@ -32,5 +32,10 @@ namespace OfficeWar
                 dir = Mathf.Sign(speed.x);
             }
         }
+
+        public Vector3 GetSpeed()
+        {
+            return realSpeed;
+        }
     }
 }

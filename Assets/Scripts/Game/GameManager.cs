@@ -16,6 +16,7 @@ namespace OfficeWar
 
         public List<WeaponData> weaponsData;
         public List<PropData> propsData;
+        public List<Character> characters;
 
         public PropDataSO propDataSO;
         public WeaponDataSO weaponDataSO;
@@ -29,8 +30,7 @@ namespace OfficeWar
             gameData = new GameDataSave();
             GameFsm = new FiniteStateMachine(gameFsmSO);
             GameFsm.Start();
-            this.weaponsData = new List<WeaponData>();
-            this.propsData = new List<PropData>();
+            this.characters = new List<Character>();
 
             //add data from json file
             TextAsset weaponsJson = Resources.Load<TextAsset>("JSON/Weapons");
@@ -76,6 +76,11 @@ namespace OfficeWar
         private void Update()
         {
             GameFsm.Update();
+        }
+
+        internal Character GetCharacter(int characterId)
+        {
+            return null;
         }
     }
 }
