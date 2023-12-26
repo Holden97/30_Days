@@ -25,9 +25,9 @@ namespace OfficeWar
             base.Attack(target);
             var orginalPos = transform.localPosition;
             AttackingChecking = true;
-            transform.DOLocalMove(((target.To2() - transform.position.To2()).normalized.To3() * AttackRange + orginalPos), AttackSpeed / 2).OnComplete(() =>
+            transform.DOLocalMove(((target.To2() - transform.position.To2()).normalized.To3() * AttackRange + orginalPos), AttackInterval / 2).OnComplete(() =>
             {
-                transform.DOLocalMove(orginalPos, AttackSpeed / 2).OnComplete(() => this.AttackingChecking = false);
+                transform.DOLocalMove(orginalPos, AttackInterval / 2).OnComplete(() => this.AttackingChecking = false);
                 HealthsAttacking.Clear();
             });
         }

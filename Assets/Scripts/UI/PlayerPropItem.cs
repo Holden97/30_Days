@@ -1,6 +1,5 @@
 ﻿using CommonBase;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,18 +10,21 @@ namespace OfficeWar
     {
         public Image weaponIcon;
         public TMP_Text weaponName;
+        public TMP_Text count;
         public void BindData(object data)
         {
-            var c = data as Prop;
+            var c = data as Tuple<PropData, int>;
             if (c != null)
             {
-                weaponIcon.sprite = c.propData.avatar;
-                weaponName.text = c.propData.name; ;
+                weaponIcon.sprite = c.Item1.avatar;
+                weaponName.text = c.Item1.name; ;
+                count.text = c.Item2.ToString();
             }
             else
             {
                 weaponIcon.sprite = null;
                 weaponName.text = "";
+                count.text = "";
             }
         }
     }

@@ -8,7 +8,7 @@ namespace OfficeWar
     public class WeaponData : CommodityData
     {
         public float damage;
-        public float attackSpeed;
+        public float attackInterval;
         public float attackRange;
         public string type;
         /// <summary>

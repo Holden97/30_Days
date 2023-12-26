@@ -12,6 +12,7 @@ namespace OfficeWar
     {
         public bool manualAttackMode = false;
         public int coinsCount;
+        public float baseAttackSpeed = 100;
 
         public List<BaseWeapon> weapons;
         public List<Prop> props;
@@ -60,7 +61,7 @@ namespace OfficeWar
                 {
                     var prop = new Prop(p);
                     props.Add(prop);
-                    //ShopParser.Parse(prop.propData.bytecode);
+                    ShopParser.Parse(prop.propData.bytecode);
                     return prop;
                 }
                 UIManager.Instance.ShowTip("未找到对应类型！");

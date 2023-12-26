@@ -13,7 +13,7 @@ namespace OfficeWar
         private WeaponData weaponData;
         public WeaponData WeaponData => weaponData;
 
-        public float attackCD => weaponData.attackSpeed;
+        public float attackCD => weaponData.attackInterval;
         public int HitCount { get; protected set; }
         public List<Health> HealthsAttacking { get; protected set; }
         private Health owner;
@@ -44,7 +44,7 @@ namespace OfficeWar
         public bool readyToAttack = true;
 
         public float Damage { get; private set; }
-        public float AttackSpeed { get; private set; }
+        public float AttackInterval { get; private set; }
         public float AttackRange { get; private set; }
 
         public int Cost => weaponData.cost;
@@ -82,9 +82,9 @@ namespace OfficeWar
         {
             this.weaponData = w;
             Damage = w.damage;
-            AttackSpeed = w.attackSpeed;
+            AttackInterval = w.attackInterval;
             AttackRange = w.attackRange;
-            autoAttackBTInstance.SetVariableValue("attackInterval", this.weaponData.attackSpeed);
+            autoAttackBTInstance.SetVariableValue("attackInterval", this.weaponData.attackInterval);
         }
 
         public void ResetAttack()

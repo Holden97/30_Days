@@ -1,5 +1,6 @@
 ﻿using CommonBase;
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -28,8 +29,28 @@ namespace OfficeWar
                 this.coinsText.text = s.Item1.coinsCount.ToString();
                 this.shopItemList.BindData(s.Item2);
                 this.playerWeaponsList.BindData(s.Item1.weapons);
-                this.playerPropsList.BindData(s.Item1.props);
+                this.playerPropsList.BindData(CountProps(s.Item1.props));
             }
+        }
+
+        public List<Tuple<PropData, int>> CountProps(List<Prop> props)
+        {
+            List<Tuple<PropData, int>> result = new List<Tuple<PropData, int>>();
+            Dictionary<PropData, int> propsDic = new Dictionary<PropData, int>();
+            foreach (Prop prop in props)
+            {
+                if (!propsDic.TryAdd(prop.propData, 1))
+                {
+                    propsDic[prop.propData]++;
+                }
+            }
+
+            foreach (var item in propsDic)
+            {
+                result.Add(new Tuple<PropData, int>(item.Key, item.Value));
+            }
+
+            return result;
         }
 
         public void NextLevel()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.XR;
 
@@ -28,6 +29,11 @@ namespace OfficeWar
                         var bonus2 = stack.Pop();
                         var characterId2 = stack.Pop();
                         SetMaxHp((int)characterId2, (int)bonus2);
+                        break;
+                    case "SET_ATTACK_SPEED":
+                        var bonus7 = stack.Pop();
+                        var characterId7 = stack.Pop();
+                        SET_ATTACK_SPEED((int)characterId7, (int)bonus7);
                         break;
                     case "ADD_SHIELD_PER_WAVE":
                         var bonus3 = stack.Pop();
@@ -59,6 +65,12 @@ namespace OfficeWar
                         break;
                 }
             }
+        }
+
+        private static void SET_ATTACK_SPEED(int characterId7, int bonus7)
+        {
+            Character character = GameManager.Instance.GetCharacter(characterId7);
+            character.AttackSpeed += bonus7;
         }
 
         public static void SetMaxHp(int characterId, int maxHp)

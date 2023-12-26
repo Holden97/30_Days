@@ -29,5 +29,6 @@ namespace OfficeWar
 
         public float RealisticHp => health.RealisticHp;
 
+        public float AttackSpeed { get => playerPicker.baseAttackSpeed; set { playerPicker.baseAttackSpeed = value; } }
     }
 }
