@@ -87,5 +87,10 @@ namespace OfficeWar
         {
             this.characters.Add(c);
         }
+
+        public void ClearCharacters()
+        {
+            this.characters.Clear();
+        }
     }
 }

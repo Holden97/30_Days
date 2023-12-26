@@ -21,7 +21,7 @@ MonoBehaviour:
     ecsRemovable: 1
   - name: DamageInfoPanel
     resPath: Assets/Resources/UIPrefab/DamageInfoPanel.prefab
-    uiPrefab: {fileID: 5627787100988806994, guid: 2b7b7bce8cd7bb741abfea6cbaa2e8e3, type: 3}
+    uiPrefab: {fileID: 7429277776593789120, guid: e68f01ca744af3341b00949a28571e53, type: 3}
     uiType: 1
     fadeType: 0
     ecsRemovable: 1
@@ -46,12 +46,6 @@ MonoBehaviour:
   - name: ShopPanel
     resPath: Assets/Resources/UIPrefab/ShopPanel.prefab
     uiPrefab: {fileID: 7429277776593789120, guid: 9a38e24b38647b24e90825bdad04b444, type: 3}
-    uiType: 1
-    fadeType: 0
-    ecsRemovable: 1
-  - name: TimerPanel
-    resPath: Assets/Resources/UIPrefab/TimerPanel.prefab
-    uiPrefab: {fileID: 5627787100988806994, guid: 95004886aa60c7a40969e5179a06d894, type: 3}
     uiType: 1
     fadeType: 0
     ecsRemovable: 1

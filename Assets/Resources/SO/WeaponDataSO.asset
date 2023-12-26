@@ -61,7 +61,7 @@ MonoBehaviour:
   - name: "\u624B\u67AA"
     avatar: {fileID: 21300000, guid: 1e8302df0e66c714caa9a5aaa5b3253d, type: 3}
     cost: 180
-    damage: 2
+    damage: 1
     attackInterval: 0.3
     attackRange: 3
     type: "\u8FDC\u7A0B"

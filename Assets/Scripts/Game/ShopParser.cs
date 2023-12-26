@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine.XR;
 
 namespace OfficeWar
@@ -30,7 +31,7 @@ namespace OfficeWar
                         var characterId2 = stack.Pop();
                         SetMaxHp((int)characterId2, (int)bonus2);
                         break;
-                    case "SET_ATTACK_SPEED":
+                    case "ADD_ATTACK_SPEED":
                         var bonus7 = stack.Pop();
                         var characterId7 = stack.Pop();
                         SET_ATTACK_SPEED((int)characterId7, (int)bonus7);
@@ -42,10 +43,10 @@ namespace OfficeWar
                         break;
                     case "GET_MAX_HP":
                         var characterId4 = stack.Pop();
-                        GET_MAX_HP((int)characterId4);
+                        stack.Push(GET_MAX_HP((int)characterId4));
                         break;
                     case "LITERAL":
-                        LITERAL(literals[1]);
+                        stack.Push(LITERAL(literals[1]));
                         break;
                     case "MUL":
                         var multiplier1 = stack.Pop();
@@ -60,6 +61,9 @@ namespace OfficeWar
                         var percent = stack.Pop();
                         var characterId6 = stack.Pop();
                         SetDamageImcresementPercent((int)characterId6, (float)percent);
+                        break;
+                    case "GET_PLAYER_ID":
+                        stack.Push(0);
                         break;
                     default:
                         break;
@@ -105,6 +109,18 @@ namespace OfficeWar
 
         public static object LITERAL(object bonus)
         {
+            //TODO:这里需要细化
+            if (bonus is string s)
+            {
+                if (int.TryParse(s, out int intValue))
+                {
+                    return intValue;
+                }
+                else if (float.TryParse(s, NumberStyles.Float, CultureInfo.InvariantCulture, out float floatValue))
+                {
+                    return floatValue;
+                }
+            }
             return bonus;
         }
 

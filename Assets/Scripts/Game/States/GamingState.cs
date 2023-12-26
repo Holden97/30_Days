@@ -25,6 +25,7 @@ namespace OfficeWar
         public override void OnStateStart()
         {
             UIManager.Instance.HideAll();
+            GameManager.Instance.ClearCharacters();
             CurWaveNo++;
             Time.timeScale = 1.0f;
 
@@ -43,6 +44,7 @@ namespace OfficeWar
             {
                 player = playerGo.GetComponentInChildren<Health>();
                 playerPicker = playerGo.GetComponent<PlayerPicker>();
+                GameManager.Instance.AddCharacter(playerGo.GetComponent<Character>());
             }
 
             if (CurWaveNo == 1)
@@ -71,7 +73,7 @@ namespace OfficeWar
                   go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
                   //go.GetComponentInChildren<Animator>().Play("Trainee_idle");
                   go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
-
+                  GameManager.Instance.AddCharacter(go.GetComponent<Character>());
               }, isLoop: true);
             monsterTimer.Register();
 
