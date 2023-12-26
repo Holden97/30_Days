@@ -101,8 +101,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 1435
+      x: 972
+      y: 1092
       width: 653
       height: 365
     spriteID: f0e0b7383103a7f4b80008a5599bcb1a
@@ -113,8 +113,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -5, y: 1435}
-    spritePosition: {x: 339, y: 0}
+    uvTransform: {x: 972, y: 1092}
+    spritePosition: {x: 182, y: 0}
   - name: "GO! \u4E0B\u73ED"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -124,9 +124,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 1092
-      width: 728
-      height: 335
-    spriteID: 298bb72a372e8504489aae98070d3b10
+      width: 960
+      height: 370
+    spriteID: 606c8743009268944b91a4f38bc441db
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -135,28 +135,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 1092}
-    spritePosition: {x: 931, y: 0}
-  - name: "\u5343\u5E93\u7F51_\u84DD\u8272\u6E10\u53D8\u79D1\u6280\u5411\u53F3\u7BAD\u5934_\u5143\u7D20\u7F16\u53F712594514"
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 740
-      y: 1092
-      width: 356
-      height: 295
-    spriteID: 434f3b1d821cded4887090cd642a8ab6
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 740, y: 1092}
-    spritePosition: {x: 1564, y: 193}
+    spritePosition: {x: 960, y: 0}
   - name: "\u80CC\u666F"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -254,7 +233,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: f0e0b7383103a7f4b80008a5599bcb1a
     layerID: 53
-    mosaicPosition: {x: 4, y: 1435}
+    mosaicPosition: {x: 972, y: 1092}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -262,19 +241,9 @@ ScriptedImporter:
     spriteName: "GO! \u4E0B\u73ED"
     isGroup: 0
     parentIndex: -1
-    spriteID: 298bb72a372e8504489aae98070d3b10
-    layerID: 43
+    spriteID: 606c8743009268944b91a4f38bc441db
+    layerID: 72
     mosaicPosition: {x: 4, y: 1092}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: "\u5343\u5E93\u7F51_\u84DD\u8272\u6E10\u53D8\u79D1\u6280\u5411\u53F3\u7BAD\u5934_\u5143\u7D20\u7F16\u53F712594514"
-    spriteName: "\u5343\u5E93\u7F51_\u84DD\u8272\u6E10\u53D8\u79D1\u6280\u5411\u53F3\u7BAD\u5934_\u5143\u7D20\u7F16\u53F712594514"
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 434f3b1d821cded4887090cd642a8ab6
-    layerID: 56
-    mosaicPosition: {x: 740, y: 1092}
     flatten: 0
     isImported: 1
     isVisible: 1
