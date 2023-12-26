@@ -18,6 +18,15 @@ namespace OfficeWar
         public float deathRate = 5;
         public Faction faction;
         public GameObject root;
+        public float healthRatio = 1;
+
+        public float RealisticHp
+        {
+            get
+            {
+                return curHp * healthRatio;
+            }
+        }
 
         private DamageFlash df;
 

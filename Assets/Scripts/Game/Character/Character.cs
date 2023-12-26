@@ -21,11 +21,13 @@ namespace OfficeWar
         public Health health;
         public PlayerPicker playerPicker;
 
-        public void Init(int characterId)
+        public void Init()
         {
             this.characterId = seed++;
             damageEnhancedPercent = 0;
         }
+
+        public float RealisticHp => health.RealisticHp;
 
     }
 }

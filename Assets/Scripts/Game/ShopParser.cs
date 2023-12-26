@@ -9,7 +9,7 @@ namespace OfficeWar
     /// </summary>
     public class ShopParser
     {
-        public void Parse(string bytecode)
+        public static void Parse(string bytecode)
         {
             var stack = new Stack<object>();
             var instructions = bytecode.Split(';');
@@ -61,53 +61,53 @@ namespace OfficeWar
             }
         }
 
-        public void SetMaxHp(int characterId, int maxHp)
+        public static void SetMaxHp(int characterId, int maxHp)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
             character.health.maxHp += maxHp;
         }
 
-        public void AddFixedSpeed(int characterId, float bonus)
+        public static void AddFixedSpeed(int characterId, float bonus)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
             character.speed.SetSpeed(character.speed.GetSpeed() * (bonus + 1));
         }
 
-        public void ADD_SHIELD_PER_WAVE(int characterId, int bonus)
+        public static void ADD_SHIELD_PER_WAVE(int characterId, int bonus)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
             character.shieldPerWaveBeforeStart += bonus;
         }
 
-        public void SET_SHIELD_PER_WAVE(int characterId, int layerCount)
+        public static void SET_SHIELD_PER_WAVE(int characterId, int layerCount)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
             character.shieldPerWaveBeforeStart = layerCount;
         }
 
-        public float GET_MAX_HP(int characterId)
+        public static float GET_MAX_HP(int characterId)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
             return character.health.maxHp;
         }
 
-        public object LITERAL(object bonus)
+        public static object LITERAL(object bonus)
         {
             return bonus;
         }
 
-        public float MUL(float multiplier1, float multiplier2)
+        public static float MUL(float multiplier1, float multiplier2)
         {
             return multiplier1 * multiplier2;
         }
 
-        public float GetDamageIncreasementPersent(int characterId)
+        public static float GetDamageIncreasementPersent(int characterId)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
             return character.damageEnhancedPercent;
         }
 
-        public void SetDamageImcresementPercent(int characterId, float bonus)
+        public static void SetDamageImcresementPercent(int characterId, float bonus)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
             character.damageEnhancedPercent += bonus;

@@ -26,6 +26,7 @@ namespace OfficeWar
         {
             UIManager.Instance.HideAll();
             CurWaveNo++;
+            Time.timeScale = 1.0f;
 
             var pi = GameObject.FindObjectOfType<PlayerInput>();
             GameManager.Instance.player = GameObject.FindObjectOfType<PlayerPicker>();

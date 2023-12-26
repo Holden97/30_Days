@@ -60,6 +60,7 @@ namespace OfficeWar
                 {
                     var prop = new Prop(p);
                     props.Add(prop);
+                    //ShopParser.Parse(prop.propData.bytecode);
                     return prop;
                 }
                 UIManager.Instance.ShowTip("未找到对应类型！");

@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 3370677487319574083}
   - component: {fileID: 2361557826418066}
   - component: {fileID: 5447552972975663740}
+  - component: {fileID: -5944781439860878750}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -699,6 +700,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factionType: 0
+--- !u!114 &-5944781439860878750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558294019186666448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaddc4a4238bd9d4982b1a6a9817ffe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterId: 0
+  damageEnhancedPercent: 0
+  shieldPerWaveBeforeStart: 0
+  health: {fileID: 3370677487319574083}
+  playerPicker: {fileID: 2361557826418066}
 --- !u!1 &5693113204079676007
 GameObject:
   m_ObjectHideFlags: 0

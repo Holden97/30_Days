@@ -78,9 +78,14 @@ namespace OfficeWar
             GameFsm.Update();
         }
 
-        internal Character GetCharacter(int characterId)
+        public Character GetCharacter(int characterId)
         {
-            return null;
+            return characters.Find(x => x.characterId == characterId);
+        }
+
+        public void AddCharacter(Character c)
+        {
+            this.characters.Add(c);
         }
     }
 }

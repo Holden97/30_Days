@@ -17,6 +17,7 @@ namespace OfficeWar
 
         public override void OnStateStart()
         {
+            Time.timeScale = 0;
             Cursor.visible = true;
             base.OnStateStart();
             var player = GameObject.FindGameObjectWithTag("Player");
