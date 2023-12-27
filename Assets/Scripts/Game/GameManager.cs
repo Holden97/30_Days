@@ -51,21 +51,26 @@ namespace OfficeWar
             this.propsData = propDataSO.propData;
         }
 
-        public CommodityData[] CreateCommodityData(int count)
+        public ShopData[] RefreshCommodityData(ShopData[] shopData)
         {
-            var result = new CommodityData[count];
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < shopData.Length; i++)
             {
-                if (Random.Range(0, 1f) < 0.5f)
-                {
-                    result[i] = (weaponsData.Random());
-                }
-                else
-                {
-                    result[i] = (propsData.Random());
-                }
+                if (shopData[i] == null || !shopData[i].isLocked)
+                    shopData[i] = RandomlyCreateCommodityData();
             }
-            return result;
+            return shopData;
+        }
+
+        public ShopData RandomlyCreateCommodityData()
+        {
+            if (Random.Range(0, 1f) < 0.5f)
+            {
+                return new ShopData(weaponsData.Random());
+            }
+            else
+            {
+                return new ShopData(propsData.Random());
+            }
         }
 
         public WeaponData GetWeaponData(string weaponName)

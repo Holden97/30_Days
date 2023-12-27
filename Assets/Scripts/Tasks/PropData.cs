@@ -11,6 +11,7 @@ namespace OfficeWar
         public string bytecode;
         public int quality;
 
+
         public void ExcuteBytecode(string b)
         {
 

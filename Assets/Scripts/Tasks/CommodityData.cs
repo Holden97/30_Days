@@ -11,6 +11,5 @@ namespace OfficeWar
         public string name;
         public Sprite avatar;
         public int cost;
-        public bool isLocked;
     }
 }

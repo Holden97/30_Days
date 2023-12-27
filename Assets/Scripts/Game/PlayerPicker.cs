@@ -37,7 +37,7 @@ namespace OfficeWar
 
         public ICost Buy(int index)
         {
-            CommodityData c = ShopManager.Instance.Get(index);
+            CommodityData c = ShopManager.Instance.Get(index).commodityData;
             if (c == null) { return null; }
 
             if (c is WeaponData && weapons.Count >= 6)

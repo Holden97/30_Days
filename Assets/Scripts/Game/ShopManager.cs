@@ -10,7 +10,7 @@ namespace OfficeWar
     public class ShopManager
     {
         public static int SlotCount = 4;
-        public CommodityData[] commodityData;
+        public ShopData[] shopData;
 
         public static ShopManager Instance
         {
@@ -24,38 +24,48 @@ namespace OfficeWar
             }
         }
 
-        public CommodityData Get(int index)
+        public ShopData Get(int index)
         {
-            return commodityData[index];
+            return shopData[index];
         }
         private static ShopManager instance;
 
         public ShopManager(int slotCount)
         {
             SlotCount = slotCount;
-            commodityData = new CommodityData[slotCount];
+            shopData = new ShopData[slotCount];
         }
 
         public void Sell(int index)
         {
-            this.commodityData[index] = null;
+            this.shopData[index] = null;
             return;
         }
 
         public void Refresh()
         {
-            Instance.commodityData = GameManager.Instance.CreateCommodityData(SlotCount);
-            if (UIManager.Instance.Get<ShopPanel>())
-            {
-                UIManager.Instance.UpdatePanel<ShopPanel>(GetShopData());
-            }
+            Instance.shopData = GameManager.Instance.RefreshCommodityData(Instance.shopData);
         }
 
-        public static Tuple<PlayerPicker, CommodityData[]> GetShopData()
+        public static Tuple<PlayerPicker, ShopData[]> GetShopData()
         {
             var picker = GameManager.Instance.player;
-            Tuple<PlayerPicker, CommodityData[]> d = new Tuple<PlayerPicker, CommodityData[]>(picker, Instance.commodityData);
+            Tuple<PlayerPicker, ShopData[]> d = new Tuple<PlayerPicker, ShopData[]>(picker, Instance.shopData);
             return d;
         }
+    }
+
+    [Serializable]
+    public class ShopData
+    {
+        public CommodityData commodityData;
+        public bool isLocked;
+
+        public ShopData(CommodityData commodityData)
+        {
+            this.commodityData = commodityData;
+            isLocked = false;
+        }
+
     }
 }

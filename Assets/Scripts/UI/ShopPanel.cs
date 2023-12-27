@@ -23,7 +23,7 @@ namespace OfficeWar
 
         public override void UpdateView(object o)
         {
-            var s = o as Tuple<PlayerPicker, CommodityData[]>;
+            var s = o as Tuple<PlayerPicker, ShopData[]>;
             if (s != null)
             {
                 this.coinsText.text = s.Item1.coinsCount.ToString();
@@ -61,8 +61,8 @@ namespace OfficeWar
 
         public void Refresh()
         {
-            ShopManager.Instance.commodityData = GameManager.Instance.CreateCommodityData(ShopManager.SlotCount);
-            UpdateView(new Tuple<PlayerPicker, CommodityData[]>(playerPicker, ShopManager.Instance.commodityData));
+            ShopManager.Instance.Refresh();
+            UpdateView(new Tuple<PlayerPicker, ShopData[]>(playerPicker, ShopManager.Instance.shopData));
         }
     }
 }

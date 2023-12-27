@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace OfficeWar
 {
-    public class BaseWeapon : MonoBehaviour, ICost
+    public class BaseWeapon : MonoBehaviour, ICost, ILockable
     {
         public bool manualAttackMode = false;
         private WeaponData weaponData;
@@ -52,6 +52,8 @@ namespace OfficeWar
         public float AttackRange { get; private set; }
 
         public int Cost => weaponData.cost;
+
+        public bool IsLocked { get; set; }
 
         public virtual void Attack(Vector3 target)
         {

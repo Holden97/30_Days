@@ -1,6 +1,4 @@
-﻿using BehaviorDesigner.Runtime.Tasks.Unity.UnityParticleSystem;
-using CommonBase;
-using System.Collections;
+﻿using CommonBase;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -21,7 +19,7 @@ namespace OfficeWar
         private CanvasGroup cg;
         public int index;
 
-        private CommodityData c;
+        private ShopData c;
 
         private void Awake()
         {
@@ -33,13 +31,13 @@ namespace OfficeWar
             if (data != null)
             {
                 cg.alpha = 1;
-                var c = data as CommodityData;
-                avatarImg.sprite = c.avatar;
-                commodityNameText.text = c.name;
-                commodityCost.text = c.cost.ToString();
+                var c = data as ShopData;
+                avatarImg.sprite = c.commodityData.avatar;
+                commodityNameText.text = c.commodityData.name;
+                commodityCost.text = c.commodityData.cost.ToString();
                 this.c = c;
                 lockFlagImg.gameObject.SetActive(true);
-                lockFlagImg.sprite = c.isLocked ? lockIcons[1] : lockIcons[0];
+                lockFlagImg.sprite = c.isLocked ? lockIcons[0] : lockIcons[1];
             }
             else
             {
@@ -62,6 +60,8 @@ namespace OfficeWar
         public void Lock()
         {
             c.isLocked = !c.isLocked;
+            ShopManager.Instance.Get(index).isLocked = c.isLocked;
+            UIManager.Instance.UpdatePanel<ShopPanel>(ShopManager.GetShopData());
         }
 
     }

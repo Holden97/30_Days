@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace OfficeWar
 {
-    public class Prop : ICost
+    public class Prop : ICost, ILockable
     {
         public PropData propData;
 
@@ -14,10 +14,17 @@ namespace OfficeWar
         }
 
         public int Cost => propData.cost;
+
+        public bool IsLocked { get; set; }
     }
 
     public interface ICost
     {
         public int Cost { get; }
+    }
+
+    public interface ILockable
+    {
+        public bool IsLocked { get; set; }
     }
 }
