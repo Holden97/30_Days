@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 0}
-  m_SizeDelta: {x: 229.34, y: 284.4171}
+  m_AnchoredPosition: {x: -7.903, y: 9.8009}
+  m_SizeDelta: {x: 213.53, y: 264.8152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8867627018755664052
 CanvasRenderer:
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -75,8 +75,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  rtOffset: {x: 0, y: 40}
-  rbOffset: {x: 0, y: 50}
+  rtOffset: {x: 0, y: 45}
+  rbOffset: {x: 0, y: 45}
   ltOffset: {x: 0, y: 0}
   lbOffset: {x: 0, y: 0}
 --- !u!1 &4462582644389514281
@@ -230,14 +230,14 @@ GameObject:
   m_Component:
   - component: {fileID: 359059718977249856}
   - component: {fileID: 4290124979156838354}
-  - component: {fileID: 1844621815879090389}
+  - component: {fileID: 4060364198094423182}
   m_Layer: 5
   m_Name: SelectedBg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &359059718977249856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -254,8 +254,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -7.9031, y: 9.8011}
+  m_SizeDelta: {x: -15.806, y: -58.485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4290124979156838354
 CanvasRenderer:
@@ -265,7 +265,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5913897096313924600}
   m_CullTransparentMesh: 1
---- !u!114 &1844621815879090389
+--- !u!114 &4060364198094423182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5913897096313924600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: e4317ae17553aff44ba4063e6b1b9fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -295,6 +295,10 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+  rtOffset: {x: 0, y: 45}
+  rbOffset: {x: 0, y: 45}
+  ltOffset: {x: 0, y: 0}
+  lbOffset: {x: 0, y: 0}
 --- !u!1 &6598946348375401542
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 114.67, y: 85}
+  m_AnchoredPosition: {x: 110, y: 114.5}
   m_SizeDelta: {x: 186.5645, y: 61.0645}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4262278202037076103
@@ -387,17 +391,17 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -463,8 +467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 46.534897}
-  m_SizeDelta: {x: 149.6661, y: 166.2712}
+  m_AnchoredPosition: {x: -12.2206, y: 47.596}
+  m_SizeDelta: {x: 123.1999, y: 136.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2863386653095002397
 CanvasRenderer:
@@ -504,7 +508,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  rtOffset: {x: 0, y: 30}
-  rbOffset: {x: 0, y: 40}
+  rtOffset: {x: 0, y: 15}
+  rbOffset: {x: 0, y: 15}
   ltOffset: {x: 0, y: 0}
   lbOffset: {x: 0, y: 0}
