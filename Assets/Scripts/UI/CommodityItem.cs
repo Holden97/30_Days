@@ -14,6 +14,9 @@ namespace OfficeWar
         public Sprite transformSquare;
         public TMP_Text commodityNameText;
         public TMP_Text commodityCost;
+        public Image lockFlagImg;
+
+        public List<Sprite> lockIcons;
 
         private CanvasGroup cg;
         public int index;
@@ -35,6 +38,8 @@ namespace OfficeWar
                 commodityNameText.text = c.name;
                 commodityCost.text = c.cost.ToString();
                 this.c = c;
+                lockFlagImg.gameObject.SetActive(true);
+                lockFlagImg.sprite = c.isLocked ? lockIcons[1] : lockIcons[0];
             }
             else
             {
@@ -43,6 +48,7 @@ namespace OfficeWar
                 commodityNameText.text = "";
                 commodityCost.text = "";
                 this.c = null;
+                lockFlagImg.gameObject.SetActive(false);
             }
 
         }
@@ -51,6 +57,11 @@ namespace OfficeWar
         {
             GameManager.Instance.player.Buy(index);
             UIManager.Instance.UpdatePanel<ShopPanel>(ShopManager.GetShopData());
+        }
+
+        public void Lock()
+        {
+            c.isLocked = !c.isLocked;
         }
 
     }
