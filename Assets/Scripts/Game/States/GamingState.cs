@@ -25,12 +25,12 @@ namespace OfficeWar
         public override void OnStateStart()
         {
             UIManager.Instance.HideAll();
-            GameManager.Instance.ClearCharacters();
+            GameManager.Instance.player = GameObject.FindObjectOfType<PlayerPicker>();
+            GameManager.Instance.ClearEnemies();
             CurWaveNo++;
             Time.timeScale = 1.0f;
 
             var pi = GameObject.FindObjectOfType<PlayerInput>();
-            GameManager.Instance.player = GameObject.FindObjectOfType<PlayerPicker>();
             if (pi != null)
             {
                 pi.enabled = true;
@@ -73,6 +73,7 @@ namespace OfficeWar
                   go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
                   //go.GetComponentInChildren<Animator>().Play("Trainee_idle");
                   go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
+                  go.GetComponent<Character>().Init();
                   GameManager.Instance.AddCharacter(go.GetComponent<Character>());
               }, isLoop: true);
             monsterTimer.Register();

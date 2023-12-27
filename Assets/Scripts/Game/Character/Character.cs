@@ -21,6 +21,11 @@ namespace OfficeWar
         public Health health;
         public PlayerPicker playerPicker;
 
+        private void Awake()
+        {
+            speed = GetComponentInChildren<ISpeedModifier>();
+        }
+
         public void Init()
         {
             this.characterId = seed++;

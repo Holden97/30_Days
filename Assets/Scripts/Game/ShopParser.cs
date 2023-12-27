@@ -27,9 +27,10 @@ namespace OfficeWar
                         AddFixedSpeed((int)characterId, (int)bonus);
                         break;
                     case "ADD_MAX_HP":
+                        stack.Push(LITERAL(literals[1]));
                         var bonus2 = stack.Pop();
                         var characterId2 = stack.Pop();
-                        SetMaxHp((int)characterId2, (int)bonus2);
+                        AddMaxHp((int)characterId2, bonus2);
                         break;
                     case "ADD_ATTACK_SPEED":
                         var bonus7 = stack.Pop();
@@ -53,14 +54,39 @@ namespace OfficeWar
                         var multiplier2 = stack.Pop();
                         stack.Push(MUL((float)multiplier1, (float)multiplier2));
                         break;
+                    case "ADD":
+                        var add1 = stack.Pop();
+                        var add2 = stack.Pop();
+                        stack.Push(AddObjects(add1, add2));
+                        break;
                     case "GET_DAMAGE_INCREASEMENT_PERSENT":
                         var characterId5 = stack.Pop();
                         stack.Push(GetDamageIncreasementPersent((int)characterId5));
                         break;
                     case "SET_DAMAGE_IMCRESEMENT_PERCENT":
                         var percent = stack.Pop();
+                        float percentValue = 0;
+                        if (percent is int)
+                        {
+                            percentValue = (int)percent;
+                        }
+                        if (percent is float)
+                        {
+                            percentValue = (float)percent;
+                        }
+
                         var characterId6 = stack.Pop();
-                        SetDamageImcresementPercent((int)characterId6, (float)percent);
+                        int characterId6Value = 0;
+                        if (characterId6 is int)
+                        {
+                            characterId6Value = (int)characterId6;
+                        }
+                        if (characterId6 is float)
+                        {
+                            //unbox时要先转成对应的数据类型（float），再强转(int)，否则出错
+                            characterId6Value = (int)(float)characterId6;
+                        }
+                        SetDamageImcresementPercent(characterId6Value, percentValue);
                         break;
                     case "GET_PLAYER_ID":
                         stack.Push(0);
@@ -77,10 +103,42 @@ namespace OfficeWar
             character.AttackSpeed += bonus7;
         }
 
-        public static void SetMaxHp(int characterId, int maxHp)
+        public static void AddMaxHp(int characterId, object bonus)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
-            character.health.maxHp += maxHp;
+            var value = ConvertObject(bonus);
+            if (value is int)
+            {
+                character.health.maxHp += (int)value;
+            }
+            else if (value is float)
+            {
+                character.health.maxHp += (float)value;
+            }
+        }
+
+        static object AddObjects(object a, object b)
+        {
+            if (a is int && b is int)
+            {
+                // 如果两个操作数都是 int，直接相加
+                return (int)a + (int)b;
+            }
+            else if (a is float || b is float)
+            {
+                // 如果其中一个或两个操作数是 double，转换为 double 再相加
+                return Convert.ToDouble(a) + Convert.ToDouble(b);
+            }
+            else if (a is string || b is string)
+            {
+                // 如果其中一个或两个操作数是 string，将它们转换为字符串并进行拼接
+                return a.ToString() + b.ToString();
+            }
+            else
+            {
+                // 其他情况可能需要根据具体需求进行处理
+                throw new ArgumentException("Unsupported data types for addition");
+            }
         }
 
         public static void AddFixedSpeed(int characterId, float bonus)
@@ -129,6 +187,11 @@ namespace OfficeWar
             return multiplier1 * multiplier2;
         }
 
+        public static float ADD(float add1, float add2)
+        {
+            return add1 + add2;
+        }
+
         public static float GetDamageIncreasementPersent(int characterId)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
@@ -154,6 +217,22 @@ namespace OfficeWar
                 float floatValue = (float)value;
                 stack.Push(floatValue);
             }
+        }
+
+        public static object ConvertObject(object value)
+        {
+
+            if (value is int)
+            {
+                int intValue = (int)value;
+                return (intValue);
+            }
+            else if (value is float)
+            {
+                float floatValue = (float)value;
+                return (floatValue);
+            }
+            return value;
         }
     }
 }

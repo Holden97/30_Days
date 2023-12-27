@@ -17,24 +17,30 @@ MonoBehaviour:
     avatar: {fileID: 21300000, guid: 84463b4e66cb5264489003b326621b20, type: 3}
     cost: 50
     description: "\u589E\u52A010\u79FB\u901F\uFF08\u56FA\u5B9A\uFF09"
-    bytecode: ADD_FIXED_SPEED 10
+    bytecode: GET_PLAYER_ID;LITERAL 10;ADD_FIXED_SPEED;
+    quality: 0
   - name: "\u52A0\u901F\u624B\u5957"
     avatar: {fileID: 21300000, guid: bcc7b1c5abb33d547a9bb2cc45df4d41, type: 3}
     cost: 50
     description: "\u589E\u52A010\u653B\u901F"
     bytecode: GET_PLAYER_ID;LITERAL 10;ADD_ATTACK_SPEED
+    quality: 0
   - name: "\u6BDB\u6BDB\u5E3D"
     avatar: {fileID: 21300000, guid: 22554a66fd2a0534cb867454aa3ec68b, type: 3}
     cost: 60
     description: "\u589E\u52A05\u751F\u547D\u503C"
-    bytecode: ADD_MAX_HP 5
+    bytecode: GET_PLAYER_ID;ADD_MAX_HP 5
+    quality: 0
   - name: "\u8F7B\u76C8\u7FBD\u7FFC"
     avatar: {fileID: 21300000, guid: 48f2053fbca415e4d92e819ea08b071c, type: 3}
     cost: 100
     description: "\u6BCF\u6CE2\u6B21\u5F00\u59CB\u65F6\uFF0C\u6DFB\u52A0\u4E00\u6B21\u62A4\u76FE"
-    bytecode: ADD_SHIELD_PER_WAVE 1
+    bytecode: GET_PLAYER_ID;LITERAL 1;ADD_SHIELD_PER_WAVE;
+    quality: 0
   - name: "\u5927\u529B\u58EB"
     avatar: {fileID: 21300000, guid: a40cef2722b3a384ba02afd2c2e8893f, type: 3}
     cost: 200
     description: "\u83B7\u5F97\u6700\u5927\u751F\u547D\u503C20%\u7684\u4F24\u5BB3\u52A0\u6210"
-    bytecode: GET_MAX_HP;LITERAL 0.2;MUL;GET_DAMAGE_INCREASEMENT_PERSENT;ADD;SET_DAMAGE_IMCRESEMENT_PERCENT
+    bytecode: GET_PLAYER_ID;GET_PLAYER_ID;GET_DAMAGE_INCREASEMENT_PERSENT;GET_PLAYER_ID;GET_MAX_HP;LITERAL
+      0.2;MUL;ADD;SET_DAMAGE_IMCRESEMENT_PERCENT
+    quality: 0

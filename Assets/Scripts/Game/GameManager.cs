@@ -93,9 +93,11 @@ namespace OfficeWar
             this.characters.Add(c);
         }
 
-        public void ClearCharacters()
+        public void ClearEnemies()
         {
             this.characters.Clear();
+            //重新添加玩家
+            this.characters.Add(player.GetComponent<Character>());
         }
     }
 }
