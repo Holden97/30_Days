@@ -18,7 +18,14 @@ namespace OfficeWar
             {
                 weaponIcon.sprite = c.Item1.avatar;
                 weaponName.text = c.Item1.name; ;
-                count.text = c.Item2.ToString();
+                if (c.Item2 <= 1)
+                {
+                    count.text = "";
+                }
+                else
+                {
+                    count.text = "x" + c.Item2.ToString();
+                }
             }
             else
             {
