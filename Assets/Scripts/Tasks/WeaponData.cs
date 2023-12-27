@@ -11,6 +11,7 @@ namespace OfficeWar
         public float attackInterval;
         public float attackRange;
         public string type;
+        public string description;
         /// <summary>
         /// 穿透（远程）
         /// </summary>

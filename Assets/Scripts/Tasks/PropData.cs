@@ -9,6 +9,7 @@ namespace OfficeWar
     {
         public string description;
         public string bytecode;
+        public int quality;
 
         public void ExcuteBytecode(string b)
         {

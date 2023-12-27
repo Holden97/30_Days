@@ -11,6 +11,10 @@ namespace OfficeWar
     {
         public bool manualAttackMode = false;
         private WeaponData weaponData;
+        /// <summary>
+        /// 武器等级
+        /// </summary>
+        public int level;
         public WeaponData WeaponData => weaponData;
 
         public float attackCD => weaponData.attackInterval;
