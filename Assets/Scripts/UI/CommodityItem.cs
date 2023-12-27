@@ -11,7 +11,7 @@ namespace OfficeWar
     public class CommodityItem : MonoBehaviour, IListItem
     {
         public Image avatarImg;
-        public Sprite transformSquare;
+        public Sprite transparentSprite;
         public TMP_Text commodityNameText;
         public TMP_Text commodityCost;
         public Image lockFlagImg;
@@ -44,7 +44,7 @@ namespace OfficeWar
             else
             {
                 cg.alpha = 0;
-                avatarImg.sprite = transformSquare;
+                avatarImg.sprite = transparentSprite;
                 commodityNameText.text = "";
                 commodityCost.text = "";
                 this.c = null;

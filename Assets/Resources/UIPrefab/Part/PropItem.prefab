@@ -850,6 +850,10 @@ MonoBehaviour:
   transformSquare: {fileID: 21300000, guid: 955bd888b969ffc4fbaed2fc8a9e9c4d, type: 3}
   commodityNameText: {fileID: 5004363792083628482}
   commodityCost: {fileID: 1346922343531103607}
+  lockFlagImg: {fileID: 2143629584540911686}
+  lockIcons:
+  - {fileID: 21300000, guid: 1d29a67c198ad074d8ac0d510f77f3d6, type: 3}
+  - {fileID: 21300000, guid: 0236dec6b4e53754298e884e9d0a0569, type: 3}
   index: 0
 --- !u!114 &8700316208743378255
 MonoBehaviour:
