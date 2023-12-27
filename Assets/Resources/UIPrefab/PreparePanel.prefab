@@ -572,8 +572,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -130, y: 138.88}
-  m_SizeDelta: {x: 1313.5195, y: 802.24}
+  m_AnchoredPosition: {x: -76.91492, y: 103.48996}
+  m_SizeDelta: {x: 1419.6897, y: 873.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4665905439327607359
 CanvasRenderer:
@@ -667,7 +667,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1651578073821315640}
-  - component: {fileID: 8014113597724467378}
   - component: {fileID: 1113358954456924549}
   - component: {fileID: 8500957267015305181}
   - component: {fileID: 5177897432899174393}
@@ -697,30 +696,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000029573526}
   m_SizeDelta: {x: 1000, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &8014113597724467378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7349406100868519704}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 50
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 250, y: 330}
-  m_Spacing: {x: 10, y: 10}
-  m_Constraint: 0
-  m_ConstraintCount: 2
 --- !u!114 &1113358954456924549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,7 +821,7 @@ MonoBehaviour:
     avatar: {fileID: 0}
     cost: 0
     damage: 0
-    attackSpeed: 0
+    attackInterval: 0
     attackRange: 0
     type: 
     penetration: 0
