@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace OfficeWar
 {
-    public class CommodityItem : MonoBehaviour, IListItem
+    public class CommodityItem : MonoBehaviour, IListItem, IPointerEnterHandler, IPointerExitHandler
     {
         public Image avatarImg;
         public Sprite transparentSprite;
@@ -64,6 +65,20 @@ namespace OfficeWar
             UIManager.Instance.UpdatePanel<ShopPanel>(ShopManager.GetShopData());
         }
 
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            CommodityData d = default;
+            if (this.c != null)
+            {
+                d = this.c.commodityData;
+            }
+            UIManager.Instance.ShowFloatWindow<DescriptionFloatWindow>(this.transform.position, data: d);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            UIManager.Instance.Hide<DescriptionFloatWindow>();
+        }
     }
 }
 

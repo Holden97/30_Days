@@ -25,6 +25,12 @@ MonoBehaviour:
     uiType: 1
     fadeType: 0
     ecsRemovable: 1
+  - name: DescriptionFloatWindow
+    resPath: Assets/Resources/UIPrefab/FloatWindow/DescriptionFloatWindow.prefab
+    uiPrefab: {fileID: 4462582644389514281, guid: 09ba816486587ab4eb707f88050a51a2, type: 3}
+    uiType: 2
+    fadeType: 0
+    ecsRemovable: 1
   - name: GameOverPanel
     resPath: Assets/Resources/UIPrefab/GameOverPanel.prefab
     uiPrefab: {fileID: 7429277776593789120, guid: 1ebfefab7e03000489c77a2cde5a7d18, type: 3}

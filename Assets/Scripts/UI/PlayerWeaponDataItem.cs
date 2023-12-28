@@ -1,11 +1,12 @@
 ﻿using CommonBase;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace OfficeWar
 {
-    public class PlayerWeaponDataItem : MonoBehaviour, IListItem
+    public class PlayerWeaponDataItem : MonoBehaviour, IListItem, IPointerExitHandler, IPointerEnterHandler
     {
         public GameObject selectedBg;
         public Image weaponIcon;
@@ -37,6 +38,16 @@ namespace OfficeWar
         public void OnUnselected()
         {
             selectedBg.SetActive(false);
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            UIManager.Instance.ShowFloatWindow<DescriptionFloatWindow>(this.transform.position, data: this.w);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            UIManager.Instance.Hide<DescriptionFloatWindow>();
         }
     }
 }

@@ -16,30 +16,43 @@ MonoBehaviour:
   - name: "\u98DE\u8D3C\u4E4B\u9774"
     avatar: {fileID: 21300000, guid: 84463b4e66cb5264489003b326621b20, type: 3}
     cost: 50
+    abstractDescription: "\u4E00\u53CC\u795E\u5947\u7684\u9774\u5B50\u3002"
+    detailsDescription: "\u9F13\u4E0A\u86A4\u4ECE\u6765\u4E0D\u53D1\u51FA\u58F0\u97F3\uFF0C\u4E3A\u4EC0\u4E48\uFF1F\u56E0\u4E3A\u4ED6\u6709\u4E00\u53CC\u7CBE\u81F4\u7684\u9774\u5B50\u3002\n\u79FB\u901F
+      +10"
     description: "\u589E\u52A010\u79FB\u901F\uFF08\u56FA\u5B9A\uFF09"
     bytecode: GET_PLAYER_ID;LITERAL 10;ADD_FIXED_SPEED;
     quality: 0
   - name: "\u52A0\u901F\u624B\u5957"
     avatar: {fileID: 21300000, guid: bcc7b1c5abb33d547a9bb2cc45df4d41, type: 3}
     cost: 50
+    abstractDescription: "\u5929\u4E0B\u6B66\u529F\uFF0C\u552F\u5FEB\u4E0D\u7834\u3002"
+    detailsDescription: "\u98CE\u4ECE\u51AF\u7136\u7684\u638C\u5916\u7ED5\u5F00\uFF0C\u56E0\u4E3A\u5B83\u4EEC\u60E7\u6015\u8FD9\u53EA\u624B\u7684\u901F\u5EA6\u3002\n\u653B\u51FB\u901F\u5EA6
+      +10"
     description: "\u589E\u52A010\u653B\u901F"
     bytecode: GET_PLAYER_ID;LITERAL 10;ADD_ATTACK_SPEED
     quality: 0
   - name: "\u6BDB\u6BDB\u5E3D"
     avatar: {fileID: 21300000, guid: 22554a66fd2a0534cb867454aa3ec68b, type: 3}
     cost: 60
+    abstractDescription: "\u6E29\u6696\u7684\u5E3D\u5B50~"
+    detailsDescription: "\u6CA1\u6709\u4EBA\u77E5\u9053\u8FD9\u9876\u5E3D\u5B50\u4E0A\u7684\u6BDB\u662F\u4ECE\u54EA\u91CC\u6765\u7684\uFF0C\u53EA\u6709\u51AF\u7136\u77E5\u9053\u3002\n\u6700\u5927\u751F\u547D\u503C
+      +5"
     description: "\u589E\u52A05\u751F\u547D\u503C"
     bytecode: GET_PLAYER_ID;ADD_MAX_HP 5
     quality: 0
   - name: "\u8F7B\u76C8\u7FBD\u7FFC"
     avatar: {fileID: 21300000, guid: 48f2053fbca415e4d92e819ea08b071c, type: 3}
     cost: 100
+    abstractDescription: "\u6211\u5FC3\u98DE\u7FD4\uFF01"
+    detailsDescription: "\u201C\u90A3\u662F\u6211\u7B2C\u4E00\u6B21\u6253\u730E\uFF0C\u201D\u51AF\u7136\u8BF4\uFF0C\u201C\u7136\u540E\u5C31\u6293\u4F4F\u4E86\u8FD9\u7247\u7FBD\u6BDB\u3002\u201D\n\u6BCF\u6CE2\u6B21\u5F00\u59CB\u65F6\uFF0C\u6DFB\u52A0\u4E00\u6B21\u62A4\u76FE"
     description: "\u6BCF\u6CE2\u6B21\u5F00\u59CB\u65F6\uFF0C\u6DFB\u52A0\u4E00\u6B21\u62A4\u76FE"
     bytecode: GET_PLAYER_ID;LITERAL 1;ADD_SHIELD_PER_WAVE;
     quality: 0
   - name: "\u5927\u529B\u58EB"
     avatar: {fileID: 21300000, guid: a40cef2722b3a384ba02afd2c2e8893f, type: 3}
     cost: 200
+    abstractDescription: "\u4E00\u74F6\u731B\u836F\u3002"
+    detailsDescription: "\u6C34\u624B\u4EEC\u4ECE\u8239\u4E0A\u4E0B\u6765\uFF0C\u5176\u4E2D\u4E00\u4E2A\u628A\u8FD9\u74F6\u836F\u843D\u5728\u4E86\u7532\u677F\u3002\n\u83B7\u5F97\u6700\u5927\u751F\u547D\u503C20%\u7684\u4F24\u5BB3\u52A0\u6210"
     description: "\u83B7\u5F97\u6700\u5927\u751F\u547D\u503C20%\u7684\u4F24\u5BB3\u52A0\u6210"
     bytecode: GET_PLAYER_ID;GET_PLAYER_ID;GET_DAMAGE_INCREASEMENT_PERSENT;GET_PLAYER_ID;GET_MAX_HP;LITERAL
       0.2;MUL;ADD;SET_DAMAGE_IMCRESEMENT_PERCENT

@@ -11,5 +11,11 @@ namespace OfficeWar
         public string name;
         public Sprite avatar;
         public int cost;
+        public string abstractDescription;
+        [TextArea]
+        public string detailsDescription;
+
+        public virtual string AbstractDescription => abstractDescription;
+        public virtual string DetailsDescription => detailsDescription;
     }
 }
