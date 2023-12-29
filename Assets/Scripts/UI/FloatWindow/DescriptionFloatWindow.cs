@@ -1,6 +1,7 @@
 ﻿using CommonBase;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace OfficeWar
 {
@@ -9,6 +10,8 @@ namespace OfficeWar
         public TMP_Text commodityNameText;
         public TMP_Text abstractDescriptionText;
         public TMP_Text detailsDescriptionText;
+        private RectTransform rectTransform;
+        public Image img;
 
         public override void UpdateView(object o)
         {
@@ -27,48 +30,38 @@ namespace OfficeWar
             }
         }
 
-        private void Update()
+        private void Awake()
         {
-            //TODO:添加调整，使该信息框始终完全在游戏窗口内。
-            //AdjustUIPosition();
+            rectTransform = img.GetComponent<RectTransform>();
         }
 
-        void AdjustUIPosition()
+        private void Update()
         {
-            var rectTransform = this.transform as RectTransform;
-            // 获取屏幕的宽高
-            float screenWidth = Screen.width;
-            float screenHeight = Screen.height;
+            ConstrainFullyInGameWindow();
+        }
 
-            // 将UI的四个角转换为屏幕坐标
-            Vector3[] corners = new Vector3[4];
-            rectTransform.GetWorldCorners(corners);
+        /// <summary>
+        /// 限制UI完全显示在屏幕内
+        /// https://huotuyouxi.com/2021/12/26/unity-tips-017/#%E9%99%90%E5%88%B6-UI-%E8%8C%83%E5%9B%B4
+        /// </summary>
+        private void ConstrainFullyInGameWindow()
+        {
+            // UI 的真实坐标
+            var pos = rectTransform.anchoredPosition;
 
-            Vector2 minScreenPos = new Vector2(float.MaxValue, float.MaxValue);
-            Vector2 maxScreenPos = new Vector2(float.MinValue, float.MinValue);
+            // UI 的大小尺寸
+            var size = rectTransform.sizeDelta / 2;
 
-            if (minScreenPos.x < 0) this.transform.position += new Vector3(-minScreenPos.x, 0, 0);
-            if (minScreenPos.y < 0) this.transform.position += new Vector3(-minScreenPos.y, 0, 0);
+            // 计算屏幕的尺寸
+            float xDistance = Screen.width / 2;
+            float yDistance = Screen.height / 2;
 
-            for (int i = 0; i < corners.Length; i++)
-            {
-                Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(null, corners[i]);
+            // 限制 UI 坐标最大最小值
+            float x = Mathf.Clamp(pos.x, -xDistance + size.x, xDistance - size.x);
+            float y = Mathf.Clamp(pos.y, -yDistance + size.y, yDistance - size.y);
 
-                // 更新最小和最大屏幕坐标
-                minScreenPos = Vector2.Min(minScreenPos, screenPos);
-                maxScreenPos = Vector2.Max(maxScreenPos, screenPos);
-            }
-
-            // 计算UI的宽高
-            float uiWidth = maxScreenPos.x - minScreenPos.x;
-            float uiHeight = maxScreenPos.y - minScreenPos.y;
-
-            // 计算UI应该在屏幕中的位置
-            float targetX = Mathf.Clamp(rectTransform.position.x, uiWidth / 2, screenWidth - uiWidth / 2);
-            float targetY = Mathf.Clamp(rectTransform.position.y, uiHeight / 2, screenHeight - uiHeight / 2);
-
-            // 更新UI的位置
-            rectTransform.position = new Vector3(targetX, targetY, rectTransform.position.z);
+            // 调整 UI 坐标
+            rectTransform.anchoredPosition = new Vector2(x, y);
         }
     }
 }
