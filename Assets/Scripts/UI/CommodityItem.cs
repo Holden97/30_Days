@@ -32,6 +32,7 @@ namespace OfficeWar
             if (data != null)
             {
                 cg.alpha = 1;
+                cg.interactable = true;
                 var c = data as ShopData;
                 avatarImg.sprite = c.commodityData.avatar;
                 commodityNameText.text = c.commodityData.name;
@@ -42,6 +43,7 @@ namespace OfficeWar
             }
             else
             {
+                cg.interactable = false;
                 cg.alpha = 0;
                 avatarImg.sprite = transparentSprite;
                 commodityNameText.text = "";
@@ -54,7 +56,12 @@ namespace OfficeWar
 
         public void Buy()
         {
-            GameManager.Instance.player.Buy(index);
+            var commodity = GameManager.Instance.player.Buy(index);
+            if (commodity != null)
+            {
+                this.c = null;
+            }
+            ShowFloatWindow();
             UIManager.Instance.UpdatePanel<ShopPanel>(ShopManager.GetShopData());
         }
 
@@ -67,12 +74,19 @@ namespace OfficeWar
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            CommodityData d = default;
+            ShowFloatWindow();
+        }
+
+        private void ShowFloatWindow()
+        {
             if (this.c != null)
             {
-                d = this.c.commodityData;
+                UIManager.Instance.ShowFloatWindow<DescriptionFloatWindow>(this.transform.position, data: this.c.commodityData);
             }
-            UIManager.Instance.ShowFloatWindow<DescriptionFloatWindow>(this.transform.position, data: d);
+            else
+            {
+                UIManager.Instance.Hide<DescriptionFloatWindow>();
+            }
         }
 
         public void OnPointerExit(PointerEventData eventData)

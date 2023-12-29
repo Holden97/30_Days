@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a5351398d03714f9941f35f475a833, type: 3}
+  m_Name: CharacterDataConfig
+  m_EditorClassIdentifier: 
+  data:
+  - name: "\u51AF\u7136"
+    avatar: {fileID: 0}
+    baseMapHp: 100
+    baseSpeed: 5
+    shieldCountBeforePerWave: 0
+    damageIncreasementPersent: 0
+    attackSpeed: 50
+    characterPrefab: {fileID: 5558294019186666448, guid: bc79eeababa263048a165294e6f54cb4, type: 3}

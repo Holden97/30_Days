@@ -18,6 +18,8 @@ namespace OfficeWar
         public Vector3 realSpeed = default;
         public float XSign { get => dir; set { dir = value; } }
 
+        public float SpeedMagnitude { get; set; }
+
         void Update()
         {
             playerAnim.SetFloat("Speed", realSpeed.magnitude);

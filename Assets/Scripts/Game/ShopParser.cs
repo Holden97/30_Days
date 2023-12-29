@@ -74,6 +74,10 @@ namespace OfficeWar
                         {
                             percentValue = (float)percent;
                         }
+                        if (percent is double)
+                        {
+                            percentValue = (float)(double)percent;
+                        }
 
                         var characterId6 = stack.Pop();
                         int characterId6Value = 0;
@@ -144,19 +148,19 @@ namespace OfficeWar
         public static void AddFixedSpeed(int characterId, float bonus)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
-            character.speed.SetSpeed(character.speed.GetSpeed() * (bonus + 1));
+            character.speed.SpeedMagnitude += bonus;
         }
 
         public static void ADD_SHIELD_PER_WAVE(int characterId, int bonus)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
-            character.shieldPerWaveBeforeStart += bonus;
+            character.shieldCountBeforePerWave += bonus;
         }
 
         public static void SET_SHIELD_PER_WAVE(int characterId, int layerCount)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
-            character.shieldPerWaveBeforeStart = layerCount;
+            character.shieldCountBeforePerWave = layerCount;
         }
 
         public static float GET_MAX_HP(int characterId)
@@ -195,13 +199,13 @@ namespace OfficeWar
         public static float GetDamageIncreasementPersent(int characterId)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
-            return character.damageEnhancedPercent;
+            return character.damageIncreasementPersent;
         }
 
         public static void SetDamageImcresementPercent(int characterId, float bonus)
         {
             Character character = GameManager.Instance.GetCharacter(characterId);
-            character.damageEnhancedPercent += bonus;
+            character.damageIncreasementPersent += bonus;
         }
 
         public void Push(Stack<object> stack, object value)

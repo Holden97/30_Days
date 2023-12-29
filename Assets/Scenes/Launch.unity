@@ -252,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameFsmSO: {fileID: 11400000, guid: d0208eff52ed9074d8c9694e1e575ea0, type: 2}
   waveDuration: 3
+  characterDataConfig: {fileID: 11400000, guid: 5a2cca195279e2d49ab33cbefd00dd7f, type: 2}
   MonsterPrefab: {fileID: 4373778672942348890, guid: 27f3faedf2b272c42ad40ac75842371d, type: 3}
   BulletPrefab: {fileID: 152870348349582098, guid: 9aeb66bab05d5f64cb23b4b78db8db66, type: 3}
   CoinPrefab: {fileID: 4171846467530137350, guid: bc1e59e32003ae8449a4a065773df6ef, type: 3}
@@ -272,7 +273,6 @@ MonoBehaviour:
       attackInterval: 0
       attackRange: 0
       type: 
-      description: 
       penetration: 0
       weaponPrefab: {fileID: 0}
 --- !u!4 &441229737

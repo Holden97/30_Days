@@ -26,6 +26,8 @@ namespace OfficeWar
 
         public float XSign { get => xSign; set { xSign = value; } }
 
+        public float SpeedMagnitude { get; set; }
+
         private void Awake()
         {
             selfHealth = GetComponent<Health>();

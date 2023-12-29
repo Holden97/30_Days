@@ -9,5 +9,6 @@ namespace OfficeWar
         Vector3 GetSpeed();
 
         float XSign { get; set; }
+        float SpeedMagnitude { get; set; }
     }
 }

@@ -9,7 +9,11 @@ namespace OfficeWar
     {
         public string name;
         public Sprite avatar;
-        public int mapHp;
+        public float baseMapHp;
+        public float baseSpeed;
+        public int shieldCountBeforePerWave;
+        public float damageIncreasementPersent;
+        public float attackSpeed;
         public GameObject characterPrefab;
     }
 }

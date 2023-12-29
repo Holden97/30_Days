@@ -10,6 +10,8 @@ namespace OfficeWar
         public FSMSO gameFsmSO;
         public float waveDuration = 30;
 
+        public CharacterDataConfig characterDataConfig;
+
         public GameObject MonsterPrefab;
         public GameObject BulletPrefab;
         public GameObject CoinPrefab;
@@ -49,6 +51,11 @@ namespace OfficeWar
 
             this.weaponsData = weaponDataSO.weaponData;
             this.propsData = propDataSO.propData;
+        }
+
+        public CharacterData GetCharacterData(string characterName)
+        {
+            return characterDataConfig.data.Find(x => x.name == characterName);
         }
 
         public ShopData[] RefreshCommodityData(ShopData[] shopData)

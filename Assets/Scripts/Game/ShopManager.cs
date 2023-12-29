@@ -29,6 +29,7 @@ namespace OfficeWar
             return shopData[index];
         }
         private static ShopManager instance;
+        public int refreshCost = 5;
 
         public ShopManager(int slotCount)
         {
@@ -47,10 +48,12 @@ namespace OfficeWar
             Instance.shopData = GameManager.Instance.RefreshCommodityData(Instance.shopData);
         }
 
-        public static Tuple<PlayerPicker, ShopData[]> GetShopData()
+        public static Tuple<PlayerPicker, ShopData[], Character> GetShopData()
         {
             var picker = GameManager.Instance.player;
-            Tuple<PlayerPicker, ShopData[]> d = new Tuple<PlayerPicker, ShopData[]>(picker, Instance.shopData);
+            var character = GameManager.Instance.player.GetComponent<Character>();
+            Tuple<PlayerPicker, ShopData[], Character> d
+                = new Tuple<PlayerPicker, ShopData[], Character>(picker, Instance.shopData, character);
             return d;
         }
     }

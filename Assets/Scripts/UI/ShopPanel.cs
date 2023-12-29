@@ -13,23 +13,40 @@ namespace OfficeWar
         public CommonList playerWeaponsList;
         public TMP_Text coinsText;
         private PlayerPicker playerPicker;
+        private Character character;
         private GameObject player;
+
+        public TMP_Text speed;
+        public TMP_Text hp;
+        public TMP_Text shield;
+        public TMP_Text enhancedDamgePercent;
+        public TMP_Text attackSpeed;
+        public TMP_Text refreshCost;
+
 
         private void Awake()
         {
             player = GameObject.FindGameObjectWithTag("Player");
             playerPicker = player.GetComponent<PlayerPicker>();
+            character = player.GetComponent<Character>();
         }
 
         public override void UpdateView(object o)
         {
-            var s = o as Tuple<PlayerPicker, ShopData[]>;
+            var s = o as Tuple<PlayerPicker, ShopData[], Character>;
             if (s != null)
             {
                 this.coinsText.text = s.Item1.coinsCount.ToString();
                 this.shopItemList.BindData(s.Item2);
                 this.playerWeaponsList.BindData(s.Item1.weapons);
                 this.playerPropsList.BindData(CountProps(s.Item1.props));
+
+                this.speed.text = ((int)s.Item3.speed.SpeedMagnitude).ToString();
+                this.hp.text = ((int)s.Item3.health.maxHp).ToString();
+                this.shield.text = s.Item3.shieldCountBeforePerWave.ToString();
+                this.enhancedDamgePercent.text = ((int)s.Item3.damageIncreasementPersent).ToString();
+                this.attackSpeed.text = ((int)s.Item3.attackSpeed).ToString();
+                this.refreshCost.text = ShopManager.Instance.refreshCost.ToString();
             }
         }
 
@@ -59,10 +76,18 @@ namespace OfficeWar
             shoppingState.isShopping = false;
         }
 
-        public void Refresh()
+        public void Roll()
         {
+            if (playerPicker.coinsCount - ShopManager.Instance.refreshCost >= 0)
+            {
+                playerPicker.coinsCount -= ShopManager.Instance.refreshCost;
+            }
+            else
+            {
+                return;
+            }
             ShopManager.Instance.Refresh();
-            UpdateView(new Tuple<PlayerPicker, ShopData[]>(playerPicker, ShopManager.Instance.shopData));
+            UpdateView(new Tuple<PlayerPicker, ShopData[], Character>(playerPicker, ShopManager.Instance.shopData, character));
         }
     }
 }
