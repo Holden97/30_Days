@@ -16,6 +16,8 @@ MonoBehaviour:
   - name: "\u6B65\u67AA"
     avatar: {fileID: 21300000, guid: 489e8cd0fd99d344db0d093ebd66d2a9, type: 3}
     cost: 200
+    abstractDescription: 
+    detailsDescription: 
     damage: 20
     attackInterval: 0.5
     attackRange: 20
@@ -25,6 +27,8 @@ MonoBehaviour:
   - name: "\u62F3"
     avatar: {fileID: 21300000, guid: 0531987dbefcc6540bb7ba327d9b0eff, type: 3}
     cost: 50
+    abstractDescription: 
+    detailsDescription: 
     damage: 10
     attackInterval: 1
     attackRange: 4
@@ -34,6 +38,8 @@ MonoBehaviour:
   - name: "\u780D\u5200"
     avatar: {fileID: -929548471, guid: fdba490b89fa9c243a2d3448399391ee, type: 3}
     cost: 180
+    abstractDescription: 
+    detailsDescription: 
     damage: 1
     attackInterval: 1
     attackRange: 3
@@ -43,6 +49,8 @@ MonoBehaviour:
   - name: "\u54B8\u9C7C\u5251"
     avatar: {fileID: 21300000, guid: 931cc787597088c4d9bf845423693a02, type: 3}
     cost: 30
+    abstractDescription: 
+    detailsDescription: 
     damage: 1
     attackInterval: 2
     attackRange: 3
@@ -52,6 +60,8 @@ MonoBehaviour:
   - name: "\u62AB\u8428"
     avatar: {fileID: 21300000, guid: aee9e1f9ed5fb804dbf27da7685ac9af, type: 3}
     cost: 50
+    abstractDescription: 
+    detailsDescription: 
     damage: 2
     attackInterval: 1
     attackRange: 3
@@ -61,6 +71,8 @@ MonoBehaviour:
   - name: "\u624B\u67AA"
     avatar: {fileID: 21300000, guid: 7032193c66f48144baf6afaf3fdb61e5, type: 3}
     cost: 180
+    abstractDescription: 
+    detailsDescription: 
     damage: 1
     attackInterval: 0.3
     attackRange: 3

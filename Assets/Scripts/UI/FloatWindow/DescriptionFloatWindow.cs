@@ -11,7 +11,6 @@ namespace OfficeWar
         public TMP_Text abstractDescriptionText;
         public TMP_Text detailsDescriptionText;
         private RectTransform rectTransform;
-        public Image img;
 
         public override void UpdateView(object o)
         {
@@ -28,40 +27,36 @@ namespace OfficeWar
                 abstractDescriptionText.text = string.Empty;
                 detailsDescriptionText.text = string.Empty;
             }
+            ConstrainFullyInGameWindow();
         }
 
         private void Awake()
         {
-            rectTransform = img.GetComponent<RectTransform>();
-        }
-
-        private void Update()
-        {
-            ConstrainFullyInGameWindow();
+            rectTransform = GetComponent<RectTransform>();
         }
 
         /// <summary>
         /// 限制UI完全显示在屏幕内
         /// https://huotuyouxi.com/2021/12/26/unity-tips-017/#%E9%99%90%E5%88%B6-UI-%E8%8C%83%E5%9B%B4
         /// </summary>
-        private void ConstrainFullyInGameWindow()
+        public void ConstrainFullyInGameWindow()
         {
             // UI 的真实坐标
             var pos = rectTransform.anchoredPosition;
 
             // UI 的大小尺寸
-            var size = rectTransform.sizeDelta / 2;
+            var size = rectTransform.sizeDelta;
 
             // 计算屏幕的尺寸
-            float xDistance = Screen.width / 2;
-            float yDistance = Screen.height / 2;
+            float xDistance = Screen.width;
+            float yDistance = Screen.height;
 
             // 限制 UI 坐标最大最小值
-            float x = Mathf.Clamp(pos.x, -xDistance + size.x, xDistance - size.x);
-            float y = Mathf.Clamp(pos.y, -yDistance + size.y, yDistance - size.y);
+            float x = Mathf.Clamp(pos.x, 0, xDistance - size.x);
+            float y = Mathf.Clamp(pos.y, 0, yDistance - size.y);
 
             // 调整 UI 坐标
-            rectTransform.anchoredPosition = new Vector2(x, y);
+            rectTransform.position = new Vector2(x, y);
         }
     }
 }
