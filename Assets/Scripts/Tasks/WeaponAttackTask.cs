@@ -23,7 +23,14 @@ namespace OfficeWar
     {
         public SharedTransform target;
         public SharedTransform self;
+        private SpriteRenderer weaponSprite;
         public SharedWeapon weapon;
+
+        public override void OnStart()
+        {
+            base.OnStart();
+            weaponSprite = weapon.Value.GetComponentInChildren<SpriteRenderer>();
+        }
 
         public override TaskStatus OnUpdate()
         {
@@ -34,6 +41,8 @@ namespace OfficeWar
             }
             else
             {
+                weaponSprite.flipY = target.Value.position.x < self.Value.position.x;
+
                 Vector2 direction = (target.Value.position - self.Value.position).normalized;
                 switch (weapon.Value.WeaponData.type)
                 {
