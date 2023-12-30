@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1804121770462665017}
   - component: {fileID: 5977331041498542634}
   - component: {fileID: 400012161394760311}
+  - component: {fileID: 3733070868481260756}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -141,4 +142,53 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.46
+--- !u!114 &3733070868481260756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171846467530137350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d999c3840054f7408eed89df80f5b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.4183757
+      outSlope: 0.4183757
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4791667
+      value: 0.2004717
+      inSlope: 0.016735017
+      outSlope: 0.016735017
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.38490567
+      outSlope: -0.38490567
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  explosionDuration: 0.3
+  speedXZ: 4
+  dirXZ: {x: 0, y: 0, z: 0}
+  explosionHeight: 4

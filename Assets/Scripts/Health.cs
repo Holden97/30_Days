@@ -60,6 +60,8 @@ namespace OfficeWar
                     var go = ObjectPoolManager.Instance.GetNextObject("金币");
                     go.transform.SetPositionAndRotation(transform.position, Quaternion.identity);
                     StartCoroutine(Putback());
+                    var dir = this.transform.position - damageSource;
+                    go.GetComponent<Coin>().Init(new Vector3(dir.x, dir.y, 0), this.transform.position);
                 }
             }
         }
