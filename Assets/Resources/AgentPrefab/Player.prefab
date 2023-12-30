@@ -532,7 +532,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 38bd6668cabff4f42af72a193a02cccb, type: 2}
@@ -714,10 +714,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterId: 0
-  damageEnhancedPercent: 0
-  shieldPerWaveBeforeStart: 0
+  damageIncreasementPersent: 0
+  shieldCountBeforePerWave: 0
   health: {fileID: 3370677487319574083}
   playerPicker: {fileID: 2361557826418066}
+  characterName: 
+  avatar: {fileID: 0}
+  baseMapHp: 0
+  baseSpeed: 0
+  attackSpeed: 0
 --- !u!1 &5693113204079676007
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 using BehaviorDesigner.Runtime;
+using CommonBase;
 
 namespace OfficeWar
 {
@@ -31,14 +32,18 @@ namespace OfficeWar
         public override void OnFixedUpdate()
         {
             base.OnFixedUpdate();
-            selfRigid.MovePosition(selfRigid.transform.position + speed * (target.Value.position - transform.position).normalized * Time.deltaTime);
+            if (!selfHealth.isUnderAttack)
+            {
+                selfRigid.MovePosition(selfRigid.transform.position + speed * (target.Value.position - transform.position).normalized * Time.deltaTime);
+            }
 
         }
 
         public override TaskStatus OnUpdate()
         {
             // Return a task status of success once we've reached the target
-            if (Vector3.Distance(selfRigid.transform.position, target.Value.position) < inAttackRange)
+            var distance = Vector2.Distance(selfRigid.transform.position.To2(), target.Value.position.To2());
+            if (distance < inAttackRange)
             {
                 return TaskStatus.Success;
             }

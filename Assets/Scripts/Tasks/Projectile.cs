@@ -5,12 +5,11 @@ namespace OfficeWar
 {
     public class Projectile : MonoBehaviour
     {
-        public float damage = 15;
         public float speed = 20;
         private WeaponData weaponData;
         private int penetration;
         public Health Owner { get; private set; }
-        private void Update()
+        private void FixedUpdate()
         {
             this.transform.position += this.transform.right * Time.deltaTime * 20;
         }
@@ -29,7 +28,7 @@ namespace OfficeWar
             {
                 if (this.penetration > 0)
                 {
-                    h.BeHurt(damage, collision.transform, this.transform.position);
+                    h.BeHurt(weaponData.damage, this.transform.position, this.weaponData.repulse, this.transform.right);
                     penetration--;
                 }
                 else

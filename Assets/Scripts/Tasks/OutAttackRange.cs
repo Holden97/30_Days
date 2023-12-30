@@ -12,7 +12,7 @@ namespace OfficeWar
 
         public override TaskStatus OnUpdate()
         {
-            if (Vector3.Distance(target.Value.position, transform.position) > attackRange)
+            if (Vector2.Distance(target.Value.position, transform.position) > attackRange)
             {
                 return TaskStatus.Success;
             }

@@ -19,6 +19,7 @@ namespace OfficeWar
         public Faction faction;
         public GameObject root;
         public float healthRatio = 1;
+        private float hitDuration = 0.5f;
 
         public float RealisticHp
         {
@@ -29,6 +30,7 @@ namespace OfficeWar
         }
 
         private DamageFlash df;
+        public bool isUnderAttack;
 
         public bool IsAlive => curHp > 0;
 
@@ -43,16 +45,31 @@ namespace OfficeWar
             df = GetComponent<DamageFlash>();
         }
 
-        public void BeHurt(float damage, Transform hitPoint, Vector3 damageSource)
+        private void OnDisable()
+        {
+            StopAllCoroutines();
+            isUnderAttack = false;
+        }
+
+        public IEnumerator UnderAttack()
+        {
+            isUnderAttack = true;
+            yield return new WaitForSeconds(hitDuration);
+            isUnderAttack = false;
+        }
+
+        public void BeHurt(float damage, Vector3 damageSource, float repulse, Vector2 repulseDir)
         {
             if (!this.gameObject.activeInHierarchy) return;
             df.CallDamageFlash();
+            StartCoroutine(UnderAttack());
             curHp = Mathf.Max(0, curHp - damage);
-            selfRigid.AddForce(((Vector2)(this.transform.position - hitPoint.position)).normalized * punchRate, ForceMode2D.Impulse);
+            if (repulse > 0)
+                selfRigid.AddForce(repulseDir.normalized * repulse, ForceMode2D.Impulse);
             EventCenter.Instance.Trigger("HURT", new HurtEvent(this, damage, damageSource));
             if (curHp <= 0)
             {
-                selfRigid.AddForce(((Vector2)(this.transform.position - damageSource)).normalized * deathRate, ForceMode2D.Impulse);
+                //selfRigid.AddForce(((Vector2)(this.transform.position - damageSource)).normalized * deathRate, ForceMode2D.Impulse);
                 selfAnim.SetTrigger("isDead");
                 selfAnim.SetBool("Alive", false);
                 if (faction.factionType == Faction.FactionEnum.ENEMY)
@@ -60,8 +77,7 @@ namespace OfficeWar
                     var go = ObjectPoolManager.Instance.GetNextObject("金币");
                     go.transform.SetPositionAndRotation(transform.position, Quaternion.identity);
                     StartCoroutine(Putback());
-                    var dir = this.transform.position - damageSource;
-                    go.GetComponent<Coin>().Init(new Vector3(dir.x, dir.y, 0), this.transform.position);
+                    go.GetComponent<Coin>().Init(new Vector3(repulseDir.x, repulseDir.y, 0), this.transform.position);
                 }
             }
         }

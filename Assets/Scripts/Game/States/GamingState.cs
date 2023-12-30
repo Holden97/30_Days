@@ -2,6 +2,7 @@
 using BehaviorDesigner.Runtime.Tasks.Unity.UnityAudioSource;
 using CommonBase;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Timer = CommonBase.Timer;
 
 namespace OfficeWar
@@ -17,6 +18,7 @@ namespace OfficeWar
         private Timer monsterTimer;
         private float lastCursorMoveTime;
         private Vector3 lastMousePos;
+        public CompositeCollider2D tc2d;
         public GamingState(string stateName) : base(stateName)
         {
             CurWaveNo = 0;
@@ -24,6 +26,7 @@ namespace OfficeWar
 
         public override void OnStateStart()
         {
+            tc2d = GameObject.FindObjectOfType<CompositeCollider2D>();
             UIManager.Instance.HideAll();
             GameManager.Instance.player = GameObject.FindObjectOfType<PlayerPicker>();
             GameManager.Instance.ClearEnemies();
@@ -66,21 +69,48 @@ namespace OfficeWar
                 ObjectPoolManager.Instance.CreatePool("金币", GameManager.Instance.CoinPrefab, 200);
             }
 
-            monsterTimer = new Timer(2, "生成怪物", onComplete: () =>
+            monsterTimer = new Timer(10, "生成怪物",
+                OnStart: () =>
+                {
+                    GenerateGroup(10, Random.insideUnitCircle * 10);
+                },
+                onComplete: () =>
               {
-                  var go = ObjectPoolManager.Instance.GetNextObject("怪物");
-                  go.GetComponentInChildren<Health>().ResetHealth();
-                  go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
-                  //go.GetComponentInChildren<Animator>().Play("Trainee_idle");
-                  go.transform.SetPositionAndRotation(new Vector3(Random.Range(-10, 10f), Random.Range(-10, 10f), -1), Quaternion.identity);
-                  go.GetComponent<Character>().Init();
-                  GameManager.Instance.AddCharacter(go.GetComponent<Character>());
+                  GenerateGroup(10, Random.insideUnitCircle * 10);
               }, isLoop: true);
             monsterTimer.Register();
 
             //UI
             UIManager.Instance.ShowPanel<GamingInfoPanel>();
             UIManager.Instance.ShowPanel<DamageInfoPanel>();
+        }
+
+        public void GenerateGroup(int count, Vector2 center)
+        {
+            var mapRect
+                = new Rect(tc2d.bounds.min + new Vector3(1, 1, 0),
+                tc2d.bounds.max - tc2d.bounds.min - new Vector3(2, 2, 0));
+            for (int i = 0; i < count; i++)
+            {
+                GenerateSingle(center, mapRect);
+            }
+        }
+
+        private void GenerateSingle(Vector2 center, Rect bounds)
+        {
+            var go = ObjectPoolManager.Instance.GetNextObject("怪物");
+            go.GetComponentInChildren<Health>().ResetHealth();
+            go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
+            //go.GetComponentInChildren<Animator>().Play("Trainee_idle");
+            var initPos = center.To3() + new Vector3(Random.Range(-5, 5f), Random.Range(-5, 5f), -1);
+            if (!bounds.Contains(initPos))
+            {
+                initPos.x = Mathf.Clamp(initPos.x, bounds.min.x, bounds.max.x);
+                initPos.y = Mathf.Clamp(initPos.y, bounds.min.y, bounds.max.y);
+            }
+            go.transform.SetPositionAndRotation(initPos, Quaternion.identity);
+            go.GetComponent<Character>().Init();
+            GameManager.Instance.AddCharacter(go.GetComponent<Character>());
         }
 
         public void SetUpWeapon(string name)
