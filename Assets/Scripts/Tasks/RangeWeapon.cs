@@ -22,16 +22,11 @@ namespace OfficeWar
             }
             base.Attack(target);
             //weaponAnimator.SetTrigger("Attack");
-            CreateBullet();
         }
 
-        private void CreateBullet()
+        public void CreateRifleBullet()
         {
             var go = ObjectPoolManager.Instance.GetNextObject("子弹");
-            //if (dischargeRefPos != null)
-            //{
-            //    go.transform.position = dischargeRefPos.position;
-            //}
             go.GetComponent<Projectile>().Init(Owner, WeaponData);
             go.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
         }
@@ -40,10 +35,6 @@ namespace OfficeWar
         {
             var go = GameObject.Instantiate(pistolBullet);
             go.SetActive(true);
-            //if (dischargeRefPos != null)
-            //{
-            //    go.transform.position = dischargeRefPos.position;
-            //}
             go.GetComponent<Projectile>().Init(Owner, WeaponData);
             go.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
         }

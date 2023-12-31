@@ -273,6 +273,7 @@ MonoBehaviour:
       attackInterval: 0
       attackRange: 0
       type: 
+      repulse: 0
       penetration: 0
       weaponPrefab: {fileID: 0}
 --- !u!4 &441229737

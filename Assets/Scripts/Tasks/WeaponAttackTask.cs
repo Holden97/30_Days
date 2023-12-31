@@ -24,6 +24,9 @@ namespace OfficeWar
         public SharedTransform target;
         public SharedTransform self;
         private SpriteRenderer weaponSprite;
+        /// <summary>
+        /// 继承baseweapon的脚本应该在武器预设的根节点上
+        /// </summary>
         public SharedWeapon weapon;
 
         public override void OnStart()
@@ -41,7 +44,11 @@ namespace OfficeWar
             }
             else
             {
-                weaponSprite.flipY = target.Value.position.x < self.Value.position.x;
+                if (weapon.Value is RangeWeapon)
+                {
+                    var isFlip = target.Value.position.x < self.Value.position.x;
+                    weapon.Value.transform.localScale = isFlip ? new Vector3(1, -1, 1) : Vector3.one;
+                }
 
                 Vector2 direction = (target.Value.position - self.Value.position).normalized;
                 switch (weapon.Value.WeaponData.type)

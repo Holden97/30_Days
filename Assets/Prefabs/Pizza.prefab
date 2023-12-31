@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1033874005, guid: dee0ea1374759b44e876bad35fb3096e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b91382d24b5688e4692b25a0f3d385d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -268,7 +268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddea67c51c221fb4d9ac4b8e551a615c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
   speed: 20
 --- !u!60 &391552949999382467
 PolygonCollider2D:
@@ -423,6 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manualAttackMode: 0
+  level: 0
   autoAttackBTPref: {fileID: 5845677283825489682, guid: df37c72562a5cc543b0c4175fb71fe8d, type: 3}
   readyToAttack: 1
   animator: {fileID: 8149083050681822307}

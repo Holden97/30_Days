@@ -26,7 +26,7 @@ namespace OfficeWar
             var h = collision.GetComponentInChildren<Health>();
             if (h && h != Owner && h.IsAlive)
             {
-                if (this.penetration > 0)
+                if (this.penetration >= 0)
                 {
                     h.BeHurt(weaponData.damage, this.transform.position, this.weaponData.repulse, this.transform.right);
                     penetration--;

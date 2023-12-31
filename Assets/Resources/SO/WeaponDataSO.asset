@@ -66,11 +66,11 @@ MonoBehaviour:
     cost: 50
     abstractDescription: 
     detailsDescription: 
-    damage: 2
+    damage: 10
     attackInterval: 1
     attackRange: 3
     type: "\u8FDC\u7A0B"
-    repulse: 0
+    repulse: 1
     penetration: 0
     weaponPrefab: {fileID: 8318458049461795442, guid: 62ebcc726bf690144a4184b7dba04861, type: 3}
   - name: "\u624B\u67AA"
@@ -78,10 +78,10 @@ MonoBehaviour:
     cost: 180
     abstractDescription: 
     detailsDescription: 
-    damage: 1
+    damage: 10
     attackInterval: 0.3
     attackRange: 3
     type: "\u8FDC\u7A0B"
     repulse: 0
-    penetration: 0
+    penetration: 1
     weaponPrefab: {fileID: 5914322737466284520, guid: 6d36f403e3f7dad4a8817a454b0761e2, type: 3}
