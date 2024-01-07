@@ -9,6 +9,7 @@ namespace OfficeWar
         public FiniteStateMachine GameFsm { get; private set; }
         public FSMSO gameFsmSO;
         public float waveDuration = 30;
+        public float generateSpan = 1;
 
         public CharacterDataConfig characterDataConfig;
 

@@ -1,9 +1,6 @@
-﻿using BehaviorDesigner.Runtime;
-using BehaviorDesigner.Runtime.Tasks.Unity.UnityAudioSource;
-using CommonBase;
+﻿using CommonBase;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using Timer = CommonBase.Timer;
 
 namespace OfficeWar
@@ -77,11 +74,11 @@ namespace OfficeWar
             monsterTimer = new Timer(10, "生成怪物",
                 OnStart: () =>
                 {
-                    GenerateGroup(10, Random.insideUnitCircle * 10);
+                    GenerateGroup(10, Random.insideUnitCircle * 10, GameManager.Instance.generateSpan);
                 },
                 onComplete: () =>
               {
-                  GenerateGroup(10, Random.insideUnitCircle * 10);
+                  GenerateGroup(10, Random.insideUnitCircle * 10, GameManager.Instance.generateSpan);
               }, isLoop: true);
             monsterTimer.Register();
 
@@ -90,23 +87,21 @@ namespace OfficeWar
             UIManager.Instance.ShowPanel<DamageInfoPanel>();
         }
 
-        public void GenerateGroup(int count, Vector2 center)
+        public void GenerateGroup(int count, Vector2 center, float generateSpan)
         {
             var mapRect
                 = new Rect(tc2d.bounds.min + new Vector3(1, 1, 0),
                 tc2d.bounds.max - tc2d.bounds.min - new Vector3(2, 2, 0));
             for (int i = 0; i < count; i++)
             {
-                GenerateSingle(center, mapRect);
+                GameManager.Instance.StartCoroutine(GenerateSingle(center, mapRect, Random.Range(0, generateSpan)));
             }
         }
 
-        private void GenerateSingle(Vector2 center, Rect bounds)
+        private IEnumerator GenerateSingle(Vector2 center, Rect bounds, float delay)
         {
+            yield return new WaitForSeconds(delay);
             var go = ObjectPoolManager.Instance.GetNextObject("预警");
-            //go.GetComponentInChildren<Health>().ResetHealth();
-            //go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
-            //go.GetComponentInChildren<Animator>().Play("Trainee_idle");
             var initPos = center.To3() + new Vector3(Random.Range(-5, 5f), Random.Range(-5, 5f), -1);
             if (!bounds.Contains(initPos))
             {
@@ -114,8 +109,6 @@ namespace OfficeWar
                 initPos.y = Mathf.Clamp(initPos.y, bounds.min.y, bounds.max.y);
             }
             go.transform.SetPositionAndRotation(initPos, Quaternion.identity);
-            //go.GetComponent<Character>().Init();
-            //GameManager.Instance.AddCharacter(go.GetComponent<Character>());
         }
 
         public IEnumerator GenerateRealMonster()
