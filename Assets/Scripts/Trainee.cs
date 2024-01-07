@@ -5,12 +5,15 @@ using UnityEngine.U2D.Animation;
 
 public class Trainee : MonoBehaviour
 {
-    public int stateNum;
-    public SpriteResolver spriteResolvers;
+    public GameObject head;
 
-
-    private void Update()
+    /// <summary>
+    /// »»Í·
+    /// </summary>
+    /// <param name="stateNum"></param>
+    public void ChangeHead(int stateNum)
     {
+        var spriteResolvers = head.GetComponent<SpriteResolver>();
         spriteResolvers.SetCategoryAndLabel("Head", stateNum.ToString());
     }
 }
