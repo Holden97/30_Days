@@ -1,6 +1,7 @@
 ﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks.Unity.UnityAudioSource;
 using CommonBase;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Timer = CommonBase.Timer;
@@ -60,6 +61,10 @@ namespace OfficeWar
             {
                 ObjectPoolManager.Instance.CreatePool("怪物", GameManager.Instance.MonsterPrefab, 100);
             }
+            if (!ObjectPoolManager.Instance.Contains("预警"))
+            {
+                ObjectPoolManager.Instance.CreatePool("预警", GameManager.Instance.AlertPrefab, 30);
+            }
             if (!ObjectPoolManager.Instance.Contains("子弹"))
             {
                 ObjectPoolManager.Instance.CreatePool("子弹", GameManager.Instance.BulletPrefab, 200);
@@ -98,9 +103,9 @@ namespace OfficeWar
 
         private void GenerateSingle(Vector2 center, Rect bounds)
         {
-            var go = ObjectPoolManager.Instance.GetNextObject("怪物");
-            go.GetComponentInChildren<Health>().ResetHealth();
-            go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
+            var go = ObjectPoolManager.Instance.GetNextObject("预警");
+            //go.GetComponentInChildren<Health>().ResetHealth();
+            //go.GetComponentInChildren<BehaviorTree>().EnableBehavior();
             //go.GetComponentInChildren<Animator>().Play("Trainee_idle");
             var initPos = center.To3() + new Vector3(Random.Range(-5, 5f), Random.Range(-5, 5f), -1);
             if (!bounds.Contains(initPos))
@@ -109,8 +114,14 @@ namespace OfficeWar
                 initPos.y = Mathf.Clamp(initPos.y, bounds.min.y, bounds.max.y);
             }
             go.transform.SetPositionAndRotation(initPos, Quaternion.identity);
-            go.GetComponent<Character>().Init();
-            GameManager.Instance.AddCharacter(go.GetComponent<Character>());
+            //go.GetComponent<Character>().Init();
+            //GameManager.Instance.AddCharacter(go.GetComponent<Character>());
+        }
+
+        public IEnumerator GenerateRealMonster()
+        {
+            var alert = ObjectPoolManager.Instance.GetNextObject("预警");
+            yield return new WaitForSeconds(1);
         }
 
         public void SetUpWeapon(string name)

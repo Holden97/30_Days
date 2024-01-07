@@ -13,6 +13,7 @@ namespace OfficeWar
         public CharacterDataConfig characterDataConfig;
 
         public GameObject MonsterPrefab;
+        public GameObject AlertPrefab;
         public GameObject BulletPrefab;
         public GameObject CoinPrefab;
 

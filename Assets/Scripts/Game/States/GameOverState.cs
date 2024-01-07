@@ -40,6 +40,7 @@ namespace OfficeWar
             ObjectPoolManager.Instance.PutbackAll("怪物");
             ObjectPoolManager.Instance.PutbackAll("子弹");
             ObjectPoolManager.Instance.PutbackAll("金币");
+            ObjectPoolManager.Instance.PutbackAll("预警");
             GameManager.Instance.player = null;
         }
     }

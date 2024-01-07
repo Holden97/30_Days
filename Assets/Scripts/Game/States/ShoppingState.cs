@@ -22,6 +22,7 @@ namespace OfficeWar
             base.OnStateStart();
             var player = GameObject.FindGameObjectWithTag("Player");
             ObjectPoolManager.Instance.PutbackAll("怪物");
+            ObjectPoolManager.Instance.PutbackAll("预警");
             isShopping = true;
             ShopManager.Instance.Refresh();
             UIManager.Instance.ShowPanel<ShopPanel>(data: ShopManager.GetShopData());
