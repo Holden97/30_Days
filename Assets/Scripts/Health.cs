@@ -20,6 +20,7 @@ namespace OfficeWar
         public GameObject root;
         public float healthRatio = 1;
         private float hitDuration = 0.5f;
+        public bool lockHp = false;
 
         public float RealisticHp
         {
@@ -60,6 +61,7 @@ namespace OfficeWar
 
         public void BeHurt(float damage, Vector3 damageSource, float repulse, Vector2 repulseDir)
         {
+            if (lockHp) { return; }
             if (!this.gameObject.activeInHierarchy) return;
             df.CallDamageFlash();
             StartCoroutine(UnderAttack());

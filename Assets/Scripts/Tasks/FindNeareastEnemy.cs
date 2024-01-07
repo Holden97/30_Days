@@ -24,7 +24,7 @@ namespace OfficeWar
             {
                 Collider2D item = colliders[i];
                 var curHealth = item.GetComponentInChildren<Health>();
-                if (curHealth != null && item.transform != self.Value && curHealth.IsAlive)
+                if (curHealth != null && item.transform != self.Value.GetComponent<BaseWeapon>().Owner.transform && curHealth.IsAlive)
                 {
                     this.target.SetValue(item.transform);
                     break;

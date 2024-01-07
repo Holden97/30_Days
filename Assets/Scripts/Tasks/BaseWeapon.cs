@@ -30,7 +30,6 @@ namespace OfficeWar
             }
             private set
             {
-                autoAttackBTInstance.SetVariableValue("self", value.transform);
                 owner = value;
             }
         }
@@ -82,6 +81,7 @@ namespace OfficeWar
             HealthsAttacking = new List<Health>();
             autoAttackBTInstance = GameObject.Instantiate(autoAttackBTPref, this.transform);
             autoAttackBTInstance.SetVariableValue("curWeapon", this);
+            autoAttackBTInstance.SetVariableValue("self", this.transform);
         }
 
         public virtual void Init(WeaponData w)
