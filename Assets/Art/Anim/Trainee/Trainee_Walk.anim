@@ -38,7 +38,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
   m_PositionCurves:
   - curve:
       serializedVersion: 2
@@ -91,7 +91,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -134,7 +134,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72/bone_\u5934"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72/bone_\u5934"
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
@@ -160,7 +160,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: "\u5B9E\u4E60\u751F"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F"
   m_FloatCurves: []
   m_PPtrCurves:
   - serializedVersion: 2
@@ -182,7 +182,7 @@ AnimationClip:
     - time: 1.1666666
       value: {fileID: 21300000, guid: 160b4625fb8f41345a1bbda1819e53e3, type: 3}
     attribute: m_Sprite
-    path: "\u5B9E\u4E60\u751F/Foot"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/Foot"
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -194,7 +194,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3393400386
+      path: 2017710846
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -203,7 +203,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3564461589
+      path: 2246303463
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -212,7 +212,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1120640430
+      path: 2545532126
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -221,7 +221,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3393400386
+      path: 2017710846
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -230,7 +230,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2462123471
+      path: 1802340926
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -303,7 +303,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -360,7 +360,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -399,7 +399,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -447,7 +447,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72/bone_\u5934"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72/bone_\u5934"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -486,7 +486,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72/bone_\u5934"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72/bone_\u5934"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -525,7 +525,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72/bone_\u5934"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72/bone_\u5934"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -555,7 +555,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: "\u5B9E\u4E60\u751F"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -585,7 +585,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: "\u5B9E\u4E60\u751F"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -615,7 +615,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: "\u5B9E\u4E60\u751F"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -645,7 +645,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -675,7 +675,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -705,7 +705,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -718,7 +718,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -730,7 +730,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -742,7 +742,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: "\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u5B9E\u4E60\u751F/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
