@@ -1,9 +1,4 @@
-﻿using BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject;
-using CommonBase;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Sprites;
+﻿using CommonBase;
 using UnityEngine;
 
 namespace OfficeWar

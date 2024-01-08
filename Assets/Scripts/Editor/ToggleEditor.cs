@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 
 namespace CommonBase.Editor
 {
@@ -12,3 +13,4 @@ namespace CommonBase.Editor
     }
 }
 
+#endif

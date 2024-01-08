@@ -1,10 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static DG.DemiEditor.DeEditorUtils;
 
 /// <summary>
-/// ¿òÌå×ÔÖ÷ÅÅÁĞ£¨Ğ±Ïò£©
+/// æ¡†ä½“è‡ªä¸»æ’åˆ—ï¼ˆæ–œå‘ï¼‰
 /// </summary>
 public class DiagonalArrangement : MonoBehaviour
 {
@@ -25,7 +24,7 @@ public class DiagonalArrangement : MonoBehaviour
         {
             newWeaponDataItem[i].transform.localPosition = newWeaponDataItem[i - 1].transform.localPosition + new Vector3(250, 49, 0);
         }
-        if(5 <= newWeaponDataItem.Count) //µÚÁù¸ö»»ĞĞ²Ù×÷£¬ÓĞµã´À£¬ÏÈÕâÑù
+        if (5 <= newWeaponDataItem.Count) //ç¬¬å…­ä¸ªæ¢è¡Œæ“ä½œï¼Œæœ‰ç‚¹è ¢ï¼Œå…ˆè¿™æ ·
         {
             newWeaponDataItem[5].transform.localPosition = newWeaponDataItem[0].transform.localPosition + new Vector3(0, -300, 0);
 
