@@ -106,7 +106,7 @@ namespace OfficeWar
         {
             this.characters.Clear();
             //重新添加玩家
-            this.characters.Add(player.GetComponent<Character>());
+            this.characters.Add(player.GetComponentInParent<Character>());
         }
     }
 }
