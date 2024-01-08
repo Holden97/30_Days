@@ -14,7 +14,7 @@ namespace OfficeWar
         public float dropSpeedXZ;
         public Vector3 dropDirXZ;
         private Vector3 initPos;
-        public float attractionSpeed = 3;
+        public AnimationCurve attractSpeed;
         /// <summary>
         /// 抛出最大高度
         /// </summary>
@@ -52,10 +52,14 @@ namespace OfficeWar
 
         public IEnumerator Attracted(Transform player, Action onComplete)
         {
+            var timer = 0f;
             while (true)
             {
+                timer += Time.deltaTime;
+                var curSpeed = attractSpeed.Evaluate(timer);
                 var dir = player.position - this.transform.position;
-                transform.position += dir * attractionSpeed * Time.deltaTime;
+
+                transform.position += dir * curSpeed * Time.deltaTime;
                 if (Vector3.Distance(this.transform.position, player.position) < .2f)
                 {
                     onComplete?.Invoke();
