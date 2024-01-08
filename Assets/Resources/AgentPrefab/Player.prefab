@@ -871,7 +871,7 @@ MonoBehaviour:
   damageIncreasementPersent: 0
   shieldCountBeforePerWave: 0
   health: {fileID: 3370677487319574083}
-  playerPicker: {fileID: 0}
+  playerPicker: {fileID: 8623374119769115244}
   characterName: 
   avatar: {fileID: 0}
   baseMapHp: 0

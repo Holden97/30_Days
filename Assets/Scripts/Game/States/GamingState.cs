@@ -12,7 +12,7 @@ namespace OfficeWar
         private bool waveOver;
         public static float TimeLeft;
         public static int CurWaveNo;
-        public static int MaxWaveNo = 6;
+        public int MaxWaveNo;
         private Timer monsterTimer;
         private float lastCursorMoveTime;
         private Vector3 lastMousePos;
@@ -20,6 +20,7 @@ namespace OfficeWar
         public GamingState(string stateName) : base(stateName)
         {
             CurWaveNo = 0;
+            MaxWaveNo = GameManager.Instance.waveCount;
         }
 
         public override void OnStateStart()
@@ -37,7 +38,7 @@ namespace OfficeWar
                 pi.enabled = true;
             }
 
-            TimeLeft = GameManager.Instance.waveDuration;
+            TimeLeft = GameManager.Instance.GetCurWaveDuration(CurWaveNo);
             base.OnStateStart();
             new Timer(TimeLeft, onComplete: () => waveOver = true).Register();
             var playerGo = GameObject.FindGameObjectWithTag("Player");

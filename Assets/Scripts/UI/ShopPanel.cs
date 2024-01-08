@@ -27,7 +27,7 @@ namespace OfficeWar
         private void Awake()
         {
             player = GameObject.FindGameObjectWithTag("Player");
-            playerPicker = player.GetComponent<PlayerPicker>();
+            playerPicker = player.GetComponentInChildren<PlayerPicker>();
             character = player.GetComponent<Character>();
         }
 

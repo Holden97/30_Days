@@ -8,7 +8,6 @@ namespace OfficeWar
     {
         public FiniteStateMachine GameFsm { get; private set; }
         public FSMSO gameFsmSO;
-        public float waveDuration = 30;
         public float generateSpan = 1;
 
         public CharacterDataConfig characterDataConfig;
@@ -28,9 +27,13 @@ namespace OfficeWar
         public PlayerPicker player;
         public GameDataSave gameData;
 
+        public WaveConfigSO waves;
+        public int waveCount;
+
         protected override void Awake()
         {
             base.Awake();
+            waveCount = waves.wavesConfig.Count;
             gameData = new GameDataSave();
             GameFsm = new FiniteStateMachine(gameFsmSO);
             GameFsm.Start();
@@ -53,6 +56,21 @@ namespace OfficeWar
 
             this.weaponsData = weaponDataSO.weaponData;
             this.propsData = propDataSO.propData;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="waveIndex">start from 1</param>
+        /// <returns></returns>
+        public int GetCurWaveDuration(int waveIndex)
+        {
+            if (waveIndex - 1 < 0 || waveIndex > waves.wavesConfig.Count)
+            {
+                Debug.LogError("out of waveConfig's bound!");
+                return -1;
+            }
+            return waves.wavesConfig[waveIndex - 1].duration;
         }
 
         public CharacterData GetCharacterData(string characterName)
