@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Codice.Client.Commands.WkTree.WorkspaceTreeNode;
@@ -10,9 +11,10 @@ namespace OfficeWar
         private float startTime;
         public AnimationCurve explosionCurve;
         public float explosionDuration;
-        public float speedXZ;
-        public Vector3 dirXZ;
+        public float dropSpeedXZ;
+        public Vector3 dropDirXZ;
         private Vector3 initPos;
+        public float attractionSpeed = 3;
         /// <summary>
         /// 抛出最大高度
         /// </summary>
@@ -23,18 +25,43 @@ namespace OfficeWar
             startTime = Time.time;
             this.transform.position = pos;
             initPos = pos;
-            this.dirXZ = dirXZ;
+            this.dropDirXZ = dirXZ;
+
+            StartCoroutine(Drop());
         }
 
-        void Update()
+        private IEnumerator Drop()
         {
-            float timeRatio = Mathf.Clamp01((Time.time - startTime) / explosionDuration);
-            if (timeRatio >= 1)
+            while (true)
             {
-                return;
+                float timeRatio = Mathf.Clamp01((Time.time - startTime) / explosionDuration);
+                if (timeRatio >= 1)
+                {
+                    yield break;
+                }
+                float curveValue = explosionCurve.Evaluate(timeRatio);
+                transform.position = new Vector3(transform.position.x, initPos.y + curveValue * explosionHeight, transform.position.z) + this.dropDirXZ * Time.deltaTime;
+                yield return null;
             }
-            float curveValue = explosionCurve.Evaluate(timeRatio);
-            transform.position = new Vector3(transform.position.x, initPos.y + curveValue * explosionHeight, transform.position.z) + this.dirXZ * Time.deltaTime;
+        }
+
+        public void BeAttracted(Transform player, Action onComplete)
+        {
+            StartCoroutine(Attracted(player, onComplete));
+        }
+
+        public IEnumerator Attracted(Transform player, Action onComplete)
+        {
+            while (true)
+            {
+                var dir = player.position - this.transform.position;
+                transform.position += dir * attractionSpeed * Time.deltaTime;
+                if (Vector3.Distance(this.transform.position, player.position) < .2f)
+                {
+                    onComplete?.Invoke();
+                }
+                yield return null;
+            }
         }
     }
 }

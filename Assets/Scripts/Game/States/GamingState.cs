@@ -44,7 +44,7 @@ namespace OfficeWar
             if (playerGo != null)
             {
                 player = playerGo.GetComponentInChildren<Health>();
-                playerPicker = playerGo.GetComponent<PlayerPicker>();
+                playerPicker = playerGo.GetComponentInChildren<PlayerPicker>();
                 GameManager.Instance.AddCharacter(playerGo.GetComponent<Character>());
             }
 

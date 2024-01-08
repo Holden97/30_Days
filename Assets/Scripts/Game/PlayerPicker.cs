@@ -1,4 +1,5 @@
 ﻿using CommonBase;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,8 +31,11 @@ namespace OfficeWar
         {
             if (collision.tag == "Coin")
             {
-                ObjectPoolManager.Instance.Putback("金币", collision.gameObject);
-                coinsCount++;
+                collision.GetComponent<Coin>().BeAttracted(this.transform, () =>
+                {
+                    ObjectPoolManager.Instance.Putback("金币", collision.gameObject);
+                    coinsCount++;
+                });
             }
         }
 
@@ -80,7 +84,7 @@ namespace OfficeWar
         {
             var weapon = WeaponFactory.CreateWeapon(w);
             weapons.Add(weapon);
-            weapon.SetOwner(GetComponent<Health>());
+            weapon.SetOwner(GetComponentInParent<Health>());
 
             foreach (var pos in weaponPositions)
             {

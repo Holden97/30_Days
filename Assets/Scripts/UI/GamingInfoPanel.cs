@@ -20,7 +20,7 @@ namespace OfficeWar
         {
             player = GameObject.FindGameObjectWithTag("Player");
             playerHp = player.GetComponentInChildren<Health>();
-            picker = playerHp.GetComponent<PlayerPicker>();
+            picker = playerHp.GetComponentInChildren<PlayerPicker>();
         }
 
         private void Update()
