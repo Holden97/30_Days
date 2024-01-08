@@ -49,7 +49,7 @@ namespace OfficeWar
                 else
                 {
                     var player = GameObject.FindGameObjectWithTag("Player");
-                    var playerPicker = player.GetComponent<PlayerPicker>();
+                    var playerPicker = player.GetComponentInChildren<PlayerPicker>();
                     UIManager.Instance.ShowPanel<CharacterInfoPanel>(data: playerPicker);
                     Time.timeScale = 0;
                 }
