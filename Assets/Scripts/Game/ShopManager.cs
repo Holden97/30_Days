@@ -51,7 +51,7 @@ namespace OfficeWar
         public static Tuple<PlayerPicker, ShopData[], Character> GetShopData()
         {
             var picker = GameManager.Instance.player;
-            var character = GameManager.Instance.player.GetComponent<Character>();
+            var character = GameManager.Instance.player.GetComponentInParent<Character>();
             Tuple<PlayerPicker, ShopData[], Character> d
                 = new Tuple<PlayerPicker, ShopData[], Character>(picker, Instance.shopData, character);
             return d;
