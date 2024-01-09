@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5446870536812444744}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.22, z: 0}
+  m_LocalPosition: {x: 0.301, y: 0.391, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manualAttackMode: 0
+  level: 0
   autoAttackBTPref: {fileID: 5845677283825489682, guid: df37c72562a5cc543b0c4175fb71fe8d, type: 3}
   readyToAttack: 1
   weaponAnimator: {fileID: 4389016785314681374}

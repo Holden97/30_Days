@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.014103413, y: 0.15, z: 0}
+        value: {x: 0.0201478, y: 0.22319236, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -28,8 +28,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.33333334
-        value: {x: 0.014103413, y: 0.15623465, z: 0}
+        time: 0.5
+        value: {x: 0.0201478, y: 0.2, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -37,8 +37,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.8333333
-        value: {x: 0.014103413, y: 0.15, z: 0}
+        time: 1
+        value: {x: 0.0201478, y: 0.22319236, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -48,13 +48,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: "\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72"
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.095, y: -0.000000011901445, z: 0}
+        value: {x: 0.15393586, y: -0.000000049197308, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -62,8 +62,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.33333334
-        value: {x: 0.1, y: -0.000000011901445, z: 0}
+        time: 0.5
+        value: {x: 0.14, y: -0.000000049197308, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -71,8 +71,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.8333333
-        value: {x: 0.095, y: -0.000000011901445, z: 0}
+        time: 1
+        value: {x: 0.15393586, y: -0.000000049197308, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -82,7 +82,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: "\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72/bone_\u5934"
+    path: "SpriteResolvers/\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72/bone_\u5934"
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -94,7 +94,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3212424877
+      path: 3409190874
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -103,7 +103,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2590234885
+      path: 248303824
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -117,7 +117,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8333333
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -138,8 +138,17 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.33333334
-        value: 0.014103413
+        time: 0
+        value: 0.0201478
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.0201478
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -150,7 +159,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: "\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -160,7 +169,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.15
+        value: 0.22319236
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -168,8 +177,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.33333334
-        value: 0.15623465
+        time: 0.5
+        value: 0.2
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -177,8 +186,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.8333333
-        value: 0.15
+        time: 1
+        value: 0.22319236
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -189,7 +198,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: "\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -198,7 +207,16 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.33333334
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
         value: 0
         inSlope: 0
         outSlope: 0
@@ -210,7 +228,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: "\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72"
+    path: "SpriteResolvers/\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -220,7 +238,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.095
+        value: 0.15393586
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -228,8 +246,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.33333334
-        value: 0.1
+        time: 0.5
+        value: 0.14
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -237,8 +255,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.8333333
-        value: 0.095
+        time: 1
+        value: 0.15393586
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -249,7 +267,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: "\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72/bone_\u5934"
+    path: "SpriteResolvers/\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72/bone_\u5934"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -258,8 +276,17 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.33333334
-        value: -0.000000011901445
+        time: 0
+        value: -0.000000049197308
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: -0.000000049197308
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -270,7 +297,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: "\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72/bone_\u5934"
+    path: "SpriteResolvers/\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72/bone_\u5934"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -279,7 +306,16 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.33333334
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
         value: 0
         inSlope: 0
         outSlope: 0
@@ -291,7 +327,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: "\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72/bone_\u5934"
+    path: "SpriteResolvers/\u7529\u9505\u540C\u4E8B/bone_\u8EAF\u5E72/bone_\u5934"
     classID: 4
     script: {fileID: 0}
     flags: 0
