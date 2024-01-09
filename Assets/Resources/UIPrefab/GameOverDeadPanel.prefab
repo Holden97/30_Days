@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u53EE\uFF01 \u6253\u5361\u4E0B\u73ED"
+  m_text: "\u88AB\u6293\u5230\u7EE7\u7EED\u52A0\u73ED"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac8b35080b8c43c45989cc606d6f99a0, type: 2}
   m_sharedMaterial: {fileID: -4993563664628037356, guid: ac8b35080b8c43c45989cc606d6f99a0, type: 2}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u8FD4\u56DE\u4E3B\u83DC\u5355"
+  m_text: "\u518D\u6B21\u5C1D\u8BD5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac8b35080b8c43c45989cc606d6f99a0, type: 2}
   m_sharedMaterial: {fileID: -4993563664628037356, guid: ac8b35080b8c43c45989cc606d6f99a0, type: 2}
@@ -379,7 +379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000071526, y: -363}
+  m_AnchoredPosition: {x: -0.00000071526, y: -319}
   m_SizeDelta: {x: 280.9354, y: 91.3696}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8606166151523733644
@@ -487,9 +487,8 @@ GameObject:
   - component: {fileID: 6076884737197921159}
   - component: {fileID: 6776037100834254379}
   - component: {fileID: 7155786047347864186}
-  - component: {fileID: 2189279948416842407}
   m_Layer: 5
-  m_Name: Filt
+  m_Name: Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -511,8 +510,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -66}
-  m_SizeDelta: {x: 20, y: 20}
+  m_AnchoredPosition: {x: 0, y: -64}
+  m_SizeDelta: {x: 58.2, y: 38.3113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6776037100834254379
 CanvasRenderer:
@@ -542,7 +541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1509415212, guid: f3f8e682767c4b44ab43e44657f10332, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 363e7589390631e4189607fc9ae9a81b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -552,27 +551,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &2189279948416842407
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6546031268320694469}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fa51cd6bba2dea94fb9bab26289dda99, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7429277776593789120
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +564,7 @@ GameObject:
   - component: {fileID: 781307027028618002}
   - component: {fileID: 1941480796976384913}
   m_Layer: 5
-  m_Name: GameOverPanel
+  m_Name: GameOverDeadPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
