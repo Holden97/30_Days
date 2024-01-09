@@ -30,5 +30,14 @@ namespace OfficeWar
             SceneManager.LoadScene("MainMenu");
             Time.timeScale = 1.0f;
         }
+
+        public void QuitGame()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
     }
 }
