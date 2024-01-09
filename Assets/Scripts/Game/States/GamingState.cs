@@ -17,6 +17,8 @@ namespace OfficeWar
         private float lastCursorMoveTime;
         private Vector3 lastMousePos;
         public CompositeCollider2D tc2d;
+        public static float MonsterZ = -1;
+        private bool collectionFlag = false;
         public GamingState(string stateName) : base(stateName)
         {
             CurWaveNo = 0;
@@ -103,7 +105,7 @@ namespace OfficeWar
         {
             yield return new WaitForSeconds(delay);
             var go = ObjectPoolManager.Instance.GetNextObject("预警");
-            var initPos = center.To3() + new Vector3(Random.Range(-5, 5f), Random.Range(-5, 5f), -1);
+            var initPos = center.To3() + new Vector3(Random.Range(-5, 5f), Random.Range(-5, 5f), MonsterZ);
             if (!bounds.Contains(initPos))
             {
                 initPos.x = Mathf.Clamp(initPos.x, bounds.min.x, bounds.max.x);
@@ -130,7 +132,7 @@ namespace OfficeWar
             {
                 this.Transfer("GAME_OVER");
             }
-            if (waveOver && CurWaveNo < MaxWaveNo)
+            if (waveOver && CurWaveNo < MaxWaveNo && ObjectPoolManager.Instance.GetAllActiveObjectsCount("金币") <= 0)
             {
                 this.Transfer("GO_SHOPPING");
             }
@@ -146,13 +148,17 @@ namespace OfficeWar
             if (Input.mousePosition != lastMousePos)
             {
                 lastMousePos = Input.mousePosition;
-                Debug.Log("lastMousePos:" + lastMousePos);
-                Debug.Log("Input.mousePosition:" + Input.mousePosition);
                 lastCursorMoveTime = Time.time;
             }
             Cursor.visible = Time.time - lastCursorMoveTime < 1;
             TimerManager.Instance.Tick();
             TimeLeft -= Time.deltaTime;
+            if (waveOver && !collectionFlag)
+            {
+                CollectAllCoins();
+                monsterTimer.Unregister();
+                collectionFlag = true;
+            }
         }
 
         public override void OnStateEnd()
@@ -161,6 +167,34 @@ namespace OfficeWar
             waveOver = false;
             monsterTimer.Unregister();
             UIManager.Instance.Hide<DamageInfoPanel>();
+
+            collectionFlag = false;
+        }
+
+        private void CollectAllCoins()
+        {
+            var gameInfoPanel = UIManager.Instance.Get<GamingInfoPanel>();
+            var coinsQuantityPos = Camera.main.ScreenToWorldPoint(gameInfoPanel.coinsCount.transform.position);
+            coinsQuantityPos = new Vector3(coinsQuantityPos.x, coinsQuantityPos.y, MonsterZ);
+
+            foreach (var item in ObjectPoolManager.Instance.GetAllActiveObjects("金币"))
+            {
+                GameManager.Instance.StartCoroutine(CollectSingleCoin(item, coinsQuantityPos));
+            }
+        }
+
+        private IEnumerator CollectSingleCoin(GameObject coin, Vector3 targetPos)
+        {
+            float timer = 0;
+            var dir = (targetPos - coin.transform.position).normalized;
+            while (Vector3.Distance(targetPos, coin.transform.position) > .3f)
+            {
+                timer += Time.fixedDeltaTime;
+                coin.transform.position += dir * Time.fixedDeltaTime * GameManager.Instance.waves.coinAttractionCurve.Evaluate(timer);
+                yield return null;
+            }
+            ObjectPoolManager.Instance.Putback("金币", coin);
+            playerPicker.coinsCount++;
         }
     }
 }

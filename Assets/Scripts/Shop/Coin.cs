@@ -56,7 +56,7 @@ namespace OfficeWar
             {
                 timer += Time.deltaTime;
                 var curSpeed = attractSpeed.Evaluate(timer);
-                var dir = player.position - this.transform.position;
+                var dir = (player.position - this.transform.position).normalized;
 
                 transform.position += dir * curSpeed * Time.deltaTime;
                 if (Vector3.Distance(this.transform.position, player.position) < .2f)

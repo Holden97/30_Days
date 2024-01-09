@@ -19,7 +19,7 @@ namespace OfficeWar
             ObjectPoolManager.Instance.PutbackAll("怪物");
             ObjectPoolManager.Instance.PutbackAll("预警");
             //TODO:need add attraction animation
-            ObjectPoolManager.Instance.PutbackAll("金币");
+            //ObjectPoolManager.Instance.PutbackAll("金币");
             //reset player's health
             GameManager.Instance.player.GetComponentInParent<Health>().ResetHealth();
             isShopping = true;

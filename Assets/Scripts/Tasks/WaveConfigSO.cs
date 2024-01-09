@@ -8,5 +8,6 @@ namespace OfficeWar
     public class WaveConfigSO : ScriptableObject
     {
         public List<WaveConfig> wavesConfig;
+        public AnimationCurve coinAttractionCurve;
     }
 }
