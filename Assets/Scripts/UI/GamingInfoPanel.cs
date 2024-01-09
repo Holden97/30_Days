@@ -8,7 +8,11 @@ namespace OfficeWar
     public class GamingInfoPanel : BaseUI
     {
         public Slider hpPercent;
+        public Slider expPercent;
+
         public TMP_Text hp;
+        public TMP_Text level;
+
         private GameObject player;
         private PlayerPicker picker;
         private Health playerHp;

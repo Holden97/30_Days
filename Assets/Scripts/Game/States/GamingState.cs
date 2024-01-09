@@ -194,7 +194,7 @@ namespace OfficeWar
                 yield return null;
             }
             ObjectPoolManager.Instance.Putback("金币", coin);
-            playerPicker.coinsCount++;
+            playerPicker.exp += .4f;
         }
     }
 }

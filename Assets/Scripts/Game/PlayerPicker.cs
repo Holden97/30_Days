@@ -13,6 +13,8 @@ namespace OfficeWar
     {
         public bool manualAttackMode = false;
         public int coinsCount;
+        public float exp;
+        public int level;
         public float baseAttackSpeed = 100;
 
         public List<BaseWeapon> weapons;
@@ -23,6 +25,7 @@ namespace OfficeWar
         private void Awake()
         {
             coinsCount = 2000;
+            exp = 0;
             weapons = new List<BaseWeapon>();
             props = new List<Prop>();
         }
@@ -35,6 +38,7 @@ namespace OfficeWar
                 {
                     ObjectPoolManager.Instance.Putback("金币", collision.gameObject);
                     coinsCount++;
+                    exp++;
                 });
             }
         }
