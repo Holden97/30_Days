@@ -9,5 +9,6 @@ namespace OfficeWar
     {
         public List<WaveConfig> wavesConfig;
         public AnimationCurve coinAttractionCurve;
+        public int initCoinsQuantity;
     }
 }

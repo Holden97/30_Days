@@ -30,6 +30,7 @@ namespace OfficeWar
         public WaveConfigSO waves;
         public int waveCount;
 
+
         protected override void Awake()
         {
             base.Awake();
@@ -56,6 +57,11 @@ namespace OfficeWar
 
             this.weaponsData = weaponDataSO.weaponData;
             this.propsData = propDataSO.propData;
+        }
+
+        public int GetLevel(int totalExp)
+        {
+            return totalExp / 20;
         }
 
         /// <summary>
