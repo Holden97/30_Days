@@ -31,15 +31,15 @@ MonoBehaviour:
     uiType: 2
     fadeType: 0
     ecsRemovable: 1
-  - name: GameOverPanel
-    resPath: Assets/Resources/UIPrefab/GameOverPanel.prefab
-    uiPrefab: {fileID: 7429277776593789120, guid: 1ebfefab7e03000489c77a2cde5a7d18, type: 3}
-    uiType: 1
-    fadeType: 0
-    ecsRemovable: 1
   - name: GameOverDeadPanel
     resPath: Assets/Resources/UIPrefab/GameOverDeadPanel.prefab
     uiPrefab: {fileID: 7429277776593789120, guid: 2f5ea0e36bcab98458e712860a52e174, type: 3}
+    uiType: 1
+    fadeType: 0
+    ecsRemovable: 1
+  - name: GameOverPanel
+    resPath: Assets/Resources/UIPrefab/GameOverPanel.prefab
+    uiPrefab: {fileID: 7429277776593789120, guid: 1ebfefab7e03000489c77a2cde5a7d18, type: 3}
     uiType: 1
     fadeType: 0
     ecsRemovable: 1

@@ -1,5 +1,6 @@
 ﻿using CommonBase;
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,15 @@ namespace OfficeWar
     {
         public bool manualAttackMode = false;
         public int coinsCount;
-        public float exp;
+        public float CurExp => curExp;
+        private float curExp;
+        public float curLevelTotalNeedExp
+        {
+            get
+            {
+                return (level + 3) * (level + 3);
+            }
+        }
         public int level;
         public float baseAttackSpeed = 100;
 
@@ -22,10 +31,25 @@ namespace OfficeWar
 
         public List<Transform> weaponPositions;
 
+        public void AddExp(float count = 1)
+        {
+            curExp += count;
+            ModifyLevel();
+        }
+
+        private void ModifyLevel()
+        {
+            while (curExp > curLevelTotalNeedExp && level < 100)
+            {
+                curExp -= curLevelTotalNeedExp;
+                level++;
+            }
+        }
+
         private void Awake()
         {
             coinsCount = 2000;
-            exp = 0;
+            curExp = 0;
             weapons = new List<BaseWeapon>();
             props = new List<Prop>();
         }
@@ -38,7 +62,7 @@ namespace OfficeWar
                 {
                     ObjectPoolManager.Instance.Putback("金币", collision.gameObject);
                     coinsCount++;
-                    exp++;
+                    AddExp();
                 });
             }
         }

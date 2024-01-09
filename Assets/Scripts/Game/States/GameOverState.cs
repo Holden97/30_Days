@@ -16,7 +16,14 @@ namespace OfficeWar
         {
             base.OnStateStart();
             Cursor.visible = true;
-            UIManager.Instance.ShowPanel<GameOverPanel>();
+            if (GameManager.Instance.win)
+            {
+                UIManager.Instance.ShowPanel<GameOverPanel>();
+            }
+            else
+            {
+                UIManager.Instance.ShowPanel<GameOverDeadPanel>();
+            }
             var pi = GameObject.FindObjectOfType<PlayerInput>();
             if (pi != null)
             {

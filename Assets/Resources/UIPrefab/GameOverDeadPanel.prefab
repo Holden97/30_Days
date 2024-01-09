@@ -464,8 +464,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1941480796976384913}
-        m_TargetAssemblyTypeName: OfficeWar.GameOverPanel, Assembly-CSharp
+      - m_Target: {fileID: -5658268036446869236}
+        m_TargetAssemblyTypeName: OfficeWar.GameOverDeadPanel, OfficeWar
         m_MethodName: OnClickBackToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 3156124277154818740}
   - component: {fileID: 5883744570054049239}
   - component: {fileID: 781307027028618002}
-  - component: {fileID: 1941480796976384913}
+  - component: {fileID: -5658268036446869236}
   m_Layer: 5
   m_Name: GameOverDeadPanel
   m_TagString: Untagged
@@ -613,7 +613,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1941480796976384913
+--- !u!114 &-5658268036446869236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7429277776593789120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f61bcc402aa14d44aff53841a8170d7, type: 3}
+  m_Script: {fileID: 11500000, guid: f51a6253027cfb848b67a397ff655b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uiLayer: 1

@@ -22,6 +22,8 @@ namespace OfficeWar
         private float hitDuration = 0.5f;
         public bool lockHp = false;
 
+        private GamingState gamingState;
+
         public float RealisticHp
         {
             get
@@ -44,6 +46,7 @@ namespace OfficeWar
         {
             ResetHealth();
             df = GetComponent<DamageFlash>();
+            gamingState = GameManager.Instance.GameFsm.GetState("游戏中") as GamingState;
         }
 
         private void OnDisable()
@@ -74,7 +77,9 @@ namespace OfficeWar
                 //selfRigid.AddForce(((Vector2)(this.transform.position - damageSource)).normalized * deathRate, ForceMode2D.Impulse);
                 selfAnim.SetTrigger("isDead");
                 selfAnim.SetBool("Alive", false);
-                if (faction.factionType == Faction.FactionEnum.ENEMY)
+                //enemies in gaming can produce coins
+                if (faction.factionType == Faction.FactionEnum.ENEMY
+                    && !gamingState.waveOver)
                 {
                     var go = ObjectPoolManager.Instance.GetNextObject("金币");
                     go.transform.SetPositionAndRotation(transform.position, Quaternion.identity);

@@ -14,6 +14,7 @@ namespace OfficeWar
         public Vector3 dropDirXZ;
         private Vector3 initPos;
         public AnimationCurve attractSpeed;
+        private Coroutine drop;
         /// <summary>
         /// 抛出最大高度
         /// </summary>
@@ -26,7 +27,7 @@ namespace OfficeWar
             initPos = pos;
             this.dropDirXZ = dirXZ;
 
-            StartCoroutine(Drop());
+            drop = StartCoroutine(Drop());
         }
 
         private IEnumerator Drop()
@@ -51,6 +52,7 @@ namespace OfficeWar
 
         public IEnumerator Attracted(Transform player, Action onComplete)
         {
+            StopCoroutine(drop);
             var timer = 0f;
             while (true)
             {

@@ -9,7 +9,8 @@ namespace OfficeWar
     {
         private Health player;
         private PlayerPicker playerPicker;
-        private bool waveOver;
+        public bool waveOver;
+        private bool waveForcedTermination;
         public static float TimeLeft;
         public static int CurWaveNo;
         public int MaxWaveNo;
@@ -23,6 +24,13 @@ namespace OfficeWar
         {
             CurWaveNo = 0;
             MaxWaveNo = GameManager.Instance.waveCount;
+        }
+
+        private IEnumerator ForcedTermination()
+        {
+            //TODO:现在会有金币没有正确回收的bug，先使用强制结束保证游戏正常结束
+            yield return new WaitForSeconds(1);
+            waveForcedTermination = true;
         }
 
         public override void OnStateStart()
@@ -42,7 +50,14 @@ namespace OfficeWar
 
             TimeLeft = GameManager.Instance.GetCurWaveDuration(CurWaveNo);
             base.OnStateStart();
-            new Timer(TimeLeft, onComplete: () => waveOver = true).Register();
+            new Timer(
+                TimeLeft,
+                onComplete: () =>
+                {
+                    waveOver = true;
+                    GameManager.Instance.StartCoroutine(ForcedTermination());
+                })
+                .Register();
             var playerGo = GameObject.FindGameObjectWithTag("Player");
             if (playerGo != null)
             {
@@ -130,14 +145,16 @@ namespace OfficeWar
             base.OnStateCheckTransition();
             if (player == null || !player.IsAlive)
             {
+                GameManager.Instance.win = false;
                 this.Transfer("GAME_OVER");
             }
-            if (waveOver && CurWaveNo < MaxWaveNo && ObjectPoolManager.Instance.GetAllActiveObjectsCount("金币") <= 0)
+            if (waveOver && CurWaveNo < MaxWaveNo && (ObjectPoolManager.Instance.GetAllActiveObjectsCount("金币") <= 0 || waveForcedTermination))
             {
                 this.Transfer("GO_SHOPPING");
             }
             else if (waveOver && CurWaveNo >= MaxWaveNo)
             {
+                GameManager.Instance.win = true;
                 this.Transfer("GAME_OVER");
             }
         }
@@ -165,6 +182,7 @@ namespace OfficeWar
         {
             base.OnStateEnd();
             waveOver = false;
+            waveForcedTermination = false;
             monsterTimer.Unregister();
             UIManager.Instance.Hide<DamageInfoPanel>();
 
@@ -174,7 +192,7 @@ namespace OfficeWar
         private void CollectAllCoins()
         {
             var gameInfoPanel = UIManager.Instance.Get<GamingInfoPanel>();
-            var coinsQuantityPos = Camera.main.ScreenToWorldPoint(gameInfoPanel.coinsCount.transform.position);
+            var coinsQuantityPos = Camera.main.ScreenToWorldPoint(gameInfoPanel.levelProgress.transform.position);
             coinsQuantityPos = new Vector3(coinsQuantityPos.x, coinsQuantityPos.y, MonsterZ);
 
             foreach (var item in ObjectPoolManager.Instance.GetAllActiveObjects("金币"))
@@ -194,7 +212,7 @@ namespace OfficeWar
                 yield return null;
             }
             ObjectPoolManager.Instance.Putback("金币", coin);
-            playerPicker.exp += .4f;
+            playerPicker.AddExp(.4f);
         }
     }
 }

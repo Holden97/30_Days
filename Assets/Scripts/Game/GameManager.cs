@@ -26,6 +26,7 @@ namespace OfficeWar
 
         public PlayerPicker player;
         public GameDataSave gameData;
+        public bool win;
 
         public WaveConfigSO waves;
         public int waveCount;
